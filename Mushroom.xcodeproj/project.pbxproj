@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
-		4F620F4D1F67BEE4000D51A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F4C1F67BEE4000D51A8 /* AppDelegate.m */; };
 		4F620F501F67BEE4000D51A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F4F1F67BEE4000D51A8 /* ViewController.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
 		4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F541F67BEE4000D51A8 /* Assets.xcassets */; };
 		4F620F581F67BEE4000D51A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F561F67BEE4000D51A8 /* LaunchScreen.storyboard */; };
 		4F620F631F67BEE4000D51A8 /* MushroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F621F67BEE4000D51A8 /* MushroomTests.m */; };
 		4F620F6E1F67BEE4000D51A8 /* MushroomUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F6D1F67BEE4000D51A8 /* MushroomUITests.m */; };
+		4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F7D1F67E508000D51A8 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 		35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mushroom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4F620F4B1F67BEE4000D51A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4F620F4C1F67BEE4000D51A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4F620F4E1F67BEE4000D51A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4F620F4F1F67BEE4000D51A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4F620F521F67BEE4000D51A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		4F620F691F67BEE4000D51A8 /* MushroomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MushroomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F6D1F67BEE4000D51A8 /* MushroomUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MushroomUITests.m; sourceTree = "<group>"; };
 		4F620F6F1F67BEE4000D51A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F620F7C1F67E508000D51A8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F620F7D1F67E508000D51A8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +116,9 @@
 		4F620F471F67BEE4000D51A8 /* Mushroom */ = {
 			isa = PBXGroup;
 			children = (
-				4F620F4B1F67BEE4000D51A8 /* AppDelegate.h */,
-				4F620F4C1F67BEE4000D51A8 /* AppDelegate.m */,
+				4F620F7B1F67E508000D51A8 /* AppDelegate */,
+				4F620F801F67E553000D51A8 /* Resource */,
+				4F620F7F1F67E553000D51A8 /* Class */,
 				4F620F4E1F67BEE4000D51A8 /* ViewController.h */,
 				4F620F4F1F67BEE4000D51A8 /* ViewController.m */,
 				4F620F511F67BEE4000D51A8 /* Main.storyboard */,
@@ -153,6 +154,61 @@
 				4F620F6F1F67BEE4000D51A8 /* Info.plist */,
 			);
 			path = MushroomUITests;
+			sourceTree = "<group>";
+		};
+		4F620F7B1F67E508000D51A8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F620F7C1F67E508000D51A8 /* AppDelegate.h */,
+				4F620F7D1F67E508000D51A8 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4F620F7F1F67E553000D51A8 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				4F620F811F67E809000D51A8 /* General */,
+				4F620F821F67E809000D51A8 /* Helps */,
+				4F620F831F67E809000D51A8 /* Macro */,
+				4F620F841F67E809000D51A8 /* Vendors */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		4F620F801F67E553000D51A8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4F620F811F67E809000D51A8 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		4F620F821F67E809000D51A8 /* Helps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helps;
+			sourceTree = "<group>";
+		};
+		4F620F831F67E809000D51A8 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		4F620F841F67E809000D51A8 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 		9D791ED0ED1D4250FCA46250 /* Pods */ = {
@@ -349,8 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F620F501F67BEE4000D51A8 /* ViewController.m in Sources */,
-				4F620F4D1F67BEE4000D51A8 /* AppDelegate.m in Sources */,
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
+				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +640,7 @@
 				4F620F741F67BEE4000D51A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F620F751F67BEE4000D51A8 /* Build configuration list for PBXNativeTarget "MushroomTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +649,7 @@
 				4F620F771F67BEE4000D51A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F620F781F67BEE4000D51A8 /* Build configuration list for PBXNativeTarget "MushroomUITests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +658,7 @@
 				4F620F7A1F67BEE4000D51A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
