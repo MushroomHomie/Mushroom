@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F4D1F67BEE4000D51A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F4C1F67BEE4000D51A8 /* AppDelegate.m */; };
 		4F620F501F67BEE4000D51A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F4F1F67BEE4000D51A8 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.debug.xcconfig"; sourceTree = "<group>"; };
+		35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mushroom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F620F4B1F67BEE4000D51A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		4F620F691F67BEE4000D51A8 /* MushroomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MushroomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F6D1F67BEE4000D51A8 /* MushroomUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MushroomUITests.m; sourceTree = "<group>"; };
 		4F620F6F1F67BEE4000D51A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DFF8B31BB5A50E1B34D2DB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F620F3C1F67BEE4000D51A8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +98,8 @@
 				4F620F611F67BEE4000D51A8 /* MushroomTests */,
 				4F620F6C1F67BEE4000D51A8 /* MushroomUITests */,
 				4F620F461F67BEE4000D51A8 /* Products */,
+				9D791ED0ED1D4250FCA46250 /* Pods */,
+				4DFF8B31BB5A50E1B34D2DB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +155,15 @@
 			path = MushroomUITests;
 			sourceTree = "<group>";
 		};
+		9D791ED0ED1D4250FCA46250 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */,
+				BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F620F721F67BEE4000D51A8 /* Build configuration list for PBXNativeTarget "Mushroom" */;
 			buildPhases = (
+				CD3DF88F657F279EEE7F079D /* [CP] Check Pods Manifest.lock */,
 				4F620F411F67BEE4000D51A8 /* Sources */,
 				4F620F421F67BEE4000D51A8 /* Frameworks */,
 				4F620F431F67BEE4000D51A8 /* Resources */,
+				191B11D4D433DC27C096E1B5 /* [CP] Embed Pods Frameworks */,
+				145ADA84FEAA2E889220A4CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		145ADA84FEAA2E889220A4CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		191B11D4D433DC27C096E1B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD3DF88F657F279EEE7F079D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F620F411F67BEE4000D51A8 /* Sources */ = {
@@ -422,6 +497,7 @@
 		};
 		4F620F731F67BEE4000D51A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mushroom/Info.plist;
@@ -433,6 +509,7 @@
 		};
 		4F620F741F67BEE4000D51A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Mushroom/Info.plist;
