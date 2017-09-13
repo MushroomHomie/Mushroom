@@ -18,8 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     // last time
-    // 我是蠢猪
-    // 恩 你是蠢猪
 }
 
 

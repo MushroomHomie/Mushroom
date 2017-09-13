@@ -116,6 +116,7 @@
 		4F620F471F67BEE4000D51A8 /* Mushroom */ = {
 			isa = PBXGroup;
 			children = (
+				4FE7D57C1F68D10F00A14FBB /* Frameworks */,
 				4F620F7B1F67E508000D51A8 /* AppDelegate */,
 				4F620F801F67E553000D51A8 /* Resource */,
 				4F620F7F1F67E553000D51A8 /* Class */,
@@ -186,6 +187,14 @@
 		4F620F811F67E809000D51A8 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				4FE7D57D1F68D41400A14FBB /* Base */,
+				4FE7D57E1F68D41400A14FBB /* Categories */,
+				4FE7D57F1F68D41400A14FBB /* Core */,
+				4FE7D5801F68D41400A14FBB /* Models */,
+				4FE7D5811F68D41400A14FBB /* Public */,
+				4FE7D5821F68D41400A14FBB /* ViewControllers */,
+				4FE7D5831F68D41400A14FBB /* ViewModels */,
+				4FE7D5841F68D41400A14FBB /* Views */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -209,6 +218,69 @@
 			children = (
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		4FE7D57C1F68D10F00A14FBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FE7D57D1F68D41400A14FBB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4FE7D57E1F68D41400A14FBB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4FE7D57F1F68D41400A14FBB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4FE7D5801F68D41400A14FBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FE7D5811F68D41400A14FBB /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		4FE7D5821F68D41400A14FBB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4FE7D5831F68D41400A14FBB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4FE7D5841F68D41400A14FBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9D791ED0ED1D4250FCA46250 /* Pods */ = {
