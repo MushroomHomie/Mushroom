@@ -27,25 +27,21 @@
     [self.tabBar insertSubview:myView atIndex:1];
     self.tabBar.translucent = YES;
     
-    // 首页
-    HomePageVC *homepageVC = [[HomePageVC alloc]init];
-    [self addChildViewController:homepageVC Title:@"首页" angImage:[UIImage imageNamed:@"tab_icon_home@2x.png"] AndSelectImage:[UIImage imageNamed:@"tab_icon_home_sel@2x.png"]];
-    
-    // 分类
-    ClassifyVC *classifyVC = [[ClassifyVC alloc]init];
-    [self addChildViewController:classifyVC Title:@"分类" angImage:[UIImage imageNamed:@"btn_bar_recommend@2x.png"] AndSelectImage:[UIImage imageNamed:@"btn_bar_recommend_on@2x.png"]];
-    
-    // V榜
-    V_ListVC *v_ListVC = [[V_ListVC alloc]init];
-    [self addChildViewController:v_ListVC Title:@"V榜" angImage:[UIImage imageNamed:@"btn_bar_recommend@2x.png"] AndSelectImage:[UIImage imageNamed:@"btn_bar_recommend_on@2x.png"]];
-    
-    // 直播
-    LiveTelecastVC *liveTelecastVC = [[LiveTelecastVC alloc]init];
-    [self addChildViewController:liveTelecastVC Title:@"直播" angImage:[UIImage imageNamed:@"tab_icon_hot@2x.png"] AndSelectImage:[UIImage imageNamed:@"tab_icon_hot_sel@2x.png"]];
-    
-    // 音乐电台
-    RadioFM_VC *musicFM = [[RadioFM_VC alloc]init];
-    [self addChildViewController:musicFM Title:@"电台" angImage:[UIImage imageNamed:@"btn_bar_radio@2x.png"] AndSelectImage:[UIImage imageNamed:@"btn_bar_radio_on@2x.png"]];
+    NSArray *titles = @[@"首页",@"分类",@"V榜",@"直播",@"电台"];
+    NSArray *classNames = @[@"HomePageVC",@"ClassifyVC",@"V_ListVC",@"LiveTelecastVC",@"RadioFM_VC"];
+    NSArray *images = @[@"tabbar_home_50x50_",@"tabbar_fl_50x50_",@"tabbar_vchart_50x50_",@"tabbar_tv_50x50_",@"tabbar_mine_50x50_"];
+    NSArray *selectImages = @[@"tabbar_home_sel_50x50_",@"tabbar_fl_sel_50x50_",@"tabbar_vchart_sel_50x50_",@"tabbar_tv_p_50x50_",@"ttabbar_mine_sel_50x50_"];
+
+    for (int i = 0; i < titles.count; i++)
+    {
+        Class class = NSClassFromString(classNames[i]);
+        id pClass = [[class alloc] init];
+        [self addChildViewController:pClass
+                               Title:titles[i]
+                            angImage:[UIImage imageNamed:images[i]]
+                      AndSelectImage:[UIImage imageNamed:selectImages[i]]];
+    }
+
 }
 
 - (void)addChildViewController:(UIViewController *)childController Title:(NSString *)title angImage:(UIImage *)image AndSelectImage:(UIImage *)selectImage
@@ -54,7 +50,7 @@
     
     UILabel *label = [[UILabel alloc]init];
     label.text = title;
-    label.textColor = [UIColor orangeColor];
+    label.textColor = [UIColor greenColor];
     
     // 点击前图片
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -68,7 +64,7 @@
     textAttr[NSForegroundColorAttributeName] = [UIColor grayColor];
     // 点击后字体颜色
     NSMutableDictionary *selectTextAttr = [NSMutableDictionary dictionary];
-    selectTextAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    selectTextAttr[NSForegroundColorAttributeName] = [UIColor greenColor];
     
     [childController.tabBarItem setTitleTextAttributes:textAttr forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:selectTextAttr forState:UIControlStateSelected];
@@ -77,7 +73,7 @@
     naVC.navigationBar.translucent = NO;
     
     // 设置导航栏颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [self addChildViewController:naVC];
 }
 
