@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
-		4F620F501F67BEE4000D51A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F4F1F67BEE4000D51A8 /* ViewController.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
 		4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F541F67BEE4000D51A8 /* Assets.xcassets */; };
 		4F620F581F67BEE4000D51A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F561F67BEE4000D51A8 /* LaunchScreen.storyboard */; };
 		4F620F631F67BEE4000D51A8 /* MushroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F621F67BEE4000D51A8 /* MushroomTests.m */; };
 		4F620F6E1F67BEE4000D51A8 /* MushroomUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F6D1F67BEE4000D51A8 /* MushroomUITests.m */; };
 		4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F7D1F67E508000D51A8 /* AppDelegate.m */; };
+		4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BA31F69081C00C300ED /* BaseViewController.m */; };
+		4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BA61F69090D00C300ED /* MainTabBarController.m */; };
+		4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BB61F690B2400C300ED /* ClassifyVC.m */; };
+		4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BBB1F690B2F00C300ED /* HomePageVC.m */; };
+		4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BC41F690BA300C300ED /* LiveTelecastVC.m */; };
+		4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BC71F690BB100C300ED /* RadioFM_VC.m */; };
+		4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BCD1F690BDA00C300ED /* V_ListVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +46,6 @@
 		35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mushroom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4F620F4E1F67BEE4000D51A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4F620F4F1F67BEE4000D51A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4F620F521F67BEE4000D51A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F620F541F67BEE4000D51A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F620F571F67BEE4000D51A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +58,20 @@
 		4F620F6F1F67BEE4000D51A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F620F7C1F67E508000D51A8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F620F7D1F67E508000D51A8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F740BA21F69081C00C300ED /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		4F740BA31F69081C00C300ED /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		4F740BA51F69090D00C300ED /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		4F740BA61F69090D00C300ED /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		4F740BB51F690B2400C300ED /* ClassifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyVC.h; sourceTree = "<group>"; };
+		4F740BB61F690B2400C300ED /* ClassifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyVC.m; sourceTree = "<group>"; };
+		4F740BBA1F690B2F00C300ED /* HomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageVC.h; sourceTree = "<group>"; };
+		4F740BBB1F690B2F00C300ED /* HomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageVC.m; sourceTree = "<group>"; };
+		4F740BC31F690BA300C300ED /* LiveTelecastVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveTelecastVC.h; sourceTree = "<group>"; };
+		4F740BC41F690BA300C300ED /* LiveTelecastVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveTelecastVC.m; sourceTree = "<group>"; };
+		4F740BC61F690BB100C300ED /* RadioFM_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioFM_VC.h; sourceTree = "<group>"; };
+		4F740BC71F690BB100C300ED /* RadioFM_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioFM_VC.m; sourceTree = "<group>"; };
+		4F740BCC1F690BDA00C300ED /* V_ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V_ListVC.h; sourceTree = "<group>"; };
+		4F740BCD1F690BDA00C300ED /* V_ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_ListVC.m; sourceTree = "<group>"; };
 		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,11 +135,10 @@
 			isa = PBXGroup;
 			children = (
 				4FE7D57C1F68D10F00A14FBB /* Frameworks */,
+				4F740B9B1F6905D300C300ED /* API */,
 				4F620F7B1F67E508000D51A8 /* AppDelegate */,
 				4F620F801F67E553000D51A8 /* Resource */,
 				4F620F7F1F67E553000D51A8 /* Class */,
-				4F620F4E1F67BEE4000D51A8 /* ViewController.h */,
-				4F620F4F1F67BEE4000D51A8 /* ViewController.m */,
 				4F620F511F67BEE4000D51A8 /* Main.storyboard */,
 				4F620F541F67BEE4000D51A8 /* Assets.xcassets */,
 				4F620F561F67BEE4000D51A8 /* LaunchScreen.storyboard */,
@@ -173,6 +190,7 @@
 				4F620F821F67E809000D51A8 /* Helps */,
 				4F620F831F67E809000D51A8 /* Macro */,
 				4F620F841F67E809000D51A8 /* Vendors */,
+				4F740B9F1F6906D100C300ED /* Sections */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -187,12 +205,10 @@
 		4F620F811F67E809000D51A8 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				4FE7D57D1F68D41400A14FBB /* Base */,
 				4FE7D57E1F68D41400A14FBB /* Categories */,
 				4FE7D57F1F68D41400A14FBB /* Core */,
 				4FE7D5801F68D41400A14FBB /* Models */,
 				4FE7D5811F68D41400A14FBB /* Public */,
-				4FE7D5821F68D41400A14FBB /* ViewControllers */,
 				4FE7D5831F68D41400A14FBB /* ViewModels */,
 				4FE7D5841F68D41400A14FBB /* Views */,
 			);
@@ -220,18 +236,175 @@
 			path = Vendors;
 			sourceTree = "<group>";
 		};
+		4F740B9B1F6905D300C300ED /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4F740B9F1F6906D100C300ED /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BA91F690A5300C300ED /* HomePage */,
+				4F740BA81F690A5300C300ED /* Classify */,
+				4F740BAA1F690A5300C300ED /* LiveTelecast */,
+				4F740BAC1F690A5300C300ED /* V_List */,
+				4F740BAB1F690A5300C300ED /* RadioFM */,
+				4F740BA11F69081C00C300ED /* Base */,
+				4F740BA01F6907A600C300ED /* Main */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		4F740BA01F6907A600C300ED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BA51F69090D00C300ED /* MainTabBarController.h */,
+				4F740BA61F69090D00C300ED /* MainTabBarController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4F740BA11F69081C00C300ED /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BA21F69081C00C300ED /* BaseViewController.h */,
+				4F740BA31F69081C00C300ED /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4F740BA81F690A5300C300ED /* Classify */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BB41F690B2400C300ED /* ClassifyViewController */,
+				4F740BB31F690B2400C300ED /* ClassifyModel */,
+			);
+			path = Classify;
+			sourceTree = "<group>";
+		};
+		4F740BA91F690A5300C300ED /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BB91F690B2F00C300ED /* HomePageVC */,
+				4F740BB81F690B2F00C300ED /* HomePageModel */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		4F740BAA1F690A5300C300ED /* LiveTelecast */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BBE1F690B5100C300ED /* LiveTelecastVC */,
+				4F740BBD1F690B5100C300ED /* LiveTelecastModel */,
+			);
+			path = LiveTelecast;
+			sourceTree = "<group>";
+		};
+		4F740BAB1F690A5300C300ED /* RadioFM */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BC01F690B8200C300ED /* RadioFM_VC */,
+				4F740BBF1F690B8200C300ED /* RadioFM_Model */,
+			);
+			path = RadioFM;
+			sourceTree = "<group>";
+		};
+		4F740BAC1F690A5300C300ED /* V_List */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BC21F690B8D00C300ED /* V_ListVC */,
+				4F740BC11F690B8D00C300ED /* V_ListModel */,
+			);
+			path = V_List;
+			sourceTree = "<group>";
+		};
+		4F740BB31F690B2400C300ED /* ClassifyModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClassifyModel;
+			sourceTree = "<group>";
+		};
+		4F740BB41F690B2400C300ED /* ClassifyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BB51F690B2400C300ED /* ClassifyVC.h */,
+				4F740BB61F690B2400C300ED /* ClassifyVC.m */,
+			);
+			path = ClassifyViewController;
+			sourceTree = "<group>";
+		};
+		4F740BB81F690B2F00C300ED /* HomePageModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePageModel;
+			sourceTree = "<group>";
+		};
+		4F740BB91F690B2F00C300ED /* HomePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BBA1F690B2F00C300ED /* HomePageVC.h */,
+				4F740BBB1F690B2F00C300ED /* HomePageVC.m */,
+			);
+			path = HomePageVC;
+			sourceTree = "<group>";
+		};
+		4F740BBD1F690B5100C300ED /* LiveTelecastModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LiveTelecastModel;
+			sourceTree = "<group>";
+		};
+		4F740BBE1F690B5100C300ED /* LiveTelecastVC */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BC31F690BA300C300ED /* LiveTelecastVC.h */,
+				4F740BC41F690BA300C300ED /* LiveTelecastVC.m */,
+			);
+			path = LiveTelecastVC;
+			sourceTree = "<group>";
+		};
+		4F740BBF1F690B8200C300ED /* RadioFM_Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RadioFM_Model;
+			sourceTree = "<group>";
+		};
+		4F740BC01F690B8200C300ED /* RadioFM_VC */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BC61F690BB100C300ED /* RadioFM_VC.h */,
+				4F740BC71F690BB100C300ED /* RadioFM_VC.m */,
+			);
+			path = RadioFM_VC;
+			sourceTree = "<group>";
+		};
+		4F740BC11F690B8D00C300ED /* V_ListModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V_ListModel;
+			sourceTree = "<group>";
+		};
+		4F740BC21F690B8D00C300ED /* V_ListVC */ = {
+			isa = PBXGroup;
+			children = (
+				4F740BCC1F690BDA00C300ED /* V_ListVC.h */,
+				4F740BCD1F690BDA00C300ED /* V_ListVC.m */,
+			);
+			path = V_ListVC;
+			sourceTree = "<group>";
+		};
 		4FE7D57C1F68D10F00A14FBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		4FE7D57D1F68D41400A14FBB /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		4FE7D57E1F68D41400A14FBB /* Categories */ = {
@@ -260,13 +433,6 @@
 			children = (
 			);
 			path = Public;
-			sourceTree = "<group>";
-		};
-		4FE7D5821F68D41400A14FBB /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		4FE7D5831F68D41400A14FBB /* ViewModels */ = {
@@ -476,8 +642,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F620F501F67BEE4000D51A8 /* ViewController.m in Sources */,
+				4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */,
+				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
+				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
+				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
+				4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */,
+				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
+				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
