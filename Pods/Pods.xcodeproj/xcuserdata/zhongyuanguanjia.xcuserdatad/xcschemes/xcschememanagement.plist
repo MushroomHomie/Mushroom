@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>322F8FE2030EE0DC0F27E8DAF49385A6</key>
+		<key>0B78267BFFD8EE1AAC774971324FD1BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>106FD4E5BB6946929044BCD3D010029C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7151A2E946A3314D7033111DA1489E7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC6BBB28A3395116CF027662C2AC8C32</key>
+		<key>E66ACBCE7AB50C7403C6921AAEAD1A08</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE150EA7E0342F59CD775B7F6C4E46CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

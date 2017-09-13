@@ -7,6 +7,7 @@ pod 'YYKit', '~> 1.0.9'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'FMDB', '~> 2.6.2'
 pod 'AFNetworking', '~> 3.0.0'
+pod 'ReactiveCocoa','~>2.1.8'
 
 end
 

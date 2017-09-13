@@ -18,6 +18,12 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - MBProgressHUD (1.0.0)
+  - ReactiveCocoa (2.1.8):
+    - ReactiveCocoa/Core (= 2.1.8)
+    - ReactiveCocoa/no-arc (= 2.1.8)
+  - ReactiveCocoa/Core (2.1.8):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1.8)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -29,6 +35,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.0.0)
   - FMDB (~> 2.6.2)
   - MBProgressHUD (~> 1.0.0)
+  - ReactiveCocoa (~> 2.1.8)
   - SDWebImage (~> 4.0.0)
   - YYKit (~> 1.0.9)
 
@@ -36,9 +43,10 @@ SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f356c6e972c549908ff88b7a00240f79724d2faf
+PODFILE CHECKSUM: da8a892ae6e7818242a638017746d199fbebe978
 
 COCOAPODS: 1.2.0
