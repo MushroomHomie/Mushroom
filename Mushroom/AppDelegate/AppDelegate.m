@@ -25,6 +25,9 @@
     MainTabBarController *tabBar = [[MainTabBarController alloc] init];
     self.window.rootViewController = tabBar;
     
+    // 设置状态栏字体颜色为白色
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
     return YES;
 }
 

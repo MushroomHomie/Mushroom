@@ -22,6 +22,7 @@
 		4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BC41F690BA300C300ED /* LiveTelecastVC.m */; };
 		4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BC71F690BB100C300ED /* RadioFM_VC.m */; };
 		4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F740BCD1F690BDA00C300ED /* V_ListVC.m */; };
+		4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC7FFCA1F6946DA00A0F2B7 /* MainNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		4F740BC71F690BB100C300ED /* RadioFM_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioFM_VC.m; sourceTree = "<group>"; };
 		4F740BCC1F690BDA00C300ED /* V_ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V_ListVC.h; sourceTree = "<group>"; };
 		4F740BCD1F690BDA00C300ED /* V_ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V_ListVC.m; sourceTree = "<group>"; };
+		4FC7FFC91F6946DA00A0F2B7 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		4FC7FFCA1F6946DA00A0F2B7 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +265,8 @@
 			children = (
 				4F740BA51F69090D00C300ED /* MainTabBarController.h */,
 				4F740BA61F69090D00C300ED /* MainTabBarController.m */,
+				4FC7FFC91F6946DA00A0F2B7 /* MainNavigationController.h */,
+				4FC7FFCA1F6946DA00A0F2B7 /* MainNavigationController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -646,6 +651,7 @@
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
 				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
+				4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */,
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
 				4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */,
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,

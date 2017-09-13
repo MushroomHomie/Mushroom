@@ -12,6 +12,7 @@
 #import "LiveTelecastVC.h"
 #import "V_ListVC.h"
 #import "RadioFM_VC.h"
+#import "MainNavigationController.h"
 
 @interface MainTabBarController ()
 
@@ -19,7 +20,8 @@
 
 @implementation MainTabBarController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
@@ -41,7 +43,6 @@
                             angImage:[UIImage imageNamed:images[i]]
                       AndSelectImage:[UIImage imageNamed:selectImages[i]]];
     }
-
 }
 
 - (void)addChildViewController:(UIViewController *)childController Title:(NSString *)title angImage:(UIImage *)image AndSelectImage:(UIImage *)selectImage
@@ -61,7 +62,7 @@
     
     // 点击前字体颜色
     NSMutableDictionary *textAttr = [NSMutableDictionary dictionary];
-    textAttr[NSForegroundColorAttributeName] = [UIColor grayColor];
+    textAttr[NSForegroundColorAttributeName] = [UIColor whiteColor];
     // 点击后字体颜色
     NSMutableDictionary *selectTextAttr = [NSMutableDictionary dictionary];
     selectTextAttr[NSForegroundColorAttributeName] = [UIColor greenColor];
@@ -69,11 +70,11 @@
     [childController.tabBarItem setTitleTextAttributes:textAttr forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:selectTextAttr forState:UIControlStateSelected];
     
-    UINavigationController *naVC = [[UINavigationController alloc]initWithRootViewController:childController];
+    MainNavigationController *naVC = [[MainNavigationController alloc]initWithRootViewController:childController];
     naVC.navigationBar.translucent = NO;
     
     // 设置导航栏颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [self addChildViewController:naVC];
 }
 
