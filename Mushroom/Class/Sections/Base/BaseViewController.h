@@ -7,7 +7,34 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewModel.h"
 
 @interface BaseViewController : UIViewController
+
+/// BaseVC的基础ViewModel
+@property (nonatomic, strong, readonly) BaseViewModel *viewModel;
+
+/**
+ 唯一初始化方法
+ 
+ @param viewModel 传入ViewModel
+ @return 实例化控制器对象
+ */
+- (instancetype)initWithViewModel:(BaseViewModel *)viewModel;
+
+/**
+ 布局UI
+ */
+- (void)initView;
+
+/**
+ 请求网络数据 绑定数据
+ */
+- (void)setupBinding;
+
+/**
+ 设置数据回调，点击事件处理
+ */
+- (void)setupData;
 
 @end

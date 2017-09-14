@@ -10,13 +10,19 @@
 
 @interface BaseViewController ()
 
+///  baseVC的BviewModel，外部只是暴露getter属性
+@property (nonatomic, strong) BaseViewModel *viewModel;
+
 @end
 
 @implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 这里的基类ViewModel实现的title是nil，如果子类实现，就能获取到对应的子类控制器标题
+    self.title = _viewModel.title;
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {

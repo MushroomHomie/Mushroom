@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  Mushroom
+//
+//  Created by 中原管家 on 2017/9/14.
+//  Copyright © 2017年 iOSfghj. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+
+#endif /* PrefixHeader_pch */
