@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */; };
+		4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
 		4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F541F67BEE4000D51A8 /* Assets.xcassets */; };
@@ -29,6 +29,7 @@
 		4FE51F441F6A3205002DF13F /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F3E1F6A3205002DF13F /* BaseApi.m */; };
 		4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F401F6A3205002DF13F /* BaseServiceManager.m */; };
 		4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F421F6A3205002DF13F /* RequestManager.m */; };
+		4FE983181F6B824100E5BCCD /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE983171F6B824100E5BCCD /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.debug.xcconfig"; sourceTree = "<group>"; };
-		35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mushroom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,7 +95,10 @@
 		4FE51F401F6A3205002DF13F /* BaseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseServiceManager.m; sourceTree = "<group>"; };
 		4FE51F411F6A3205002DF13F /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		4FE51F421F6A3205002DF13F /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		4FE983161F6B824100E5BCCD /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4FE983171F6B824100E5BCCD /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
+		DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mushroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				168AA53A5F3A4AD2107E790C /* libPods-Mushroom.a in Frameworks */,
+				4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +130,7 @@
 		4DFF8B31BB5A50E1B34D2DB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35FA8F7662983A72D8884BE6 /* libPods-Mushroom.a */,
+				DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 		4F740B9F1F6906D100C300ED /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				4FE983151F6B823200E5BCCD /* Communal */,
 				4F740BA91F690A5300C300ED /* HomePage */,
 				4F740BA81F690A5300C300ED /* Classify */,
 				4F740BAA1F690A5300C300ED /* LiveTelecast */,
@@ -505,6 +509,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4FE983151F6B823200E5BCCD /* Communal */ = {
+			isa = PBXGroup;
+			children = (
+				4FE983161F6B824100E5BCCD /* TableViewController.h */,
+				4FE983171F6B824100E5BCCD /* TableViewController.m */,
+			);
+			path = Communal;
+			sourceTree = "<group>";
+		};
 		9D791ED0ED1D4250FCA46250 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +597,7 @@
 				TargetAttributes = {
 					4F620F441F67BEE4000D51A8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					4F620F5D1F67BEE4000D51A8 = {
@@ -700,6 +714,7 @@
 			files = (
 				4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */,
 				4FE51F441F6A3205002DF13F /* BaseApi.m in Sources */,
+				4FE983181F6B824100E5BCCD /* TableViewController.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
@@ -869,6 +884,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -883,6 +899,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

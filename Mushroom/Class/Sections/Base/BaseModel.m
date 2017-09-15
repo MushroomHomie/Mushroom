@@ -24,7 +24,16 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
        
-        self.manager
+        [self.manager sendRequest:api sucBlock:^(id result) {
+            
+            [subscriber sendNext:result];
+            [subscriber sendCompleted];
+            
+        } failBlock:^(NSError *error) {
+            
+            [subscriber sendNext:error];
+            [subscriber sendCompleted];
+        }];
         
         return nil;
     }];

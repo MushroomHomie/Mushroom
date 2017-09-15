@@ -27,14 +27,5 @@
  */
 - (void)initView;
 
-/**
- 请求网络数据 绑定数据
- */
-- (void)setupBinding;
-
-/**
- 设置数据回调，点击事件处理
- */
-- (void)setupData;
 
 @end

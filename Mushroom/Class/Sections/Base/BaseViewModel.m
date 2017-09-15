@@ -16,5 +16,9 @@
 
 @implementation BaseViewModel
 
+- (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
+{
+    // 子类自己实现数据请求
+}
 
 @end

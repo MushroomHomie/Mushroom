@@ -11,5 +11,11 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+/** Masonry */
+#import <Masonry/Masonry.h>
+
+/** MJRefresh */
+#import <MJRefresh/MJRefresh.h>
+
 
 #endif /* PrefixHeader_pch */

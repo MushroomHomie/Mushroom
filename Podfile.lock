@@ -17,13 +17,16 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - ReactiveCocoa (2.1.8):
-    - ReactiveCocoa/Core (= 2.1.8)
-    - ReactiveCocoa/no-arc (= 2.1.8)
-  - ReactiveCocoa/Core (2.1.8):
+  - MJRefresh (2.4.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.1.8)
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -35,8 +38,10 @@ PODS:
 
 DEPENDENCIES:
   - FMDB (~> 2.6.2)
+  - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
-  - ReactiveCocoa (~> 2.1.8)
+  - MJRefresh (~> 2.4.7)
+  - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
   - Wq_RequestManager (~> 1.0.0)
   - YYKit (~> 1.0.9)
@@ -44,12 +49,14 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
+  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Wq_RequestManager: ff52c25fa4c8418e95e40069b4cb54dab491ace4
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 8f754d0eb8226040da951663bf32d2901dd3a5ba
+PODFILE CHECKSUM: f4eae93b3df5a62a70b31dae45ee2cd881d0d1d7
 
 COCOAPODS: 1.2.0

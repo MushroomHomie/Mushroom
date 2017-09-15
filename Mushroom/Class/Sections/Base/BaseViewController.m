@@ -17,12 +17,28 @@
 
 @implementation BaseViewController
 
-- (void)viewDidLoad {
+- (instancetype)initWithViewModel:(BaseViewModel *)viewModel
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self)
+    {
+        _viewModel = viewModel;
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     // 这里的基类ViewModel实现的title是nil，如果子类实现，就能获取到对应的子类控制器标题
     self.title = _viewModel.title;
     self.view.backgroundColor = [UIColor blackColor];
+}
+
+- (void)initView
+{
+    // 具体子类实现
 }
 
 - (void)didReceiveMemoryWarning {

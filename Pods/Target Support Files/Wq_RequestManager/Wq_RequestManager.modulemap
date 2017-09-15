@@ -1,0 +1,6 @@
+framework module Wq_RequestManager {
+  umbrella header "Wq_RequestManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

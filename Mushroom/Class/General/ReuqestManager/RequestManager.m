@@ -38,7 +38,7 @@
     Class cls = [api getRespClass];
     
     NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",[bodyDic JSONString]);
+//    NSLog(@"********[请求参数：%@]",[bodyDic JSONString]);
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     

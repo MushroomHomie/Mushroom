@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '627DBD4A39A504DF8D72A9D1E2467CA8'
+               BlueprintIdentifier = '96FD5E50A48538C49000E50AA403B04E'
                BlueprintName = 'Wq_RequestManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libWq_RequestManager.a'>
+               BuildableName = 'Wq_RequestManager.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
