@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "TableViewModel.h"
 
 @interface TableViewController ()
 
@@ -22,40 +23,40 @@
 
 - (void)initView
 {
-//    [super initView];
-//    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:[self.viewModel tableViewStyle]];
-//    _tableView.delegate = self;
-//    _tableView.dataSource = self;
-//    _tableView.rowHeight = 80;
-//    _tableView.showsHorizontalScrollIndicator = NO;
-//    _tableView.showsVerticalScrollIndicator = NO;
-//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    _tableView.backgroundColor = [UIColor whiteColor];
-//    [self.view addSubview:_tableView];
-//    @weakify(self);
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        @strongify(self);
-//        make.edges.equalTo(self.view);
-//    }];
-//    
-//    
-//    // 添加头部刷新控件
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        @strongify(self);
-//        self.isRefresh = YES;
-//        [self pullTableViewRequestData:self.isRefresh];
-//    }];
-//    
-//    
-//    // 添加尾部刷新控件
-//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-//        @strongify(self);
-//        self.isRefresh = NO;
-//        [self pullTableViewRequestData:self.isRefresh];
-//    }];
-//    
-//    self.tableView.mj_header.hidden = NO;
-//    self.tableView.mj_footer.hidden = YES;
+    [super initView];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:[self.viewModel tableViewStyle]];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = 80;
+    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_tableView];
+    @weakify(self);
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.edges.equalTo(self.view);
+    }];
+    
+    
+    // 添加头部刷新控件
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self);
+        self.isRefresh = YES;
+        [self pullTableViewRequestData:self.isRefresh];
+    }];
+    
+    
+    // 添加尾部刷新控件
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        @strongify(self);
+        self.isRefresh = NO;
+        [self pullTableViewRequestData:self.isRefresh];
+    }];
+    
+    self.tableView.mj_header.hidden = NO;
+    self.tableView.mj_footer.hidden = YES;
 }
 
 

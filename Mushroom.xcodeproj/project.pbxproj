@@ -30,6 +30,8 @@
 		4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F401F6A3205002DF13F /* BaseServiceManager.m */; };
 		4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F421F6A3205002DF13F /* RequestManager.m */; };
 		4FE983181F6B824100E5BCCD /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE983171F6B824100E5BCCD /* TableViewController.m */; };
+		4FE9831B1F6BC8C200E5BCCD /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE9831A1F6BC8C200E5BCCD /* TableViewModel.m */; };
+		4FE9831E1F6BCCFA00E5BCCD /* TableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE9831D1F6BCCFA00E5BCCD /* TableViewCellViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		4FE51F421F6A3205002DF13F /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		4FE983161F6B824100E5BCCD /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4FE983171F6B824100E5BCCD /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4FE983191F6BC8C200E5BCCD /* TableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
+		4FE9831A1F6BC8C200E5BCCD /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		4FE9831C1F6BCCFA00E5BCCD /* TableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellViewModel.h; sourceTree = "<group>"; };
+		4FE9831D1F6BCCFA00E5BCCD /* TableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellViewModel.m; sourceTree = "<group>"; };
 		BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.release.xcconfig"; sourceTree = "<group>"; };
 		DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mushroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -514,6 +520,10 @@
 			children = (
 				4FE983161F6B824100E5BCCD /* TableViewController.h */,
 				4FE983171F6B824100E5BCCD /* TableViewController.m */,
+				4FE983191F6BC8C200E5BCCD /* TableViewModel.h */,
+				4FE9831A1F6BC8C200E5BCCD /* TableViewModel.m */,
+				4FE9831C1F6BCCFA00E5BCCD /* TableViewCellViewModel.h */,
+				4FE9831D1F6BCCFA00E5BCCD /* TableViewCellViewModel.m */,
 			);
 			path = Communal;
 			sourceTree = "<group>";
@@ -715,6 +725,7 @@
 				4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */,
 				4FE51F441F6A3205002DF13F /* BaseApi.m in Sources */,
 				4FE983181F6B824100E5BCCD /* TableViewController.m in Sources */,
+				4FE9831B1F6BC8C200E5BCCD /* TableViewModel.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
@@ -726,6 +737,7 @@
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
 				4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */,
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
+				4FE9831E1F6BCCFA00E5BCCD /* TableViewCellViewModel.m in Sources */,
 				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,

@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -30,33 +30,30 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
-  - Wq_RequestManager (1.0.0):
-    - AFNetworking (~> 3.1.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0.0)
   - FMDB (~> 2.6.2)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 2.4.7)
   - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
-  - Wq_RequestManager (~> 1.0.0)
   - YYKit (~> 1.0.9)
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  Wq_RequestManager: ff52c25fa4c8418e95e40069b4cb54dab491ace4
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f4eae93b3df5a62a70b31dae45ee2cd881d0d1d7
+PODFILE CHECKSUM: c5033f4008ce33e03979e74c891266a78349cb80
 
 COCOAPODS: 1.2.0
