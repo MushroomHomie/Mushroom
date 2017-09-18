@@ -11,6 +11,9 @@
 
 @interface TableViewController ()
 
+@property (nonatomic,strong) UITableView *tableView; // 实例化的tableView
+@property (nonatomic,assign) BOOL isRefresh;
+
 @end
 
 @implementation TableViewController

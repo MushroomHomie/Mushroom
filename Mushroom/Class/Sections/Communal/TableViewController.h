@@ -11,6 +11,7 @@
 
 @interface TableViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic,strong,readonly) TableViewModel *viewModel;
 @property (nonatomic,strong,readonly) UITableView *tableView;
 @property (nonatomic,assign,readonly) BOOL isRefresh;
 

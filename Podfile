@@ -9,7 +9,8 @@ pod 'FMDB', '~> 2.6.2'
 pod 'AFNetworking', '~> 3.0.0'
 pod 'ReactiveCocoa', '~> 2.5'
 pod 'Masonry', '~> 1.0.2'
-pod 'MJRefresh', '~> 2.4.7'
+pod 'MJRefresh', '~> 3.1.12'
+
 
 use_frameworks!
 end

@@ -19,7 +19,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (2.4.12)
+  - MJRefresh (3.1.12)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -39,7 +39,7 @@ DEPENDENCIES:
   - FMDB (~> 2.6.2)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
-  - MJRefresh (~> 2.4.7)
+  - MJRefresh (~> 3.1.12)
   - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
   - YYKit (~> 1.0.9)
@@ -49,11 +49,11 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c5033f4008ce33e03979e74c891266a78349cb80
+PODFILE CHECKSUM: 0e6cb8130fc29e921a688ad4af6e4c4b1766e6a3
 
 COCOAPODS: 1.2.0
