@@ -6,9 +6,9 @@
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 
-#import "TableViewCellViewModel.h"
+#import "BaseTableViewCellViewModel.h"
 
-@implementation TableViewCellViewModel
+@implementation BaseTableViewCellViewModel
 
 - (instancetype)initWithEntity:(nullable id)entity
 {
@@ -21,7 +21,7 @@
     return self;
 }
 
-// cellViewModel来计算高度，通过带返回值的Block，从上层数据拿高度
+/// cellViewModel来计算高度，通过带返回值的Block，从上层数据拿高度
 - (NSNumber *)cacheCellHeightWithCalculateBlock:(TableCellViewModelCalculateBlock)calculateHeightBlock
 {
     if (!self.rowHeight)

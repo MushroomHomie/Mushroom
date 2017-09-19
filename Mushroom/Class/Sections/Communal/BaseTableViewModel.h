@@ -7,9 +7,9 @@
 //
 
 #import "BaseViewModel.h"
-#import "TableViewCellViewModel.h"
+#import "BaseTableViewCellViewModel.h"
 
-@interface TableViewModel : BaseViewModel
+@interface BaseTableViewModel : BaseViewModel
 
 /// 通过实体组装成cellViewModel
 @property (nonatomic,strong,readonly) NSMutableArray *cellViewModels;
@@ -35,8 +35,7 @@
 - (UIView *)viewForHeaderInSection:(NSInteger)section;
 
 /// 返回对应的cellViewModel给对应的cell初始化
-- (TableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
-
+- (BaseTableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  给每个ViewModel里面的cellViewModel数组装载通过实体对象初始化的cellViewModel

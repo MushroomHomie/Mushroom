@@ -7,11 +7,11 @@
 //
 
 #import "BaseViewController.h"
-@class TableViewModel;
+@class BaseTableViewModel;
 
-@interface TableViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
+@interface BaseTableViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic,strong,readonly) TableViewModel *viewModel;
+@property (nonatomic,strong,readonly) BaseTableViewModel *viewModel;
 @property (nonatomic,strong,readonly) UITableView *tableView;
 @property (nonatomic,assign,readonly) BOOL isRefresh;
 

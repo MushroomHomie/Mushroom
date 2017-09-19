@@ -10,7 +10,7 @@
 typedef NSNumber * _Nonnull (^TableCellViewModelCalculateBlock)();
 
 
-@interface TableViewCellViewModel : BaseViewModel
+@interface BaseTableViewCellViewModel : BaseViewModel
 
 // cellViewModel会绑定一个entity实例对象
 @property (nonatomic,strong,readonly,nullable) id entity;

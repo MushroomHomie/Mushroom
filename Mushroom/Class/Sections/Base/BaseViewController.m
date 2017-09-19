@@ -33,12 +33,12 @@
     
     // 这里的基类ViewModel实现的title是nil，如果子类实现，就能获取到对应的子类控制器标题
     self.title = _viewModel.title;
-    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)initView
 {
     // 具体子类实现
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {

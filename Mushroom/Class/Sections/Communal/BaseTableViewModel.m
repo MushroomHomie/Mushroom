@@ -6,17 +6,17 @@
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 
-#import "TableViewModel.h"
+#import "BaseTableViewModel.h"
 
 
-@interface TableViewModel ()
+@interface BaseTableViewModel ()
 
 @property (nonatomic,strong) NSMutableArray *cellViewModels;
 
 @end
 
 
-@implementation TableViewModel
+@implementation BaseTableViewModel
 
 
 - (UITableViewStyle)tableViewStyle
@@ -66,7 +66,7 @@
 }
 
 /// 子类必须实现（返回数据请求回来之后放在cellViewModels数组里面的每个cell对应的cellViewModel）
-- (TableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
+- (BaseTableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     @throw [NSException exceptionWithName:@"抽象方法未实现"
                                    reason:[NSString stringWithFormat:@"%@ 必须实现抽象方法 %@",[self class],NSStringFromSelector(_cmd)]
