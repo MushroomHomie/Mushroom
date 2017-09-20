@@ -40,8 +40,8 @@
         id pClass = [[class alloc] init];
         [self addChildViewController:pClass
                                Title:titles[i]
-                            angImage:[UIImage imageNamed:images[i]]
-                      AndSelectImage:[UIImage imageNamed:selectImages[i]]];
+                            angImage:[UIImage imageWithContentsOfFile:images[i]]
+                      AndSelectImage:[UIImage imageWithContentsOfFile:selectImages[i]]];
     }
 }
 
