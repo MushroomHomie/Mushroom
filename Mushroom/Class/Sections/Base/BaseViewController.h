@@ -22,10 +22,9 @@
  */
 - (instancetype)initWithViewModel:(BaseViewModel *)viewModel;
 
-/**
- 布局UI
- */
+
 - (void)initView;
 
-
+// 数据绑定
+- (void)initBinding;
 @end

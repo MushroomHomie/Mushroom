@@ -11,6 +11,9 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+/** 常见宏定义 */
+#import "UtilsMacro.h"
+
 /** Masonry */
 #import <Masonry/Masonry.h>
 

@@ -41,6 +41,17 @@
     self.view.backgroundColor = [UIColor blackColor];
 }
 
+- (void)initBinding
+{
+    [self.viewModel sendRequest:^(id entity) {
+        
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+        
+        showMessage(errorMsg, self);
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -57,6 +57,7 @@
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4F475D7C1F70BC0D00D134C8 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4F475D7D1F70BC0D00D134C8 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		4F475D7F1F7103C500D134C8 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F620F521F67BEE4000D51A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -263,6 +264,7 @@
 		4F620F831F67E809000D51A8 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				4F475D7F1F7103C500D134C8 /* UtilsMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
