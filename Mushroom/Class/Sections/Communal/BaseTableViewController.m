@@ -103,11 +103,6 @@
     return [self.viewModel heightForHeaderInSection:section];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return [self.viewModel viewForHeaderInSection:section];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellForTableView:tableView viewModel:[self.viewModel cellViewModelForRowAtIndexPath:indexPath]];
@@ -130,7 +125,6 @@
     _hideFooterLoadingMore = hideFooterLoadingMore;
     self.tableView.mj_footer.hidden = hideFooterLoadingMore;
 }
-
 
 - (void)endFooterRefresh
 {

@@ -45,7 +45,6 @@
 {
     [self.viewModel sendRequest:^(id entity) {
         
-        
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
         
         showMessage(errorMsg, self);

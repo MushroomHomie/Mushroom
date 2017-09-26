@@ -60,10 +60,7 @@
     return 0;
 }
 
-- (UIView *)viewForHeaderInSection:(NSInteger)section
-{
-    return nil;
-}
+
 
 /// 子类必须实现（返回数据请求回来之后放在cellViewModels数组里面的每个cell对应的cellViewModel）
 - (BaseTableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath

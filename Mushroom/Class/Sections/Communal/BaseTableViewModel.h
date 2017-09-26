@@ -31,9 +31,6 @@
 ///  对应section的header高度
 - (CGFloat)heightForHeaderInSection:(NSInteger)section;
 
-/// 返回对应section的头部View
-- (UIView *)viewForHeaderInSection:(NSInteger)section;
-
 /// 返回对应的cellViewModel给对应的cell初始化
 - (BaseTableViewCellViewModel *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
 
