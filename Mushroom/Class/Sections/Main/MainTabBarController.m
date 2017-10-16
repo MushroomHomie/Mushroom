@@ -32,7 +32,7 @@
     NSArray *titles = @[@"首页",@"分类",@"V榜",@"直播",@"电台"];
     NSArray *classNames = @[@"HomePageVC",@"ClassifyVC",@"V_ListVC",@"LiveTelecastVC",@"RadioFM_VC"];
     NSArray *images = @[@"tabbar_home_50x50_",@"tabbar_fl_50x50_",@"tabbar_vchart_50x50_",@"tabbar_tv_50x50_",@"tabbar_mine_50x50_"];
-    NSArray *selectImages = @[@"tabbar_home_sel_50x50_",@"tabbar_fl_sel_50x50_",@"tabbar_vchart_sel_50x50_",@"tabbar_tv_p_50x50_",@"ttabbar_mine_sel_50x50_"];
+    NSArray *selectImages = @[@"tabbar_home_sel_50x50_",@"tabbar_fl_sel_50x50_",@"tabbar_vchart_sel_50x50_",@"tabbar_tv_p_50x50_",@"tabbar_mine_sel_50x50_"];
 
     for (int i = 0; i < titles.count; i++)
     {
@@ -40,18 +40,14 @@
         id pClass = [[class alloc] init];
         [self addChildViewController:pClass
                                Title:titles[i]
-                            angImage:[UIImage imageWithContentsOfFile:images[i]]
-                      AndSelectImage:[UIImage imageWithContentsOfFile:selectImages[i]]];
+                            angImage:[UIImage imageNamed:images[i]]
+                      AndSelectImage:[UIImage imageNamed:selectImages[i]]];
     }
 }
 
 - (void)addChildViewController:(UIViewController *)childController Title:(NSString *)title angImage:(UIImage *)image AndSelectImage:(UIImage *)selectImage
 {
     childController.title = title;
-    
-    UILabel *label = [[UILabel alloc]init];
-    label.text = title;
-    label.textColor = [UIColor greenColor];
     
     // 点击前图片
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -65,7 +61,7 @@
     textAttr[NSForegroundColorAttributeName] = [UIColor whiteColor];
     // 点击后字体颜色
     NSMutableDictionary *selectTextAttr = [NSMutableDictionary dictionary];
-    selectTextAttr[NSForegroundColorAttributeName] = [UIColor greenColor];
+    selectTextAttr[NSForegroundColorAttributeName] = RGBColor(28, 185, 112);
     
     [childController.tabBarItem setTitleTextAttributes:textAttr forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:selectTextAttr forState:UIControlStateSelected];
