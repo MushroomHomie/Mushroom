@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */; };
+		4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */; };
 		4F475D7E1F70BC0D00D134C8 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F475D7D1F70BC0D00D134C8 /* BaseTableViewCell.m */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.debug.xcconfig"; sourceTree = "<group>"; };
+		4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCollectionCell.h; sourceTree = "<group>"; };
+		4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCollectionCell.m; sourceTree = "<group>"; };
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4F475D7C1F70BC0D00D134C8 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4F475D7D1F70BC0D00D134C8 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
@@ -143,6 +146,15 @@
 				DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F02BD5D1F95F30F00BB0D6D /* HomePageCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */,
+				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
+			);
+			path = HomePageCell;
 			sourceTree = "<group>";
 		};
 		4F620F3C1F67BEE4000D51A8 = {
@@ -334,6 +346,7 @@
 		4F740BA91F690A5300C300ED /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				4F02BD5D1F95F30F00BB0D6D /* HomePageCell */,
 				4F740BB91F690B2F00C300ED /* HomePageVC */,
 				4F740BB81F690B2F00C300ED /* HomePageModel */,
 			);
@@ -735,6 +748,7 @@
 				4FE983181F6B824100E5BCCD /* BaseTableViewController.m in Sources */,
 				4FE9831B1F6BC8C200E5BCCD /* BaseTableViewModel.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
+				4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
