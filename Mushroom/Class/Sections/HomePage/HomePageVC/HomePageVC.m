@@ -8,6 +8,8 @@
 
 #import "HomePageVC.h"
 #import "HomePageCollectionCell.h"
+#import "LoopPlaybackView.h" // 轮播图
+#import "HomePageVM.h"
 
 @interface HomePageVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
@@ -15,6 +17,8 @@
     
     UIView *_firstSectionHeaderView;
     NSArray *_sectionNameArray;
+    
+    HomePageVM *_homePageVM;
 }
 
 @end
@@ -33,6 +37,7 @@
 - (void)initData
 {
     _sectionNameArray = @[@"首播",@"娱乐",@"热播推荐",@"音乐现场",@"主打星:GOT7",@"自制节目",@"官方合作专区",@"猜你喜欢"];
+    _homePageVM = [HomePageVM new];
 }
 
 - (void)initView
@@ -74,17 +79,69 @@
     [self.view addSubview:_collectionView];
 }
 
++ (UIView *)initFirstSectionHeaderview:(NSString *)sectionTitleName
+{
+    CGRect loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 140);
+    NSArray *photoName = @[@"https://b-ssl.duitang.com/uploads/item/201509/26/20150926234325_KuCnP.jpeg",
+                           @"https://b-ssl.duitang.com/uploads/item/201506/02/20150602182550_myGsS.jpeg",
+                           @"https://b-ssl.duitang.com/uploads/item/201509/26/20150926234325_KuCnP.jpeg",
+                           @"https://b-ssl.duitang.com/uploads/item/201506/02/20150602182550_myGsS.jpeg"];
+    
+    UIView *firstSectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, 190)];
 
-+ (UIView *)initOtherSectionHeaderView:(NSInteger)sectionNo
+    LoopPlaybackView *loopPlayView = [[LoopPlaybackView alloc]initWithFrame:loopPlayViewFrame array:photoName];
+    [firstSectionHeaderView addSubview:loopPlayView];
+    
+    UIView *sectionTitleView = [UIView new];
+    [firstSectionHeaderView addSubview:sectionTitleView];
+    [sectionTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(firstSectionHeaderView).with.insets(UIEdgeInsetsMake(140, 0, 0, 0));
+    }];
+    
+    UIImageView *imageView = [UIImageView new];
+    [sectionTitleView addSubview:imageView];
+    imageView.image = [UIImage imageNamed:@"help_setting_40x40_"];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(sectionTitleView).with.offset(7);
+        make.top.equalTo(sectionTitleView).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+    }];
+    
+    UILabel *sectionTitleLable = [UILabel new];
+    sectionTitleLable.text = sectionTitleName;
+    sectionTitleLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+    [sectionTitleView addSubview:sectionTitleLable];
+    
+    [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(sectionTitleView).with.insets(UIEdgeInsetsMake(0, 40, 0, 0));
+    }];
+
+    return firstSectionHeaderView;
+}
+
++ (UIView *)initOtherSectionHeaderView:(NSString *)sectionTitleName
 {
     UIView *sectionHeaderView = [UIView new];
     sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 50);
     
+    UIImageView *imageView = [UIImageView new];
+    [sectionHeaderView addSubview:imageView];
+    imageView.image = [UIImage imageNamed:@"help_setting_40x40_"];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(sectionHeaderView).with.offset(7);
+        make.top.equalTo(sectionHeaderView).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+    }];
+    
     UILabel *sectionTitleLable = [UILabel new];
-    sectionTitleLable.text = _sectionNameArray[sectionNo];
+    sectionTitleLable.text = sectionTitleName;
+    sectionTitleLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
     [sectionHeaderView addSubview:sectionTitleLable];
+    
     [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 20, 0, 0));
+        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 40, 0, 0));
     }];
     
     return sectionHeaderView;
@@ -99,19 +156,39 @@
     {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerReuse" forIndexPath:indexPath];
         headerView.backgroundColor = [UIColor whiteColor];
-        
         headerView.userInteractionEnabled = YES;
+        
+        if (indexPath.section == 0)
+        {
+            if (!_firstSectionHeaderView)
+            {
+                _firstSectionHeaderView = [HomePageVC initFirstSectionHeaderview:_sectionNameArray[0]];
+            }
+            
+            [headerView addSubview:_firstSectionHeaderView];
+        }
+        
+        if (indexPath.section > 0)
+        {
+            for (UIView *subv in [headerView subviews])
+            {
+                [subv removeFromSuperview];
+            }
+            NSString *titleName = _sectionNameArray[indexPath.section];
+            [headerView addSubview:[HomePageVC initOtherSectionHeaderView:titleName]];
+        }
+        
         return  headerView;
     }
     
     return nil;
 }
 
--(CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+- (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     if(section == 0)
     {
-        CGSize size = {APP_SCREEN_WIDTH, 170};
+        CGSize size = {APP_SCREEN_WIDTH, 190};
         return size;
     }
     else
@@ -136,13 +213,26 @@
     return 8;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HomePageCollectionCell *homePageCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuse" forIndexPath:indexPath];
     
     return homePageCell;
 }
 
+
+#pragma mark - RequestData
+
+- (void)headerRefreshMethod
+{
+    [_homePageVM sendRequest:^(id entity) {
+        
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+        
+        
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

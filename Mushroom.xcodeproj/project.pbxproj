@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */; };
 		4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */; };
+		4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726D91F970F3200E79654 /* LoopPlaybackView.m */; };
+		4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726DD1F9720AC00E79654 /* HomePageVM.m */; };
+		4F3726E11F97222800E79654 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E01F97222800E79654 /* HomePageModel.m */; };
+		4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E31F97234800E79654 /* MushroomBaseApi.m */; };
+		4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3E09251F97593500E5E532 /* HomePageApi.m */; };
 		4F475D7E1F70BC0D00D134C8 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F475D7D1F70BC0D00D134C8 /* BaseTableViewCell.m */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
@@ -58,6 +63,16 @@
 		4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCollectionCell.h; sourceTree = "<group>"; };
 		4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCollectionCell.m; sourceTree = "<group>"; };
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4F3726D81F970F3200E79654 /* LoopPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopPlaybackView.h; sourceTree = "<group>"; };
+		4F3726D91F970F3200E79654 /* LoopPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopPlaybackView.m; sourceTree = "<group>"; };
+		4F3726DC1F9720AC00E79654 /* HomePageVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageVM.h; sourceTree = "<group>"; };
+		4F3726DD1F9720AC00E79654 /* HomePageVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageVM.m; sourceTree = "<group>"; };
+		4F3726DF1F97222800E79654 /* HomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModel.h; sourceTree = "<group>"; };
+		4F3726E01F97222800E79654 /* HomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModel.m; sourceTree = "<group>"; };
+		4F3726E21F97234800E79654 /* MushroomBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MushroomBaseApi.h; sourceTree = "<group>"; };
+		4F3726E31F97234800E79654 /* MushroomBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MushroomBaseApi.m; sourceTree = "<group>"; };
+		4F3E09241F97593500E5E532 /* HomePageApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageApi.h; sourceTree = "<group>"; };
+		4F3E09251F97593500E5E532 /* HomePageApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageApi.m; sourceTree = "<group>"; };
 		4F475D7C1F70BC0D00D134C8 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4F475D7D1F70BC0D00D134C8 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		4F475D7F1F7103C500D134C8 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
@@ -155,6 +170,15 @@
 				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
 			);
 			path = HomePageCell;
+			sourceTree = "<group>";
+		};
+		4F3726DB1F97209500E79654 /* HomePageVM */ = {
+			isa = PBXGroup;
+			children = (
+				4F3726DC1F9720AC00E79654 /* HomePageVM.h */,
+				4F3726DD1F9720AC00E79654 /* HomePageVM.m */,
+			);
+			path = HomePageVM;
 			sourceTree = "<group>";
 		};
 		4F620F3C1F67BEE4000D51A8 = {
@@ -291,6 +315,10 @@
 		4F740B9B1F6905D300C300ED /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4F3726E21F97234800E79654 /* MushroomBaseApi.h */,
+				4F3726E31F97234800E79654 /* MushroomBaseApi.m */,
+				4F3E09241F97593500E5E532 /* HomePageApi.h */,
+				4F3E09251F97593500E5E532 /* HomePageApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,6 +374,7 @@
 		4F740BA91F690A5300C300ED /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				4F3726DB1F97209500E79654 /* HomePageVM */,
 				4F02BD5D1F95F30F00BB0D6D /* HomePageCell */,
 				4F740BB91F690B2F00C300ED /* HomePageVC */,
 				4F740BB81F690B2F00C300ED /* HomePageModel */,
@@ -399,6 +428,8 @@
 		4F740BB81F690B2F00C300ED /* HomePageModel */ = {
 			isa = PBXGroup;
 			children = (
+				4F3726DF1F97222800E79654 /* HomePageModel.h */,
+				4F3726E01F97222800E79654 /* HomePageModel.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -408,6 +439,8 @@
 			children = (
 				4F740BBA1F690B2F00C300ED /* HomePageVC.h */,
 				4F740BBB1F690B2F00C300ED /* HomePageVC.m */,
+				4F3726D81F970F3200E79654 /* LoopPlaybackView.h */,
+				4F3726D91F970F3200E79654 /* LoopPlaybackView.m */,
 			);
 			path = HomePageVC;
 			sourceTree = "<group>";
@@ -743,16 +776,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F475D7E1F70BC0D00D134C8 /* BaseTableViewCell.m in Sources */,
+				4F3726E11F97222800E79654 /* HomePageModel.m in Sources */,
 				4F740BC51F690BA300C300ED /* LiveTelecastVC.m in Sources */,
 				4FE51F441F6A3205002DF13F /* BaseApi.m in Sources */,
 				4FE983181F6B824100E5BCCD /* BaseTableViewController.m in Sources */,
 				4FE9831B1F6BC8C200E5BCCD /* BaseTableViewModel.m in Sources */,
+				4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
 				4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
 				4FE51F431F6A3205002DF13F /* AbsApi.m in Sources */,
+				4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */,
 				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
 				4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */,
 				4FE51F361F6A2E94002DF13F /* BaseModel.m in Sources */,
@@ -761,7 +797,9 @@
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
 				4FE9831E1F6BCCFA00E5BCCD /* BaseTableViewCellViewModel.m in Sources */,
 				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
+				4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
+				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
