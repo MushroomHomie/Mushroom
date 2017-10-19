@@ -10,4 +10,7 @@
 
 @interface HomePageModel : BaseModel
 
+@property (nonatomic, strong) NSMutableArray *data;
+
+
 @end

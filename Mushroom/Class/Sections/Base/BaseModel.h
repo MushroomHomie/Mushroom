@@ -11,6 +11,10 @@
 
 @interface BaseModel : NSObject
 
+@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *msg;
+@property (nonatomic, copy) NSString *now;
+
 - (RACSignal *)getRequestWithApi:(BaseApi *)api;
 
 @end

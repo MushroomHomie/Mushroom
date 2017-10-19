@@ -20,5 +20,7 @@
 /** MJRefresh */
 #import <MJRefresh/MJRefresh.h>
 
+/** 数据转换 */
+#import "DataConvert.h"
 
 #endif /* PrefixHeader_pch */

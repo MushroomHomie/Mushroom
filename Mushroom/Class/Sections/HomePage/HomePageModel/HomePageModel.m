@@ -7,7 +7,13 @@
 //
 
 #import "HomePageModel.h"
+#import "HomaPageTypeModel.h"
 
 @implementation HomePageModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    return @{@"data" : [HomaPageTypeModel class]};
+}
 
 @end
