@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewModel.h"
+#import "BaseTableViewModel.h"
 
 @interface HomePageVM : BaseViewModel
 

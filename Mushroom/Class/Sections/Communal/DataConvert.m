@@ -11,15 +11,15 @@
 @implementation DataConvert
 
 /// 将Dic转成model
-+ (id)convertDic:(NSDictionary *)dic
-        toEntity:(Class)cls
++ (id)convertDic:(NSDictionary *)dic toEntity:(Class)cls
 {
     return [cls modelWithDictionary:dic] ;
 }
 
 
 /// 将Model转成dic
-+ (id)convertModeltToDic:(id)model{
++ (id)convertModeltToDic:(id)model
+{
     return [NSJSONSerialization JSONObjectWithData:[model modelToJSONObject]
                                            options:NSJSONReadingAllowFragments
                                              error:nil];

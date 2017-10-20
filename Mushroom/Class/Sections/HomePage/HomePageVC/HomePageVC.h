@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseTableViewController.h"
+#import "HomePageVM.h"
 
-@interface HomePageVC : BaseViewController
+@interface HomePageVC : BaseTableViewController
+
 
 @end

@@ -20,6 +20,8 @@ typedef void(^RequestFailure)(NSUInteger errCode,NSString *errorMsg);
 
 @property (nonatomic, copy, readonly) NSString *title;
 
+- (void)initData;
+
 /// 请求数据
 - (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 

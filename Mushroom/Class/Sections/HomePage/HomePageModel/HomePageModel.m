@@ -7,9 +7,15 @@
 //
 
 #import "HomePageModel.h"
-#import "HomaPageTypeModel.h"
+#import "HomePageApi.h"
 
 @implementation HomePageModel
+
+- (RACSignal *)requestHomePageData
+{
+    return [self getRequestWithApi:[HomePageApi new]];
+}
+
 
 + (NSDictionary *)modelContainerPropertyGenericClass
 {

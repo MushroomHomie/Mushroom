@@ -35,8 +35,8 @@
 		4FE51F441F6A3205002DF13F /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F3E1F6A3205002DF13F /* BaseApi.m */; };
 		4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F401F6A3205002DF13F /* BaseServiceManager.m */; };
 		4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F421F6A3205002DF13F /* RequestManager.m */; };
+		4FF11C5D1F99EA7A000317E8 /* HomePageModelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */; };
 		4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */; };
-		4FF400F51F9885DA00E25E04 /* BaseTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400EF1F9885DA00E25E04 /* BaseTableViewCellViewModel.m */; };
 		4FF400F61F9885DA00E25E04 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F11F9885DA00E25E04 /* BaseTableViewController.m */; };
 		4FF400F71F9885DA00E25E04 /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F31F9885DA00E25E04 /* BaseTableViewModel.m */; };
 		4FF400FA1F9885ED00E25E04 /* DataConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F91F9885ED00E25E04 /* DataConvert.m */; };
@@ -122,10 +122,10 @@
 		4FE51F401F6A3205002DF13F /* BaseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseServiceManager.m; sourceTree = "<group>"; };
 		4FE51F411F6A3205002DF13F /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		4FE51F421F6A3205002DF13F /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		4FF11C5B1F99EA7A000317E8 /* HomePageModelTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModelTableCell.h; sourceTree = "<group>"; };
+		4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModelTableCell.m; sourceTree = "<group>"; };
 		4FF400EC1F9885DA00E25E04 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
-		4FF400EE1F9885DA00E25E04 /* BaseTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCellViewModel.h; sourceTree = "<group>"; };
-		4FF400EF1F9885DA00E25E04 /* BaseTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCellViewModel.m; sourceTree = "<group>"; };
 		4FF400F01F9885DA00E25E04 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		4FF400F11F9885DA00E25E04 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		4FF400F21F9885DA00E25E04 /* BaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewModel.h; sourceTree = "<group>"; };
@@ -183,6 +183,8 @@
 			children = (
 				4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */,
 				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
+				4FF11C5B1F99EA7A000317E8 /* HomePageModelTableCell.h */,
+				4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */,
 			);
 			path = HomePageCell;
 			sourceTree = "<group>";
@@ -375,8 +377,6 @@
 				4FE51F351F6A2E94002DF13F /* BaseModel.m */,
 				4FF400EC1F9885DA00E25E04 /* BaseTableViewCell.h */,
 				4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */,
-				4FF400EE1F9885DA00E25E04 /* BaseTableViewCellViewModel.h */,
-				4FF400EF1F9885DA00E25E04 /* BaseTableViewCellViewModel.m */,
 				4FF400F01F9885DA00E25E04 /* BaseTableViewController.h */,
 				4FF400F11F9885DA00E25E04 /* BaseTableViewController.m */,
 				4FF400F21F9885DA00E25E04 /* BaseTableViewModel.h */,
@@ -813,8 +813,8 @@
 				4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
+				4FF11C5D1F99EA7A000317E8 /* HomePageModelTableCell.m in Sources */,
 				4FF400FD1F98A2C400E25E04 /* HomaPageTypeModel.m in Sources */,
-				4FF400F51F9885DA00E25E04 /* BaseTableViewCellViewModel.m in Sources */,
 				4FF400FA1F9885ED00E25E04 /* DataConvert.m in Sources */,
 				4FF401001F98A35B00E25E04 /* HomePageMoreDataModel.m in Sources */,
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,

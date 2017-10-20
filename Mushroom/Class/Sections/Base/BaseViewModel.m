@@ -16,6 +16,19 @@
 
 @implementation BaseViewModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initData];
+    }
+    return self;
+}
+
+- (void)initData
+{
+}
+
 - (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
 {
     // 子类自己实现数据请求

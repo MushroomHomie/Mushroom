@@ -7,10 +7,11 @@
 //
 
 #import "BaseModel.h"
+#import "HomaPageTypeModel.h"
 
 @interface HomePageModel : BaseModel
 
 @property (nonatomic, strong) NSMutableArray *data;
 
-
+- (RACSignal *)requestHomePageData;
 @end

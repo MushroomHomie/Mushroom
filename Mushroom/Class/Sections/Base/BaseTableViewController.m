@@ -105,7 +105,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellForTableView:tableView viewModel:[self.viewModel cellViewModelForRowAtIndexPath:indexPath]];
+    BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellWithTable:tableView andIndexPath:indexPath];
     cell.selectionStyle = [self.viewModel tableViewCellSelectionStyle];
     return cell;
 }
@@ -113,10 +113,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height = tableView.rowHeight;
-    NSNumber *calculateHeight = [[self cellClassForRowAtIndexPath:indexPath] calculateRowHeightWithViewModel:[self.viewModel cellViewModelForRowAtIndexPath:indexPath]];
-    if (calculateHeight) {
-        height = calculateHeight.floatValue;
-    }
     return height;
 }
 

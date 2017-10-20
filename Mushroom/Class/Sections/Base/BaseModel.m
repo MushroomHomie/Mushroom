@@ -18,6 +18,21 @@
 
 @implementation BaseModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initData];
+    }
+    return self;
+}
+
+- (void)initData
+{
+    self.manager = [RequestManager initManagerWithDelegate:self];
+}
+
+
 - (RACSignal *)getRequestWithApi:(BaseApi *)api
 {
     @weakify(self)

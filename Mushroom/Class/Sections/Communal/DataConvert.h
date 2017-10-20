@@ -11,4 +11,9 @@
 
 @interface DataConvert : NSObject
 
+/// 将Dic转成model
++ (id)convertDic:(NSDictionary *)dic toEntity:(Class)cls;
+
+/// 将Model转成dic
++ (id)convertModeltToDic:(id)model;
 @end
