@@ -112,8 +112,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height = tableView.rowHeight;
-    return height;
+    return [self.viewModel heightForRowWithIndexPath:indexPath];
 }
 
 - (void)setHideFooterLoadingMore:(BOOL)hideFooterLoadingMore

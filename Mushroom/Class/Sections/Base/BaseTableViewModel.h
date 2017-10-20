@@ -26,6 +26,7 @@
 
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowInSection:(NSInteger)section;
+- (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath;
 
 ///  对应section的header高度
 - (CGFloat)heightForHeaderInSection:(NSInteger)section;

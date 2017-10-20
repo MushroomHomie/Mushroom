@@ -16,8 +16,6 @@
 {
     UIView *_firstSectionHeaderView;
     NSArray *_sectionNameArray;
-    
-    HomePageVM *_homePageVM;
 }
 
 @end
@@ -33,20 +31,38 @@
     [self headerRefreshMethod];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self headerRefreshMethod];
+}
+
 #pragma mark - Init
 
 - (void)initData
 {
     _sectionNameArray = @[@"首播",@"娱乐",@"热播推荐",@"音乐现场",@"主打星:GOT7",@"自制节目",@"官方合作专区",@"猜你喜欢"];
-    _homePageVM = [HomePageVM new];
+    self.viewModel = [HomePageVM new];
 }
 
 - (void)initView
 {
+    [super initView];
+    
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
     
 //    [self initCollection];
+}
+
+/// 上下拉刷新的回调， YES是下拉刷新  NO上拉加载更多
+- (void)pullTableViewRequestData:(BOOL)isRefresh
+{
+    // 下拉刷新的额时候重新刷新pagecount为0
+    if (isRefresh)
+    {
+        [self endHeaderRefresh];
+    }
 }
 
 + (UIView *)initFirstSectionHeaderview:(NSString *)sectionTitleName
@@ -126,15 +142,12 @@
 
 - (void)headerRefreshMethod
 {
-    @weakify(self)
     [self.viewModel sendRequest:^(id entity) {
-        @strongify(self);
         [self.tableView reloadData];
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
         
     }];
-
 }
 
 

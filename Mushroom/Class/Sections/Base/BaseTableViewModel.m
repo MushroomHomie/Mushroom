@@ -54,7 +54,10 @@
     return 0;
 }
 
-
+- (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
 
 - (NSMutableArray *)cellViewModels
 {

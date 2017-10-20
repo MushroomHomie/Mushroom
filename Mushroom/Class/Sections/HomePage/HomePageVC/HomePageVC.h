@@ -12,5 +12,7 @@
 
 @interface HomePageVC : BaseTableViewController
 
+@property (nonatomic, strong) HomePageVM *viewModel;
+
 
 @end

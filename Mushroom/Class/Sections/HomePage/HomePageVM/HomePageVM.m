@@ -43,6 +43,10 @@
     return 0;
 }
 
+- (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
 
 - (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
 {
@@ -54,7 +58,6 @@
         }
         
         !succeedBlock ? : succeedBlock(_homePageModel);
-        
     }];
 }
 

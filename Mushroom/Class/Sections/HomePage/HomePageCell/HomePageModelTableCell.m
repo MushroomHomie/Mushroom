@@ -43,6 +43,7 @@
 
 - (void)initView:(NSIndexPath *)indexPath
 {
+    self.contentView.backgroundColor = [UIColor blueColor];
     [self initCollection];
 }
 
