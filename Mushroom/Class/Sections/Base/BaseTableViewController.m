@@ -105,7 +105,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellWithTable:tableView
-                                                                            andIndexPath:(NSIndexPath *)indexPath
+                                                                            andIndexPath:indexPath
                                                                             andViewModel:[self.viewModel cellViewModelForRowAtIndexPath:indexPath]];
     cell.selectionStyle = [self.viewModel tableViewCellSelectionStyle];
     return cell;

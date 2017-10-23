@@ -8,19 +8,6 @@
 
 #import "MushroomBaseApi.h"
 
-#define RequestHeader  @{@"app-id":@"10201026",\
-@"device-id":@"f850f42b9702326817be2db897127319",\
-@"Authorization":@"Basic MTAyMDE6ODZmMjYyOWFlMjMwMzhkZTI3ZGE1NjI5MTgxZjE3OTM=",\
-@"DeviceInfo":@"deviceinfo=%7B%22aid%22%3A%2210201026%22%2C%22os%22%3A%22Android%22%2C%22ov%22%3A%224.2.1%22%2C%22rn%22%3A%22480*800%22%2C%22dn%22%3A%22M040%22%2C\%22cr%22%3A%2246002%22%2C%22as%22%3A%22WIFI%22%2C%22uid%22%3A%22f850f42b9702326817be2db897127319%22%2C%22clid%22%3A100001000%7D",\
-@"Device-N":@"JUU0JUI4JUFEJUU1JTlCJUJEJUU3JUE3JUJCJUU1JThBJUE4XyUyMldJRkklMjJfJTIyamFtZXMlMjI=",\
-@"Device-V":@"QW5kcm9pZF80LjIuMV84MDAqMTI4MF8xMDAwMDEwMDA=",\
-@"tt":@"f445048914b4dffbc423a70c548bfc87",\
-@"pp":@"559dc431e61cf35eb1decbfdc0b7c080",\
-@"Host":@"mapi.yinyuetai.com",\
-@"Connection":@"Keep-Alive",\
-@"User-Agent":@"Mozilla/5.0(Linux;U; Android 2.2.1; en-us; Nexus One Build/FRG83) AppleWebKit/533.1(KHTML,like Gecko) Version/4.0 Mobile Safari/533.1",\
-@"Cookie":@"route=95f0b44eeadc95313b008be0d3f8f669; JSESSIONID=aaaWCoBfrH4I-a-JXU-Nu"\
-}
 @implementation MushroomBaseApi
 
 

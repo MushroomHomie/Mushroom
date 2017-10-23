@@ -12,4 +12,5 @@
 
 - (NSArray *)getDataArray;
 
+- (NSString *)getBannerStr;
 @end

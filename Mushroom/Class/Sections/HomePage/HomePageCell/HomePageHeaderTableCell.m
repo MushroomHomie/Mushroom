@@ -57,7 +57,7 @@
 
 - (void)initView:(NSIndexPath *)indexPath
 {
-    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 150);
+    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 170);
 }
 
 - (void)initLoopPlayView:(NSArray *)photoNameArray

@@ -194,14 +194,14 @@
 		4F02BD5D1F95F30F00BB0D6D /* HomePageCell */ = {
 			isa = PBXGroup;
 			children = (
-				4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */,
-				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
 				4FF11C5B1F99EA7A000317E8 /* HomePageModelTableCell.h */,
 				4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */,
 				4F1227F91F9D8E4B007C7291 /* HomePageHeaderTableCell.h */,
 				4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */,
 				4F7722341F9DB9DC00B00E87 /* HomePageBannerTableCell.h */,
 				4F7722351F9DB9DC00B00E87 /* HomePageBannerTableCell.m */,
+				4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */,
+				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
 			);
 			path = HomePageCell;
 			sourceTree = "<group>";
@@ -243,9 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				4FE7D57C1F68D10F00A14FBB /* Frameworks */,
-				4F740B9B1F6905D300C300ED /* API */,
 				4F620F7B1F67E508000D51A8 /* AppDelegate */,
 				4F620F801F67E553000D51A8 /* Resource */,
+				4F740B9B1F6905D300C300ED /* API */,
 				4F620F7F1F67E553000D51A8 /* Class */,
 				4F620F511F67BEE4000D51A8 /* Main.storyboard */,
 				4F620F541F67BEE4000D51A8 /* Assets.xcassets */,
@@ -1009,6 +1009,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Mushroom/PrefixHeader.pch;
 				INFOPLIST_FILE = Mushroom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1024,6 +1025,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Mushroom/PrefixHeader.pch;
 				INFOPLIST_FILE = Mushroom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";

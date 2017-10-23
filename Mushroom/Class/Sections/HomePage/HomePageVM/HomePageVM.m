@@ -63,13 +63,13 @@
     switch (typeModel.type) {
         case CollectionView:
         {
-            heightForRow = (APP_SCREEN_HEIGHT / 4 + 10) * 3 - 10;
+            heightForRow = (APP_SCREEN_HEIGHT / 4 - 20) * typeModel.data.count / 2 + 20;
         }
             break;
             
         case LoopPlayView:
         {
-            heightForRow = 150;
+            heightForRow = 170;
         }
             break;
             

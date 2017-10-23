@@ -10,4 +10,6 @@
 
 @interface HomePageBannerTableCell : BaseTableViewCell
 
+@property (nonatomic, strong) UIImageView *bannerView;
+
 @end

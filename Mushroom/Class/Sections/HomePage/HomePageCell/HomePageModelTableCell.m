@@ -59,7 +59,7 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     // 设置item大小
-    flowLayout.itemSize = CGSizeMake(APP_SCREEN_WIDTH / 2 - 10, APP_SCREEN_HEIGHT / 4 - 10);
+    flowLayout.itemSize = CGSizeMake(APP_SCREEN_WIDTH / 2 - 3, APP_SCREEN_HEIGHT / 4 - 25);
     // section距离边界的间距
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 3  , 0 , 0);
     // 头部视图区域大小
@@ -79,7 +79,7 @@
 //    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerReuse"];
     
     // 垂直:各小方格之间的列间距
-    flowLayout.minimumInteritemSpacing = 5 ;
+    flowLayout.minimumInteritemSpacing = 2;
     // 行间距
     flowLayout.minimumLineSpacing = 10 ;
     
@@ -89,6 +89,7 @@
 - (void)initData
 {
     _dataArray = [self.viewModel getDataArray];
+    _collectionView.height = (APP_SCREEN_HEIGHT / 4 - 20) * _dataArray.count / 2 + 20;
 }
 
 #pragma mark - <UICollectionViewDelegate/UICollectionViewDataSource>
@@ -105,7 +106,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return _dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

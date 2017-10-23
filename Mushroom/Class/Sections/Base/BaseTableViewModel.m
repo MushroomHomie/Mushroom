@@ -34,7 +34,9 @@
 {
     NSMutableArray *cellViewModes = [NSMutableArray array];
     [entities enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
         [cellViewModes addObject:[[cellViewModelClass alloc] initWithEntity:obj]];
+        
     }];
     [self.cellViewModels addObjectsFromArray:cellViewModes];
 }

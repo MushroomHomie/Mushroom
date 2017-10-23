@@ -54,7 +54,7 @@
         [im sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:_placeholderImage]];
         
         [self.scrollView addSubview:im];
-        self.scrollView.pagingEnabled= YES;
+        self.scrollView.pagingEnabled = YES;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
         [im addGestureRecognizer: tap];
@@ -66,7 +66,6 @@
     [self.scrollView setContentOffset:CGPointMake(self.frame.size.width, 0)];
     [self createTimer];
 }
-
 
 - (void)createTimer
 {
@@ -127,7 +126,6 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     // 加速结束时
-    
     CGSize  size = scrollView.contentSize;
     CGFloat with = scrollView.frame.size.width;
     self.page = scrollView.contentOffset.x / with;

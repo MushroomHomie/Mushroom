@@ -7,10 +7,19 @@
 //
 
 #import "HomePageBannerTableCell.h"
+#import "HomePageTableCellVM.h"
+
+@interface HomePageBannerTableCell ()
+
+@property (nonatomic, strong) HomePageTableCellVM *viewModel;
+
+@end
 
 @implementation HomePageBannerTableCell
 
-+ (instancetype)cellWithTable:(UITableView *)tableView andIndexPath:(NSIndexPath *)indexPath
++ (instancetype)cellWithTable:(UITableView *)tableView
+                 andIndexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel
 {
     NSString *identify = NSStringFromClass([self class]);
     NSString *cellName = [NSString stringWithFormat:@"%@%ld%ld",identify,indexPath.section,indexPath.row];
@@ -20,7 +29,8 @@
     {
         cell = [[HomePageBannerTableCell alloc] initWithStyle:UITableViewCellStyleDefault
                                               reuseIdentifier:cellName
-                                                 andindexPath:indexPath];
+                                                 andindexPath:indexPath
+                                                 andViewModel:viewModel];
     }
     
     return cell;
@@ -29,18 +39,35 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
               reuseIdentifier:(NSString *)reuseIdentifier
                  andindexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
         [self initView:indexPath];
     }
+    
+    self.viewModel = viewModel;
+    [self initData];
     return self;
 }
 
 - (void)initView:(NSIndexPath *)indexPath
 {
+    _bannerView = [UIImageView new];
+    [self.contentView addSubview:_bannerView];
     
+    [_bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+        make.edges.equalTo(self.contentView);
+    }];
+}
+
+- (void)initData
+{
+    NSString *bannerStr = [self.viewModel getBannerStr];
+    NSURL *url = [NSURL URLWithString:bannerStr];
+    [_bannerView sd_setImageWithURL:url];
 }
 
 @end
