@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseTableViewCellVM.h"
 
 @interface BaseTableViewCell : UITableViewCell
 
-+ (instancetype)cellWithTable:(UITableView *)tableView andIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic,strong,readonly) BaseTableViewCellVM *viewModel;
+
++ (instancetype)cellWithTable:(UITableView *)tableView
+                 andIndexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel;
 
 - (void)initView;
 - (void)initBinding;

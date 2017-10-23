@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewModel.h"
+#import "BaseTableViewCellVM.h"
 
 @interface BaseTableViewModel : BaseViewModel
 
@@ -27,6 +28,7 @@
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowInSection:(NSInteger)section;
 - (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath;
+- (BaseTableViewCellVM *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 ///  对应section的header高度
 - (CGFloat)heightForHeaderInSection:(NSInteger)section;
@@ -35,7 +37,7 @@
  给每个ViewModel里面的cellViewModel数组装载通过实体对象初始化的cellViewModel
  这个方法是默认给一个Section的时候进行调用的，如果是分页的话需要在封装一层，外部进行代码的分离，然后根据currentPage进行数组的清空还是继续加载
  */
-//- (void)handleMutableArrayEntites:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass;
+- (void)handleMutableArrayEntites:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass;
 
 
 @end

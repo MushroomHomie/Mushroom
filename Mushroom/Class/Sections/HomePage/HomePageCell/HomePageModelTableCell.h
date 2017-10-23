@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "HomePageTableCellVM.h"
 
 @interface HomePageModelTableCell : BaseTableViewCell
 

@@ -7,15 +7,22 @@
 //
 
 #import "HomePageVC.h"
-#import "HomePageCollectionCell.h"
-#import "HomePageModelTableCell.h"
-#import "LoopPlaybackView.h" // 轮播图
+
 #import "HomePageVM.h"
+#import "HomePageModelTableCell.h"
+#import "HomePageHeaderTableCell.h"
+#import "HomePageBannerTableCell.h"
+
+#import "HomePageModel.h"
+#import "HomePageTypeEnum.h"
+
 
 @interface HomePageVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     UIView *_firstSectionHeaderView;
     NSArray *_sectionNameArray;
+    
+    HomePageModel *_homePageModel;
 }
 
 @end
@@ -25,9 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self initData];
-    [self initView];
+
     [self headerRefreshMethod];
 }
 
@@ -51,8 +56,6 @@
     
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
-    
-//    [self initCollection];
 }
 
 /// 上下拉刷新的回调， YES是下拉刷新  NO上拉加载更多
@@ -61,49 +64,8 @@
     // 下拉刷新的额时候重新刷新pagecount为0
     if (isRefresh)
     {
-        [self endHeaderRefresh];
+        [self headerRefreshMethod];
     }
-}
-
-+ (UIView *)initFirstSectionHeaderview:(NSString *)sectionTitleName
-{
-    CGRect loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 140);
-    NSArray *photoName = @[@"https://b-ssl.duitang.com/uploads/item/201509/26/20150926234325_KuCnP.jpeg",
-                           @"https://b-ssl.duitang.com/uploads/item/201506/02/20150602182550_myGsS.jpeg",
-                           @"https://b-ssl.duitang.com/uploads/item/201509/26/20150926234325_KuCnP.jpeg",
-                           @"https://b-ssl.duitang.com/uploads/item/201506/02/20150602182550_myGsS.jpeg"];
-    
-    UIView *firstSectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, 190)];
-
-    LoopPlaybackView *loopPlayView = [[LoopPlaybackView alloc]initWithFrame:loopPlayViewFrame array:photoName];
-    [firstSectionHeaderView addSubview:loopPlayView];
-    
-    UIView *sectionTitleView = [UIView new];
-    [firstSectionHeaderView addSubview:sectionTitleView];
-    [sectionTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(firstSectionHeaderView).with.insets(UIEdgeInsetsMake(140, 0, 0, 0));
-    }];
-    
-    UIImageView *imageView = [UIImageView new];
-    [sectionTitleView addSubview:imageView];
-    imageView.image = [UIImage imageNamed:@"help_setting_40x40_"];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(sectionTitleView).with.offset(7);
-        make.top.equalTo(sectionTitleView).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-    
-    UILabel *sectionTitleLable = [UILabel new];
-    sectionTitleLable.text = sectionTitleName;
-    sectionTitleLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
-    [sectionTitleView addSubview:sectionTitleLable];
-    
-    [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(sectionTitleView).with.insets(UIEdgeInsetsMake(0, 40, 0, 0));
-    }];
-
-    return firstSectionHeaderView;
 }
 
 + (UIView *)initOtherSectionHeaderView:(NSString *)sectionTitleName
@@ -135,7 +97,33 @@
 
 - (Class)cellClassForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [HomePageModelTableCell class];
+    HomaPageTypeModel *typeModel = _homePageModel.data[indexPath.section];
+    Class cellClass;
+    
+    switch (typeModel.type) {
+        case LoopPlayView:
+        {
+            cellClass = HomePageHeaderTableCell.class;
+        }
+            break;
+            
+        case CollectionView:
+        {
+            cellClass = HomePageModelTableCell.class;
+        }
+            break;
+            
+        case BannerView:
+        {
+            cellClass = HomePageBannerTableCell.class;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    return cellClass;
 }
 
 #pragma mark - RequestData
@@ -143,7 +131,10 @@
 - (void)headerRefreshMethod
 {
     [self.viewModel sendRequest:^(id entity) {
+        
+        _homePageModel = (HomePageModel *)entity;
         [self.tableView reloadData];
+        [self endHeaderRefresh];
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
         

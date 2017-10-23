@@ -9,10 +9,9 @@
 #import "HomePageCollectionCell.h"
 
 @interface HomePageCollectionCell ()
-{
-    UIImageView *_photoImageView;
-    UILabel *_textLabel;
-}
+
+@property (nonatomic, strong) UIImageView *photoImageView;
+@property (nonatomic, strong) UILabel *textLabel;
 
 @end
 
@@ -55,6 +54,19 @@
         make.left.equalTo(_photoImageView.mas_left);
         make.right.equalTo(_photoImageView.mas_right);
     }];
+}
+
+- (void)setSubDataModel:(HomePageSubDataModel *)subDataModel
+{
+    if (_subDataModel != subDataModel)
+    {
+        _subDataModel = subDataModel;
+    }
+ 
+    _textLabel.text = subDataModel.title;
+    
+    NSURL *url = [NSURL URLWithString:subDataModel.posterPic];
+    [_photoImageView sd_setImageWithURL:url];
 }
 
 @end

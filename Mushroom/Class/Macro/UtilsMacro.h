@@ -18,7 +18,7 @@
 [alertController addAction:[UIAlertAction actionWithTitle:@"确定"style:UIAlertActionStyleDefault handler:nil]];\
 [QUVC presentViewController:alertController animated:YES completion:nil];
 
-// RGB颜色
+/// RGB颜色
 #define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 #endif /* UtilsMacro_h */

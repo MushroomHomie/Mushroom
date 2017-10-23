@@ -23,4 +23,8 @@
 /** 数据转换 */
 #import "DataConvert.h"
 
+/** 加载图片 */
+#import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
+
 #endif /* PrefixHeader_pch */

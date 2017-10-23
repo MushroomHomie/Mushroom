@@ -10,34 +10,41 @@
 #import "HomePageCollectionCell.h"
 
 @interface HomePageModelTableCell ()<UICollectionViewDataSource,UICollectionViewDelegate>
-{
-    UICollectionView *_collectionView;
-}
 
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) HomePageTableCellVM *viewModel;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end
 
 @implementation HomePageModelTableCell
 
-+ (instancetype)cellWithTable:(UITableView *)tableView andIndexPath:(NSIndexPath *)indexPath
++ (instancetype)cellWithTable:(UITableView *)tableView
+                 andIndexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel
 {
     NSString *identify = NSStringFromClass([self class]);
     NSString *cellName = [NSString stringWithFormat:@"%@%ld%ld",identify,indexPath.section,indexPath.row];
     HomePageModelTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil)
     {
-        cell = [[HomePageModelTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName andindexPath:indexPath];
+        cell = [[HomePageModelTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName andindexPath:indexPath andViewModel:viewModel];
     }
-    
     return cell;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andindexPath:(NSIndexPath *)indexPath
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier
+                 andindexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
         [self initView:indexPath];
     }
+    
+    self.viewModel = (HomePageTableCellVM *)viewModel;
+    [self initData];
     return self;
 }
 
@@ -61,14 +68,15 @@
     // flowLayout.footerReferenceSize = CGSizeMake(self.frame.size.width, 130 );
     
     // 集合视图
-    _collectionView = [[UICollectionView alloc]initWithFrame:self.contentView.bounds collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, (APP_SCREEN_HEIGHT / 4 + 10) * 3 - 10) collectionViewLayout:flowLayout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.bounces = NO;
     // 注册item
     [_collectionView registerClass:[HomePageCollectionCell class] forCellWithReuseIdentifier:@"reuse"];
     // 注册头部
-    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerReuse"];
+//    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerReuse"];
     
     // 垂直:各小方格之间的列间距
     flowLayout.minimumInteritemSpacing = 5 ;
@@ -78,38 +86,12 @@
     [self.contentView addSubview:_collectionView];
 }
 
+- (void)initData
+{
+    _dataArray = [self.viewModel getDataArray];
+}
 
 #pragma mark - <UICollectionViewDelegate/UICollectionViewDataSource>
-
-// 设置头部和底部区域内容
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    if (kind == UICollectionElementKindSectionHeader)
-    {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerReuse" forIndexPath:indexPath];
-        headerView.backgroundColor = [UIColor whiteColor];
-        headerView.userInteractionEnabled = YES;
-        
-
-        return  headerView;
-    }
-    
-    return nil;
-}
-
-- (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    if(section == 0)
-    {
-        CGSize size = {APP_SCREEN_WIDTH, 190};
-        return size;
-    }
-    else
-    {
-        CGSize size = {APP_SCREEN_WIDTH, 50};
-        return size;
-    }
-}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,7 +100,7 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 8;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -129,6 +111,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HomePageCollectionCell *homePageCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuse" forIndexPath:indexPath];
+    homePageCell.subDataModel = _dataArray[indexPath.row];
     
     return homePageCell;
 }

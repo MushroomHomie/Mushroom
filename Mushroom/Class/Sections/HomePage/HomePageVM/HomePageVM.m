@@ -8,12 +8,12 @@
 
 #import "HomePageVM.h"
 #import "HomePageModel.h"
+#import "HomePageTypeEnum.h"
+#import "HomePageTableCellVM.h"
 
 @interface HomePageVM ()
-{
-    NSMutableArray *_cellViewModels;
-    HomePageModel *_homePageModel;
-}
+
+@property(nonatomic, strong) HomePageModel *homePageModel;
 
 @end
 
@@ -33,19 +33,57 @@
 ///  子类必须实现（每个section多少rows）
 - (NSInteger)numberOfRowInSection:(NSInteger)section
 {
-    HomaPageTypeModel *typeModel = _homePageModel.data[section];
-    return typeModel.data.count;
+    return 1;
+}
+
+/// CellVM
+- (BaseTableViewCellVM *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.cellViewModels[indexPath.section];
 }
 
 /// headerView的默认是没有的
 - (CGFloat)heightForHeaderInSection:(NSInteger)section
 {
-    return 0;
+    HomaPageTypeModel *typeModel = _homePageModel.data[section];
+    CGFloat heightForHeader = 0;
+    
+    if (typeModel.type == CollectionView)
+    {
+        heightForHeader = 30;
+    }
+    return heightForHeader;
 }
 
 - (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    return 200;
+    HomaPageTypeModel *typeModel = _homePageModel.data[indexPath.section];
+    CGFloat heightForRow = 0;
+    
+    switch (typeModel.type) {
+        case CollectionView:
+        {
+            heightForRow = (APP_SCREEN_HEIGHT / 4 + 10) * 3 - 10;
+        }
+            break;
+            
+        case LoopPlayView:
+        {
+            heightForRow = 150;
+        }
+            break;
+            
+        case BannerView:
+        {
+            heightForRow = 90;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    return heightForRow;
 }
 
 - (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
@@ -55,13 +93,17 @@
         if (data)
         {
             _homePageModel = [DataConvert convertDic:data toEntity:HomePageModel.class];
+            [self handlePagingEntities:_homePageModel.data cellViewModelClass:HomePageTableCellVM.class];
         }
         
         !succeedBlock ? : succeedBlock(_homePageModel);
     }];
 }
 
-
+- (void)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
+{
+    [self handleMutableArrayEntites:entities cellViewModelClass:cellViewModelClass];
+}
 
 
 @end

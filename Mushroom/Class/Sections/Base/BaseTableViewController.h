@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseTableViewCell.h"
+
 @class BaseTableViewModel;
 
 @interface BaseTableViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>

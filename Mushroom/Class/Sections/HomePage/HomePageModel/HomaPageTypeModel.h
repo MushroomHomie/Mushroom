@@ -11,7 +11,7 @@
 
 @interface HomaPageTypeModel : NSObject
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, assign) NSInteger type;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *enTitle;

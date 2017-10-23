@@ -14,6 +14,7 @@
 @interface LoopPlaybackView : UIView<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) NSMutableArray *pageNameArray;
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSTimer *myTimer;

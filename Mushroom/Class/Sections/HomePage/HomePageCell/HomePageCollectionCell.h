@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomePageTableCellVM.h"
+#import "HomePageSubDataModel.h"
 
 @interface HomePageCollectionCell : UICollectionViewCell
+
+@property (nonatomic, strong) HomePageSubDataModel *subDataModel;
+
 
 @end

@@ -27,6 +27,23 @@
     return self;
 }
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    BaseViewController *viewController = [super allocWithZone:zone];
+    
+    // 将ViewDidLoad绑定initView与initData
+    @weakify(viewController);
+    [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
+        
+        @strongify(viewController);
+        [viewController initView];
+        [viewController initData];
+        
+    }];
+    
+    return viewController;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,6 +56,11 @@
 {
     // 具体子类实现
     self.view.backgroundColor = [UIColor blackColor];
+}
+
+- (void)initData
+{
+    
 }
 
 - (void)initBinding

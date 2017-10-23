@@ -8,7 +8,6 @@
 
 #import "BaseTableViewController.h"
 #import "BaseTableViewModel.h"
-#import "BaseTableViewCell.h"
 
 @interface BaseTableViewController ()
 
@@ -105,7 +104,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellWithTable:tableView andIndexPath:indexPath];
+    BaseTableViewCell *cell = [[self cellClassForRowAtIndexPath:indexPath] cellWithTable:tableView
+                                                                            andIndexPath:(NSIndexPath *)indexPath
+                                                                            andViewModel:[self.viewModel cellViewModelForRowAtIndexPath:indexPath]];
     cell.selectionStyle = [self.viewModel tableViewCellSelectionStyle];
     return cell;
 }

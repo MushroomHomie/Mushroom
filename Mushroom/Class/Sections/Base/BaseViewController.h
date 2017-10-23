@@ -24,6 +24,7 @@
 
 
 - (void)initView;
+- (void)initData;
 
 // 数据绑定
 - (void)initBinding;

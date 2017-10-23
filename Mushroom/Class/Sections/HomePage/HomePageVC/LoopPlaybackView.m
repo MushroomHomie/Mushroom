@@ -105,6 +105,11 @@
     }
 }
 
+- (void)setPageNameArray:(NSMutableArray *)pageNameArray
+{
+    
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

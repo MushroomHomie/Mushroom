@@ -30,9 +30,24 @@
     return UITableViewCellSelectionStyleNone;
 }
 
-
+- (void)handleMutableArrayEntites:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
+{
+    NSMutableArray *cellViewModes = [NSMutableArray array];
+    [entities enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [cellViewModes addObject:[[cellViewModelClass alloc] initWithEntity:obj]];
+    }];
+    [self.cellViewModels addObjectsFromArray:cellViewModes];
+}
 
 #pragma mark - tableView的代理方法实现
+
+/// 子类必须实现（返回数据请求回来之后放在cellViewModels数组里面的每个cell对应的cellViewModel）
+- (BaseTableViewCellVM *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    @throw [NSException exceptionWithName:@"抽象方法未实现"
+                                   reason:[NSString stringWithFormat:@"%@ 必须实现抽象方法 %@",[self class],NSStringFromSelector(_cmd)]
+                                 userInfo:nil];
+}
 
 // 默认是一个section
 - (NSInteger)numberOfSections

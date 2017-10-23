@@ -10,24 +10,27 @@
 
 @interface BaseTableViewCell ()
 
+@property (nonatomic,strong) BaseTableViewCellVM *viewModel;
 
 @end
 
 @implementation BaseTableViewCell
 
-+ (instancetype)cellWithTable:(UITableView *)tableView andIndexPath:(NSIndexPath *)indexPath
++ (instancetype)cellWithTable:(UITableView *)tableView
+                 andIndexPath:(NSIndexPath *)indexPath
+                 andViewModel:(BaseTableViewCellVM *)viewModel
 {
     NSString *identify = NSStringFromClass([self class]);
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (!cell) {
         cell = [[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
         [cell initView];
-        [cell initBinding];
     }
+    
+    cell.viewModel = viewModel;
     [cell initData];
     return cell;
 }
-
 
 - (void)initView
 {
