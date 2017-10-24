@@ -59,7 +59,7 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     // 设置item大小
-    flowLayout.itemSize = CGSizeMake(APP_SCREEN_WIDTH / 2 - 3, APP_SCREEN_HEIGHT / 4 - 25);
+    flowLayout.itemSize = CGSizeMake(APP_SCREEN_WIDTH / 2 - 3, APP_SCREEN_HEIGHT / 4 - 30);
     // section距离边界的间距
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 3  , 0 , 0);
     // 头部视图区域大小
@@ -68,7 +68,7 @@
     // flowLayout.footerReferenceSize = CGSizeMake(self.frame.size.width, 130 );
     
     // 集合视图
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, (APP_SCREEN_HEIGHT / 4 + 10) * 3 - 10) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, (APP_SCREEN_HEIGHT / 4 - 20) * 3 - 10) collectionViewLayout:flowLayout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
@@ -89,7 +89,7 @@
 - (void)initData
 {
     _dataArray = [self.viewModel getDataArray];
-    _collectionView.height = (APP_SCREEN_HEIGHT / 4 - 20) * _dataArray.count / 2 + 20;
+    _collectionView.height = (APP_SCREEN_HEIGHT / 4 - 20) * _dataArray.count / 2;
 }
 
 #pragma mark - <UICollectionViewDelegate/UICollectionViewDataSource>
@@ -116,7 +116,5 @@
     
     return homePageCell;
 }
-
-
 
 @end

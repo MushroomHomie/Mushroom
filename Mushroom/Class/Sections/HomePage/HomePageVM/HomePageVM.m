@@ -61,7 +61,7 @@
     
     if (typeModel.type == CollectionView)
     {
-        heightForHeader = 30;
+        heightForHeader = 40;
     }
     return heightForHeader;
 }
@@ -74,7 +74,7 @@
     switch (typeModel.type) {
         case CollectionView:
         {
-            heightForRow = (APP_SCREEN_HEIGHT / 4 - 20) * typeModel.data.count / 2 + 20;
+            heightForRow = (APP_SCREEN_HEIGHT / 4 - 20) * typeModel.data.count / 2 ;
         }
             break;
             

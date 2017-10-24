@@ -69,6 +69,20 @@
     }
 }
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        @weakify(self);
+        [RACObserve(self, viewModel) subscribeNext:^(HomePageTableCellVM *viewModel) {
+            @strongify(self);
+            
+        }];
+    }
+    return self;
+}
+
 - (void)initData
 {
     NSArray *dataArray = [self.viewModel getDataArray];

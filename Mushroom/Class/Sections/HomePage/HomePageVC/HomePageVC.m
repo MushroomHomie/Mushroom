@@ -19,15 +19,14 @@
 
 @interface HomePageVC ()<UIScrollViewDelegate>
 {
-    UIView *_firstSectionHeaderView;
-    NSArray *_sectionNameArray;
-    
     HomePageModel *_homePageModel;
 }
 
 @end
 
 @implementation HomePageVC
+
+#pragma mark - LifeCycle
 
 - (void)viewDidLoad
 {
@@ -43,7 +42,6 @@
 
 - (void)initData
 {
-    _sectionNameArray = @[@"首播",@"娱乐",@"热播推荐",@"音乐现场",@"主打星:GOT7",@"自制节目",@"官方合作专区",@"猜你喜欢"];
     self.viewModel = [HomePageVM new];
     
     [self headerRefreshMethod];
@@ -55,16 +53,6 @@
     
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
-}
-
-/// 上下拉刷新的回调， YES是下拉刷新  NO上拉加载更多
-- (void)pullTableViewRequestData:(BOOL)isRefresh
-{
-    // 下拉刷新的额时候重新刷新pagecount为0
-    if (isRefresh)
-    {
-        [self headerRefreshMethod];
-    }
 }
 
 #pragma mark - PrivateMethod
@@ -84,7 +72,7 @@
     
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(sectionHeaderView).with.offset(7);
-        make.top.equalTo(sectionHeaderView);
+        make.centerY.mas_equalTo(sectionHeaderView.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
@@ -98,6 +86,18 @@
     }];
     
     return sectionHeaderView;
+}
+
+#pragma mark - CommonMethod
+
+/// 上下拉刷新的回调， YES是下拉刷新  NO上拉加载更多
+- (void)pullTableViewRequestData:(BOOL)isRefresh
+{
+    // 下拉刷新的额时候重新刷新pagecount为0
+    if (isRefresh)
+    {
+        [self headerRefreshMethod];
+    }
 }
 
 - (Class)cellClassForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -131,11 +131,9 @@
     return cellClass;
 }
 
-#pragma mark - <UITableViewDelegate>
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *)viewForHeaderInSection:(NSInteger)section
 {
-    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
+    NSString *sectionTitle = [self tableView:self.tableView titleForHeaderInSection:section];
     if (sectionTitle == nil)
     {
         return  nil;
@@ -150,7 +148,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat sectionHeaderHeight = 30;
+    CGFloat sectionHeaderHeight = 40;
     if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0)
     {
         scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);

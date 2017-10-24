@@ -49,7 +49,7 @@
     @weakify(self);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.edges.equalTo(self.view);
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 50, 0));
     }];
     
     // 添加头部刷新控件
@@ -84,8 +84,18 @@
                                  userInfo:nil];
 }
 
+/// 默认没有HeaderView
+- (UIView *)viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
 
 #pragma mark - tableView datasource
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [self viewForHeaderInSection:section];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

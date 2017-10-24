@@ -26,5 +26,6 @@
 - (void)pullTableViewRequestData:(BOOL)isRefresh;
 
 - (Class)cellClassForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UIView *)viewForHeaderInSection:(NSInteger)section;
 
 @end
