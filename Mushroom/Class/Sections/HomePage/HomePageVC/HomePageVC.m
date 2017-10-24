@@ -17,7 +17,7 @@
 #import "HomePageTypeEnum.h"
 
 
-@interface HomePageVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HomePageVC ()<UIScrollViewDelegate>
 {
     UIView *_firstSectionHeaderView;
     NSArray *_sectionNameArray;
@@ -32,8 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self headerRefreshMethod];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -47,6 +45,8 @@
 {
     _sectionNameArray = @[@"首播",@"娱乐",@"热播推荐",@"音乐现场",@"主打星:GOT7",@"自制节目",@"官方合作专区",@"猜你喜欢"];
     self.viewModel = [HomePageVM new];
+    
+    [self headerRefreshMethod];
 }
 
 - (void)initView
@@ -67,18 +67,24 @@
     }
 }
 
-+ (UIView *)initOtherSectionHeaderView:(NSString *)sectionTitleName
+#pragma mark - PrivateMethod
+
+- (UIView *)creatOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
 {
     UIView *sectionHeaderView = [UIView new];
     sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 50);
     
     UIImageView *imageView = [UIImageView new];
     [sectionHeaderView addSubview:imageView];
-    imageView.image = [UIImage imageNamed:@"help_setting_40x40_"];
+    if (imageStr)
+    {
+        NSURL *url = [NSURL URLWithString:imageStr];
+        [imageView sd_setImageWithURL:url];
+    }
     
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(sectionHeaderView).with.offset(7);
-        make.top.equalTo(sectionHeaderView).with.offset(10);
+        make.top.equalTo(sectionHeaderView);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
@@ -124,6 +130,37 @@
     
     return cellClass;
 }
+
+#pragma mark - <UITableViewDelegate>
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
+    if (sectionTitle == nil)
+    {
+        return  nil;
+    }
+    
+    HomaPageTypeModel *typeModel = _homePageModel.data[section];
+    return [self creatOtherSectionHeaderView:sectionTitle andIconImage:typeModel.icon];
+}
+
+
+#pragma mark - <UIScrollViewDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat sectionHeaderHeight = 30;
+    if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0)
+    {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    }
+    else if (scrollView.contentOffset.y >= sectionHeaderHeight)
+    {
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
+}
+
 
 #pragma mark - RequestData
 

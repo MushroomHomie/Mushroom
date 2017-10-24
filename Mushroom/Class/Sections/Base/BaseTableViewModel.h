@@ -25,6 +25,7 @@
 /// tableViewCell的点击状态
 - (UITableViewCellSelectionStyle)tableViewCellSelectionStyle;
 
+- (NSString *)titleForHeader:(NSInteger)section;
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowInSection:(NSInteger)section;
 - (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath;

@@ -24,6 +24,11 @@
     _homePageModel = [HomePageModel new];
 }
 
+- (UITableViewStyle)tableViewStyle
+{
+    return UITableViewStylePlain;
+}
+
 // 默认是一个section
 - (NSInteger)numberOfSections
 {
@@ -40,6 +45,12 @@
 - (BaseTableViewCellVM *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.cellViewModels[indexPath.section];
+}
+
+- (NSString *)titleForHeader:(NSInteger)section
+{
+    HomaPageTypeModel *typeModel = _homePageModel.data[section];
+    return typeModel.title;
 }
 
 /// headerView的默认是没有的

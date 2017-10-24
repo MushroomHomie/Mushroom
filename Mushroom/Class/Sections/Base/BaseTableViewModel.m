@@ -65,6 +65,11 @@
                                  userInfo:nil];
 }
 
+- (NSString *)titleForHeader:(NSInteger)section
+{
+    return @"";
+}
+
 /// headerView的默认是没有的
 - (CGFloat)heightForHeaderInSection:(NSInteger)section
 {
