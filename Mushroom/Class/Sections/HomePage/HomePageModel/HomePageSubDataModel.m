@@ -7,7 +7,6 @@
 //
 
 #import "HomePageSubDataModel.h"
-#import "HomePageArtistsModel.h"
 
 @implementation HomePageSubDataModel
 

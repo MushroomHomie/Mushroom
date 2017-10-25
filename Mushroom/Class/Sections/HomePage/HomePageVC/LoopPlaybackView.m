@@ -25,6 +25,11 @@
 
 - (void)createSubviews:(NSArray *)photoNameArray andFrame:(CGRect)frame
 {
+    if (photoNameArray.count <= 0)
+    {
+        return;
+    }
+    
     self.scrollView = [[UIScrollView alloc]initWithFrame:frame];
     [self addSubview:self.scrollView];
     self.scrollView.backgroundColor = [UIColor blackColor];

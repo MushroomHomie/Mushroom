@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HomePageArtistsModel.h"
 
 @interface HomePageSubDataModel : NSObject
 

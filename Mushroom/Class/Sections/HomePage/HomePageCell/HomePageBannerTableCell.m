@@ -33,6 +33,8 @@
                                                  andViewModel:viewModel];
     }
     
+    cell.viewModel = (HomePageTableCellVM *)viewModel;
+
     return cell;
 }
 
@@ -45,10 +47,15 @@
     if (self)
     {
         [self initView:indexPath];
+        
+        @weakify(self);
+        [RACObserve(self, viewModel) subscribeNext:^(id x) {
+            @strongify(self);
+            [self initData];
+        }];
+        
     }
     
-    self.viewModel = viewModel;
-    [self initData];
     return self;
 }
 

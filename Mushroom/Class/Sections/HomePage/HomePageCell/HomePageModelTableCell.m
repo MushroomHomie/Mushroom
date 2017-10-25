@@ -29,6 +29,9 @@
     {
         cell = [[HomePageModelTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName andindexPath:indexPath andViewModel:viewModel];
     }
+    
+    cell.viewModel = (HomePageTableCellVM *)viewModel;
+
     return cell;
 }
 
@@ -41,10 +44,14 @@
     if (self)
     {
         [self initView:indexPath];
+        
+        @weakify(self);
+        [RACObserve(self, viewModel) subscribeNext:^(BaseTableViewCellVM *viewModel) {
+            @strongify(self);
+            [self initData];
+        }];
     }
     
-    self.viewModel = (HomePageTableCellVM *)viewModel;
-    [self initData];
     return self;
 }
 
@@ -61,11 +68,7 @@
     // 设置item大小
     flowLayout.itemSize = CGSizeMake(APP_SCREEN_WIDTH / 2 - 3, APP_SCREEN_HEIGHT / 4 - 30);
     // section距离边界的间距
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 3  , 0 , 0);
-    // 头部视图区域大小
-    //     flowLayout.headerReferenceSize = CGSizeMake(APP_SCREEN_WIDTH, 170);
-    // 底部视图区域大小
-    // flowLayout.footerReferenceSize = CGSizeMake(self.frame.size.width, 130 );
+    flowLayout.sectionInset = UIEdgeInsetsMake(0, 3, 0, 0);
     
     // 集合视图
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, (APP_SCREEN_HEIGHT / 4 - 20) * 3 - 10) collectionViewLayout:flowLayout];
@@ -75,8 +78,6 @@
     _collectionView.bounces = NO;
     // 注册item
     [_collectionView registerClass:[HomePageCollectionCell class] forCellWithReuseIdentifier:@"reuse"];
-    // 注册头部
-//    [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerReuse"];
     
     // 垂直:各小方格之间的列间距
     flowLayout.minimumInteritemSpacing = 2;

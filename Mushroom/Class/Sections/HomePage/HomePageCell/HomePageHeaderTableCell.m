@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) HomePageTableCellVM *viewModel;
 @property (nonatomic, strong) LoopPlaybackView *loopPlayView;
+@property (nonatomic, strong) NSMutableArray *photoNameArray;
+
 
 
 @end
@@ -35,7 +37,8 @@
                                                  andindexPath:indexPath
                                                  andViewModel:viewModel];
     }
-    
+    cell.viewModel = (HomePageTableCellVM *)viewModel;
+
     return cell;
 }
 
@@ -47,17 +50,21 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        [self initView:indexPath];
+        [self initView];
+
+        @weakify(self);
+        [RACObserve(self, viewModel) subscribeNext:^(id x) {
+            @strongify(self);
+            [self initData];
+        }];
     }
-    self.viewModel = (HomePageTableCellVM *)viewModel;
-    [self initData];
     
     return self;
 }
 
 - (void)initView:(NSIndexPath *)indexPath
 {
-    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 170);
+    
 }
 
 - (void)initLoopPlayView:(NSArray *)photoNameArray
@@ -69,34 +76,33 @@
     }
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
-        @weakify(self);
-        [RACObserve(self, viewModel) subscribeNext:^(HomePageTableCellVM *viewModel) {
-            @strongify(self);
-            
-        }];
-    }
-    return self;
-}
-
 - (void)initData
 {
+    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 170);
+
     NSArray *dataArray = [self.viewModel getDataArray];
-    NSMutableArray *photoNameArray = [NSMutableArray array];
+    
+    if (_photoNameArray)
+    {
+        [_photoNameArray removeAllObjects];
+    }
+    else
+    {
+        _photoNameArray = [NSMutableArray array];
+    }
     
     for (HomePageSubDataModel *subModel in dataArray)
     {
         if (subModel.posterPic)
         {
-            [photoNameArray addObject:subModel.posterPic];
+            [_photoNameArray addObject:subModel.posterPic];
         }
     }
     
-    [self initLoopPlayView:photoNameArray];
+    if (_photoNameArray.count > 0)
+    {
+        [self initLoopPlayView:_photoNameArray];
+    }
 }
 
 @end
