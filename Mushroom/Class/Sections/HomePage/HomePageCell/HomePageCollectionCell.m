@@ -51,7 +51,7 @@
     
     [_gradientShadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.edges.equalTo(_photoImageView).width.insets(UIEdgeInsetsMake(self.contentView.height - shadowHeight - 25, 0, 0, 0 ));
+        make.edges.equalTo(_photoImageView).with.insets(UIEdgeInsetsMake(self.contentView.height - shadowHeight - 25, 0, 0, 0 ));
     }];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];

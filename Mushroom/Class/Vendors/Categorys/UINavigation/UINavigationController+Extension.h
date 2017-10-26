@@ -17,6 +17,6 @@
 
 /// 导航栏上的textfield
 - (void)createTextfieldWithTarget:(UIViewController *)target
-                        Textfield:(UITextField *)textField;
+                        Textfield:(UIView *)textField;
 
 @end

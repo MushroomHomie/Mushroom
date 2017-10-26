@@ -41,7 +41,7 @@
 
 /// 导航栏上的textfield
 - (void)createTextfieldWithTarget:(UIViewController *)target
-                             Textfield:(UITextField *)textField
+                             Textfield:(UIView *)textField
 {
     UIView *topSearchView = [[UIView alloc] init];
     [topSearchView setFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH-100, 30)];
@@ -68,7 +68,6 @@
 
     // textfield
     [searchBarBg addSubview:textField];
-    textField.font = [UIFont systemFontOfSize:13];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(searchIconImage.mas_right).with.offset(5);
         make.right.equalTo(searchBarBg.mas_right);

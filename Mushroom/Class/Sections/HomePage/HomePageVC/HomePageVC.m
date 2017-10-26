@@ -17,11 +17,11 @@
 #import "HomePageTypeEnum.h"
 
 
-@interface HomePageVC ()<UIScrollViewDelegate>
+@interface HomePageVC ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 {
     HomePageModel *_homePageModel;
     
-    UITextField *_topSearchTextField;
+    UILabel *_topSearchLabel;
     BOOL _hasTouched;                       // 是否已点击搜索
 }
 
@@ -55,7 +55,7 @@
     // 顶部搜索条
     [self createTopSearchTextField];
 
-    [self.navigationController createTextfieldWithTarget:self Textfield:_topSearchTextField];
+    [self.navigationController createTextfieldWithTarget:self Textfield:_topSearchLabel];
 }
 
 - (void)initData
@@ -78,28 +78,17 @@
 // 顶部搜索条
 - (void)createTopSearchTextField
 {
-    _topSearchTextField = [UITextField new];
-    _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"和伊斗俊在滑冰场约会是一种什么体验?" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
+    _topSearchLabel = [UILabel new];
+    _topSearchLabel.userInteractionEnabled = YES;
+    _topSearchLabel.font = [UIFont systemFontOfSize:13];
+    _topSearchLabel.text = @"123456";
     
-    UITapGestureRecognizer * PrivateLetterTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(taptopSearchView)];
-    PrivateLetterTap.numberOfTouchesRequired = 1; //手指数
-    PrivateLetterTap.numberOfTapsRequired = 1; //tap次数
-//    PrivateLetterTap.delegate = self;
-    
-    [[PrivateLetterTap rac_gestureSignal] subscribeNext:^(id x) {
-        
-        NSLog(@"x =  = = = %@",x);
-        
+    UITapGestureRecognizer *topSearchTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
+    [_topSearchLabel addGestureRecognizer:topSearchTap];
+
+    [[topSearchTap rac_gestureSignal] subscribeNext:^(id x) {
+        NSLog(@"x=======234");
     }];
-
-    [_topSearchTextField addGestureRecognizer:PrivateLetterTap];
-    
-
-}
-
-- (void)taptopSearchView
-{
-    NSLog(@"x =  = = = ");
 }
 
 - (UIView *)createOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
