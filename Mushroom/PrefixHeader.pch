@@ -27,4 +27,7 @@
 #import "UIImageView+WebCache.h"
 #import "SDImageCache.h"
 
+/** 导航栏扩展 */
+#import "UINavigationController+Extension.h"
+
 #endif /* PrefixHeader_pch */

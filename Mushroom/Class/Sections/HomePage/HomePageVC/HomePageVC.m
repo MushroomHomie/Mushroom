@@ -20,6 +20,9 @@
 @interface HomePageVC ()<UIScrollViewDelegate>
 {
     HomePageModel *_homePageModel;
+    
+    UITextField *_topSearchTextField;
+    BOOL _hasTouched;                       // 是否已点击搜索
 }
 
 @end
@@ -36,9 +39,24 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    _hasTouched = NO;
 }
 
 #pragma mark - Init
+
+- (void)initView
+{
+    [super initView];
+    
+    self.title = @"首页";
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    // 顶部搜索条
+    [self createTopSearchTextField];
+
+    [self.navigationController createTextfieldWithTarget:self Textfield:_topSearchTextField];
+}
 
 - (void)initData
 {
@@ -47,17 +65,44 @@
     [self headerRefreshMethod];
 }
 
-- (void)initView
+#pragma mark - ClickEvents
+
+/// 搜索
+- (void)searchAction
 {
-    [super initView];
     
-    self.title = @"首页";
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - PrivateMethod
 
-- (UIView *)creatOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
+// 顶部搜索条
+- (void)createTopSearchTextField
+{
+    _topSearchTextField = [UITextField new];
+    _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"和伊斗俊在滑冰场约会是一种什么体验?" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
+    
+    UITapGestureRecognizer * PrivateLetterTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(taptopSearchView)];
+    PrivateLetterTap.numberOfTouchesRequired = 1; //手指数
+    PrivateLetterTap.numberOfTapsRequired = 1; //tap次数
+//    PrivateLetterTap.delegate = self;
+    
+    [[PrivateLetterTap rac_gestureSignal] subscribeNext:^(id x) {
+        
+        NSLog(@"x =  = = = %@",x);
+        
+    }];
+
+    [_topSearchTextField addGestureRecognizer:PrivateLetterTap];
+    
+
+}
+
+- (void)taptopSearchView
+{
+    NSLog(@"x =  = = = ");
+}
+
+- (UIView *)createOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
 {
     UIView *sectionHeaderView = [UIView new];
     sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 50);
@@ -140,7 +185,7 @@
     }
     
     HomaPageTypeModel *typeModel = _homePageModel.data[section];
-    return [self creatOtherSectionHeaderView:sectionTitle andIconImage:typeModel.icon];
+    return [self createOtherSectionHeaderView:sectionTitle andIconImage:typeModel.icon];
 }
 
 

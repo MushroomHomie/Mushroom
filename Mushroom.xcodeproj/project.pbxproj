@@ -10,6 +10,7 @@
 		4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */; };
 		4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */; };
 		4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */; };
+		4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */; };
 		4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726D91F970F3200E79654 /* LoopPlaybackView.m */; };
 		4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726DD1F9720AC00E79654 /* HomePageVM.m */; };
 		4F3726E11F97222800E79654 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E01F97222800E79654 /* HomePageModel.m */; };
@@ -74,6 +75,8 @@
 		4F1227F91F9D8E4B007C7291 /* HomePageHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHeaderTableCell.h; sourceTree = "<group>"; };
 		4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHeaderTableCell.m; sourceTree = "<group>"; };
 		4F1227FC1F9D9483007C7291 /* HomePageTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTypeEnum.h; sourceTree = "<group>"; };
+		4F23D9421FA18F64007DACEC /* UINavigationController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Extension.h"; sourceTree = "<group>"; };
+		4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Extension.m"; sourceTree = "<group>"; };
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4F3726D81F970F3200E79654 /* LoopPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopPlaybackView.h; sourceTree = "<group>"; };
 		4F3726D91F970F3200E79654 /* LoopPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopPlaybackView.m; sourceTree = "<group>"; };
@@ -206,6 +209,32 @@
 			path = HomePageCell;
 			sourceTree = "<group>";
 		};
+		4F23D93F1FA18D9A007DACEC /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				4F23D9401FA18E17007DACEC /* Categorys */,
+			);
+			name = Vendors;
+			path = Mushroom/Class/Vendors;
+			sourceTree = SOURCE_ROOT;
+		};
+		4F23D9401FA18E17007DACEC /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				4F23D9411FA18E17007DACEC /* UINavigation */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		4F23D9411FA18E17007DACEC /* UINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				4F23D9421FA18F64007DACEC /* UINavigationController+Extension.h */,
+				4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */,
+			);
+			path = UINavigation;
+			sourceTree = "<group>";
+		};
 		4F3726DB1F97209500E79654 /* HomePageVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,7 +328,7 @@
 				4F620F811F67E809000D51A8 /* General */,
 				4F620F821F67E809000D51A8 /* Helps */,
 				4F620F831F67E809000D51A8 /* Macro */,
-				4F620F841F67E809000D51A8 /* Vendors */,
+				4F23D93F1FA18D9A007DACEC /* Vendors */,
 				4F740B9F1F6906D100C300ED /* Sections */,
 			);
 			path = Class;
@@ -340,13 +369,6 @@
 				4F1227FC1F9D9483007C7291 /* HomePageTypeEnum.h */,
 			);
 			path = Macro;
-			sourceTree = "<group>";
-		};
-		4F620F841F67E809000D51A8 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
 			sourceTree = "<group>";
 		};
 		4F740B9B1F6905D300C300ED /* API */ = {
@@ -857,6 +879,7 @@
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
+				4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

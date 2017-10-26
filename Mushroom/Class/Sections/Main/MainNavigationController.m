@@ -26,7 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 /**
  *  重写这个方法目的：能够拦截所有push进来的控制器
  *
@@ -52,7 +51,6 @@
 /// 返回上一页
 - (void)back
 {
-    // 这里要用self，不是self.navigationController
     [self popViewControllerAnimated:YES];
 }
 
