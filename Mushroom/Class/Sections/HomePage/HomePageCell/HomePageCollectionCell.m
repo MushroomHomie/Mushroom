@@ -45,7 +45,7 @@
         make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(5, 3, 25, 5));
     }];
     
-    NSInteger shadowHeight = 20;
+    NSInteger shadowHeight = 40;
     _gradientShadowView = [UIView new];
     [_photoImageView addSubview:_gradientShadowView];
     
@@ -55,10 +55,10 @@
     }];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, self.contentView.width - 8, shadowHeight);
+    gradientLayer.frame = CGRectMake(0, 0, self.contentView.width - 8, shadowHeight - 5);
     [_gradientShadowView.layer addSublayer:gradientLayer];
     gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,(__bridge id)[UIColor grayColor].CGColor];
-    gradientLayer.locations = @[@0.01];
+    gradientLayer.locations = @[@0.3];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
     
@@ -68,7 +68,10 @@
     [_gradientShadowView addSubview:_authorLabel];
     [_authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.edges.equalTo(_gradientShadowView);
+        make.bottom.equalTo(_gradientShadowView.mas_bottom);
+        make.left.equalTo(_gradientShadowView.mas_left);
+        make.height.mas_equalTo(@20);
+        make.right.equalTo(_gradientShadowView.mas_right);
     }];
     
     _textLabel = [UILabel new];
