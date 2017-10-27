@@ -53,7 +53,7 @@
     searchBarBg.layer.cornerRadius = 15;
     
     [searchBarBg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(topSearchView).with.insets(UIEdgeInsetsMake(2, 10, 2, 10));
+        make.edges.equalTo(topSearchView).with.insets(UIEdgeInsetsMake(2, 0, 2, 0));
     }];
     
     // 放大镜imageView

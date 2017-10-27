@@ -27,18 +27,13 @@
     _homePageDefaultSearchModel = [HomePageDefaultSearchModel new];
 }
 
-- (UITableViewStyle)tableViewStyle
-{
-    return UITableViewStylePlain;
-}
+#pragma mark - TableViewDelegate
 
-// 默认是一个section
 - (NSInteger)numberOfSections
 {
     return _homePageModel.data.count;
 }
 
-///  子类必须实现（每个section多少rows）
 - (NSInteger)numberOfRowInSection:(NSInteger)section
 {
     return 1;
@@ -56,7 +51,6 @@
     return typeModel.title;
 }
 
-/// headerView的默认是没有的
 - (CGFloat)heightForHeaderInSection:(NSInteger)section
 {
     HomaPageTypeModel *typeModel = _homePageModel.data[section];
@@ -100,7 +94,9 @@
     return heightForRow;
 }
 
-- (void)sendRequest:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
+#pragma mark - RequestData
+
+- (void)getHomePageListData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
 {
     [[_homePageModel requestHomePageData] subscribeNext:^(id data) {
         
@@ -128,11 +124,9 @@
     }];
 }
 
-
 - (void)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
 {
     [self handleMutableArrayEntites:entities cellViewModelClass:cellViewModelClass];
 }
-
 
 @end

@@ -28,4 +28,6 @@
 
 // 数据绑定
 - (void)initBinding;
+
+- (void)back;
 @end

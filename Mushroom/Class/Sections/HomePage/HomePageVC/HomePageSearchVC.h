@@ -10,4 +10,7 @@
 
 @interface HomePageSearchVC : BaseTableViewController
 
+@property (nonatomic, strong) UIImage *backgroundImage;
+
+
 @end

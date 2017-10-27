@@ -49,7 +49,7 @@
     @weakify(self);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 50, 0));
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
     // 添加头部刷新控件

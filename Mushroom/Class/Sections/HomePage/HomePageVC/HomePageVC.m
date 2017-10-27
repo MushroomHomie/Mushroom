@@ -16,6 +16,7 @@
 #import "HomePageModel.h"
 #import "HomePageDefaultSearchModel.h"
 
+#import "HomePageSearchVC.h"
 #import "HomePageTypeEnum.h"
 
 @interface HomePageVC ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
@@ -67,14 +68,6 @@
     [self headerRefreshMethod];
 }
 
-#pragma mark - ClickEvents
-
-/// 搜索
-- (void)searchAction
-{
-    
-}
-
 #pragma mark - PrivateMethod
 
 // 顶部搜索条
@@ -88,9 +81,25 @@
     UITapGestureRecognizer *topSearchTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
     [_topSearchLabel addGestureRecognizer:topSearchTap];
 
+    @weakify(self)
     [[topSearchTap rac_gestureSignal] subscribeNext:^(id x) {
-        NSLog(@"x=======234");
+        @strongify(self)
+        
+        HomePageSearchVC *homePageSearchVC = [HomePageSearchVC new];
+        homePageSearchVC.backgroundImage = [self imageFromView];
+        [self.navigationController pushViewController:homePageSearchVC animated:NO];
     }];
+}
+
+- (UIImage *)imageFromView
+{
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return theImage;
 }
 
 - (UIView *)createOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
@@ -204,7 +213,7 @@
 
 - (void)requestHomePageListData
 {
-    [self.viewModel sendRequest:^(id entity) {
+    [self.viewModel getHomePageListData:^(id entity) {
         
         _homePageModel = (HomePageModel *)entity;
         [self.tableView reloadData];
