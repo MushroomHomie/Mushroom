@@ -11,6 +11,6 @@
 
 @interface HomePageVM : BaseTableViewModel
 
-
+- (void)getHomePageTopSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 
 @end

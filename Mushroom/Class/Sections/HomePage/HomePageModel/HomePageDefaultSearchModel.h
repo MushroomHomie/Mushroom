@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSArray *data;
 
+- (RACSignal *)requestHomePageTopDefaultSearch;
+
 @end

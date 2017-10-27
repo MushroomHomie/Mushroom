@@ -10,4 +10,10 @@
 
 @interface SubDefaultSearchModel : NSObject
 
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *dataId;
+@property (nonatomic, copy) NSString *linkUrl;
+@property (nonatomic, copy) NSString *screenType;
+
 @end

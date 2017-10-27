@@ -11,7 +11,7 @@
 
 @implementation HomePageDefaultSearchModel
 
-- (RACSignal *)requestHomePageData
+- (RACSignal *)requestHomePageTopDefaultSearch
 {
     return [self getRequestWithApi:[HomePageDefaultSearchApi new]];
 }

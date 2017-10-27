@@ -14,12 +14,15 @@
 #import "HomePageBannerTableCell.h"
 
 #import "HomePageModel.h"
+#import "HomePageDefaultSearchModel.h"
+
 #import "HomePageTypeEnum.h"
 
 
 @interface HomePageVC ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 {
     HomePageModel *_homePageModel;
+    HomePageDefaultSearchModel *_homePageDefaultSearchModel;
     
     UILabel *_topSearchLabel;
     BOOL _hasTouched;                       // 是否已点击搜索
@@ -80,8 +83,8 @@
 {
     _topSearchLabel = [UILabel new];
     _topSearchLabel.userInteractionEnabled = YES;
-    _topSearchLabel.font = [UIFont systemFontOfSize:13];
-    _topSearchLabel.text = @"123456";
+    _topSearchLabel.font = [UIFont systemFontOfSize:12];
+    _topSearchLabel.textColor = [UIColor lightGrayColor];
     
     UITapGestureRecognizer *topSearchTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
     [_topSearchLabel addGestureRecognizer:topSearchTap];
@@ -177,7 +180,6 @@
     return [self createOtherSectionHeaderView:sectionTitle andIconImage:typeModel.icon];
 }
 
-
 #pragma mark - <UIScrollViewDelegate>
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -193,10 +195,15 @@
     }
 }
 
-
 #pragma mark - RequestData
 
 - (void)headerRefreshMethod
+{
+    [self requestHomePageListData];
+    [self requestTopSearchData];
+}
+
+- (void)requestHomePageListData
 {
     [self.viewModel sendRequest:^(id entity) {
         
@@ -205,10 +212,23 @@
         [self endHeaderRefresh];
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
-        
     }];
 }
 
+/// 顶部搜索框
+- (void)requestTopSearchData
+{
+    [self.viewModel getHomePageTopSearchData:^(id entity)
+    {
+        _homePageDefaultSearchModel = (HomePageDefaultSearchModel *)entity;
+        
+        int x = arc4random() % (_homePageDefaultSearchModel.data.count - 1);
+        SubDefaultSearchModel *subModel = _homePageDefaultSearchModel.data[x];
+        _topSearchLabel.text = subModel.title;
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
