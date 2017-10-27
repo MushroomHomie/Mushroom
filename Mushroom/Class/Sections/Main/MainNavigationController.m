@@ -40,7 +40,7 @@
         // 自动显示和隐藏tabbar
         viewController.hidesBottomBarWhenPushed = YES;
         // 添加返回按钮
-        UIImage *image2 = [UIImage imageNamed:@"back.png"];
+        UIImage *image2 = [UIImage imageNamed:@"yyt_return_44x44_"];
         image2 = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image2 style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     }

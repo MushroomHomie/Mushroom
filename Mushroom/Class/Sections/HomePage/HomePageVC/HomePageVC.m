@@ -18,7 +18,6 @@
 
 #import "HomePageTypeEnum.h"
 
-
 @interface HomePageVC ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 {
     HomePageModel *_homePageModel;

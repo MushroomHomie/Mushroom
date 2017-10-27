@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4D5F7F0F7C1B5E5593C7D8B9 /* Pods_Mushroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD5E29A95BA09B758CA2DDD /* Pods_Mushroom.framework */; };
 		4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */; };
+		4F0DC26A1FA3321100F355A0 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC2691FA3321100F355A0 /* UIImage+Extension.m */; };
+		4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */; };
+		4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */; };
 		4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */; };
 		4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */; };
 		4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726D91F970F3200E79654 /* LoopPlaybackView.m */; };
@@ -75,6 +78,12 @@
 		20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mushroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mushroom/Pods-Mushroom.debug.xcconfig"; sourceTree = "<group>"; };
 		4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCollectionCell.h; sourceTree = "<group>"; };
 		4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCollectionCell.m; sourceTree = "<group>"; };
+		4F0DC2681FA3321100F355A0 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		4F0DC2691FA3321100F355A0 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		4F0DC26B1FA334A200F355A0 /* HomePageSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSearchVC.h; sourceTree = "<group>"; };
+		4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSearchVC.m; sourceTree = "<group>"; };
+		4F0DC26E1FA334D900F355A0 /* HomePageSearchVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSearchVM.h; sourceTree = "<group>"; };
+		4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSearchVM.m; sourceTree = "<group>"; };
 		4F1227F91F9D8E4B007C7291 /* HomePageHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHeaderTableCell.h; sourceTree = "<group>"; };
 		4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHeaderTableCell.m; sourceTree = "<group>"; };
 		4F1227FC1F9D9483007C7291 /* HomePageTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTypeEnum.h; sourceTree = "<group>"; };
@@ -218,6 +227,15 @@
 			path = HomePageCell;
 			sourceTree = "<group>";
 		};
+		4F0DC2671FA331FF00F355A0 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				4F0DC2681FA3321100F355A0 /* UIImage+Extension.h */,
+				4F0DC2691FA3321100F355A0 /* UIImage+Extension.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		4F23D93F1FA18D9A007DACEC /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +248,7 @@
 		4F23D9401FA18E17007DACEC /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				4F0DC2671FA331FF00F355A0 /* UIImage */,
 				4F23D9411FA18E17007DACEC /* UINavigation */,
 			);
 			path = Categorys;
@@ -251,6 +270,8 @@
 				4F3726DD1F9720AC00E79654 /* HomePageVM.m */,
 				4F77223A1F9DC98A00B00E87 /* HomePageTableCellVM.h */,
 				4F77223B1F9DC98A00B00E87 /* HomePageTableCellVM.m */,
+				4F0DC26E1FA334D900F355A0 /* HomePageSearchVM.h */,
+				4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */,
 			);
 			path = HomePageVM;
 			sourceTree = "<group>";
@@ -531,6 +552,8 @@
 				4F740BBB1F690B2F00C300ED /* HomePageVC.m */,
 				4F3726D81F970F3200E79654 /* LoopPlaybackView.h */,
 				4F3726D91F970F3200E79654 /* LoopPlaybackView.m */,
+				4F0DC26B1FA334A200F355A0 /* HomePageSearchVC.h */,
+				4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */,
 			);
 			path = HomePageVC;
 			sourceTree = "<group>";
@@ -874,6 +897,8 @@
 				4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
+				4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */,
+				4F0DC26A1FA3321100F355A0 /* UIImage+Extension.m in Sources */,
 				E434A2DB1FA22254003F4EA5 /* HomePageDefaultSearchModel.m in Sources */,
 				4FF11C5D1F99EA7A000317E8 /* HomePageModelTableCell.m in Sources */,
 				4FF400FD1F98A2C400E25E04 /* HomaPageTypeModel.m in Sources */,
@@ -893,6 +918,7 @@
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
 				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
 				4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */,
+				4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
