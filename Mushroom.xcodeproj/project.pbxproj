@@ -12,7 +12,6 @@
 		4F0DC26A1FA3321100F355A0 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC2691FA3321100F355A0 /* UIImage+Extension.m */; };
 		4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */; };
 		4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */; };
-		4F0DC2731FA3426300F355A0 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC2721FA3426300F355A0 /* SearchTableViewCell.m */; };
 		4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */; };
 		4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */; };
 		4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726D91F970F3200E79654 /* LoopPlaybackView.m */; };
@@ -20,6 +19,7 @@
 		4F3726E11F97222800E79654 /* HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E01F97222800E79654 /* HomePageModel.m */; };
 		4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E31F97234800E79654 /* MushroomBaseApi.m */; };
 		4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3E09251F97593500E5E532 /* HomePageApi.m */; };
+		4F4474681FA728B700B8AD78 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
 		4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F541F67BEE4000D51A8 /* Assets.xcassets */; };
@@ -85,8 +85,6 @@
 		4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSearchVC.m; sourceTree = "<group>"; };
 		4F0DC26E1FA334D900F355A0 /* HomePageSearchVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSearchVM.h; sourceTree = "<group>"; };
 		4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSearchVM.m; sourceTree = "<group>"; };
-		4F0DC2711FA3426300F355A0 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
-		4F0DC2721FA3426300F355A0 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		4F1227F91F9D8E4B007C7291 /* HomePageHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHeaderTableCell.h; sourceTree = "<group>"; };
 		4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHeaderTableCell.m; sourceTree = "<group>"; };
 		4F1227FC1F9D9483007C7291 /* HomePageTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTypeEnum.h; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		4F3726E31F97234800E79654 /* MushroomBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MushroomBaseApi.m; sourceTree = "<group>"; };
 		4F3E09241F97593500E5E532 /* HomePageApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageApi.h; sourceTree = "<group>"; };
 		4F3E09251F97593500E5E532 /* HomePageApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageApi.m; sourceTree = "<group>"; };
+		4F4474661FA728B700B8AD78 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		4F475D7F1F7103C500D134C8 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -226,6 +226,8 @@
 				4F7722351F9DB9DC00B00E87 /* HomePageBannerTableCell.m */,
 				4F02BD5E1F95F3BD00BB0D6D /* HomePageCollectionCell.h */,
 				4F02BD5F1F95F3BD00BB0D6D /* HomePageCollectionCell.m */,
+				4F4474661FA728B700B8AD78 /* SearchTableViewCell.h */,
+				4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */,
 			);
 			path = HomePageCell;
 			sourceTree = "<group>";
@@ -544,8 +546,6 @@
 				E434A2DA1FA22254003F4EA5 /* HomePageDefaultSearchModel.m */,
 				E434A2DC1FA2235D003F4EA5 /* SubDefaultSearchModel.h */,
 				E434A2DD1FA2235D003F4EA5 /* SubDefaultSearchModel.m */,
-				4F0DC2711FA3426300F355A0 /* SearchTableViewCell.h */,
-				4F0DC2721FA3426300F355A0 /* SearchTableViewCell.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -898,7 +898,7 @@
 				4FF401061F98A51800E25E04 /* HomePageArtistsModel.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
 				4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */,
-				4F0DC2731FA3426300F355A0 /* SearchTableViewCell.m in Sources */,
+				4F4474681FA728B700B8AD78 /* SearchTableViewCell.m in Sources */,
 				4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */,
 				4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,

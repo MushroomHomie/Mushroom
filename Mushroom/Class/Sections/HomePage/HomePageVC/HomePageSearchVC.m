@@ -34,6 +34,12 @@
     _backGroundImageView.frame = self.view.bounds;
     [self.view addSubview:_backGroundImageView];
     
+    // 毛玻璃
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    effectView.frame = CGRectMake(0, 0, _backGroundImageView.frame.size.width, _backGroundImageView.frame.size.height);
+    [_backGroundImageView addSubview:effectView];
+    
     [super initView];
     
     self.tableView.backgroundColor = [UIColor clearColor];
