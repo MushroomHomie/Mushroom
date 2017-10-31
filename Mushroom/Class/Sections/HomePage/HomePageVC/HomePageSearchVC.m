@@ -2,7 +2,7 @@
 //  HomePageSearchVC.m
 //  Mushroom
 //
-//  Created by 中原管家 on 2017/10/27.
+//  Created by 王雅琦 on 2017/10/27.
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 
@@ -45,6 +45,7 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.tableView.mj_header = nil;
     
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title = @"";
@@ -63,9 +64,11 @@
 - (void)initData
 {
     self.viewModel = [HomePageSearchVM new];
+    [self requestTopSearchDefultData];
 }
 
 #pragma mark - ClickEvents
+
 
 - (void)cancelSearch
 {
@@ -95,6 +98,23 @@
 - (Class)cellClassForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return SearchTableViewCell.class;
+}
+
+#pragma mark - RequestData
+
+- (void)rquestData
+{
+    [self requestTopSearchDefultData];
+}
+
+- (void)requestTopSearchDefultData
+{
+    [self.viewModel getTopThreeDefaultData:^(id entity) {
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

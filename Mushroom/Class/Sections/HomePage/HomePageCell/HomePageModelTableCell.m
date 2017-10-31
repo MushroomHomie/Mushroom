@@ -2,7 +2,7 @@
 //  HomePageModelTableCell.m
 //  Mushroom
 //
-//  Created by 中原管家 on 2017/10/20.
+//  Created by 王雅琦 on 2017/10/20.
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 

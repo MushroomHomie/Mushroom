@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Mushroom
 //
-//  Created by 中原管家 on 2017/9/12.
+//  Created by 王雅琦 on 2017/9/12.
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 

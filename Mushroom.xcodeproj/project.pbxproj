@@ -37,6 +37,7 @@
 		4F7722361F9DB9DC00B00E87 /* HomePageBannerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7722351F9DB9DC00B00E87 /* HomePageBannerTableCell.m */; };
 		4F7722391F9DC72A00B00E87 /* BaseTableViewCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7722381F9DC72A00B00E87 /* BaseTableViewCellVM.m */; };
 		4F77223C1F9DC98A00B00E87 /* HomePageTableCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F77223B1F9DC98A00B00E87 /* HomePageTableCellVM.m */; };
+		4F97C4081FA84E7E0084B655 /* HomePageSearchCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F97C4071FA84E7E0084B655 /* HomePageSearchCellVM.m */; };
 		4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC7FFCA1F6946DA00A0F2B7 /* MainNavigationController.m */; };
 		4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F321F6A2B6B002DF13F /* BaseViewModel.m */; };
 		4FE51F361F6A2E94002DF13F /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F351F6A2E94002DF13F /* BaseModel.m */; };
@@ -138,6 +139,8 @@
 		4F7722381F9DC72A00B00E87 /* BaseTableViewCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCellVM.m; sourceTree = "<group>"; };
 		4F77223A1F9DC98A00B00E87 /* HomePageTableCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableCellVM.h; sourceTree = "<group>"; };
 		4F77223B1F9DC98A00B00E87 /* HomePageTableCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableCellVM.m; sourceTree = "<group>"; };
+		4F97C4061FA84E7E0084B655 /* HomePageSearchCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSearchCellVM.h; sourceTree = "<group>"; };
+		4F97C4071FA84E7E0084B655 /* HomePageSearchCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSearchCellVM.m; sourceTree = "<group>"; };
 		4FC7FFC91F6946DA00A0F2B7 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		4FC7FFCA1F6946DA00A0F2B7 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		4FE51F311F6A2B6B002DF13F /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				4F77223B1F9DC98A00B00E87 /* HomePageTableCellVM.m */,
 				4F0DC26E1FA334D900F355A0 /* HomePageSearchVM.h */,
 				4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */,
+				4F97C4061FA84E7E0084B655 /* HomePageSearchCellVM.h */,
+				4F97C4071FA84E7E0084B655 /* HomePageSearchCellVM.m */,
 			);
 			path = HomePageVM;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
 				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
+				4F97C4081FA84E7E0084B655 /* HomePageSearchCellVM.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
 				4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */,
 				E434A2D81FA221CE003F4EA5 /* HomePageDefaultSearchApi.m in Sources */,

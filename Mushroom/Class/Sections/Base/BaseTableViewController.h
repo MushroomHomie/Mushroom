@@ -2,7 +2,7 @@
 //  TableViewController.h
 //  Mushroom
 //
-//  Created by 中原管家 on 2017/9/15.
+//  Created by 王雅琦 on 2017/9/15.
 //  Copyright © 2017年 iOSfghj. All rights reserved.
 //
 
