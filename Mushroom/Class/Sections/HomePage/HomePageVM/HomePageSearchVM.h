@@ -10,6 +10,8 @@
 
 @interface HomePageSearchVM : BaseTableViewModel
 
+
 - (void)getTopThreeDefaultData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
+- (void)getHotSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 
 @end

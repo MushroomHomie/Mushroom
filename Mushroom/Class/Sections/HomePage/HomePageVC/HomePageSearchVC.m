@@ -64,11 +64,10 @@
 - (void)initData
 {
     self.viewModel = [HomePageSearchVM new];
-    [self requestTopSearchDefultData];
+    [self requestData];
 }
 
 #pragma mark - ClickEvents
-
 
 - (void)cancelSearch
 {
@@ -87,9 +86,10 @@
     [_topSearchTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_topSearchTextField setValue:[UIFont boldSystemFontOfSize:11] forKeyPath:@"_placeholderLabel.font"];
     
-    //------设置placeholder的大小后，如果不是系统默认大小，会出现垂直不居中的情况，解决如下
+    // 设置placeholder的大小后，如果不是系统默认大小，会出现垂直不居中的情况，解决如下
     NSMutableParagraphStyle *style = [_topSearchTextField.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
-    style.minimumLineHeight = _topSearchTextField.font.lineHeight - (_topSearchTextField.font.lineHeight - [UIFont systemFontOfSize:13.0f].lineHeight) / 2.0; //[UIFont systemFontOfSize:13.0f]是设置的placeholder的字体
+    // [UIFont systemFontOfSize:13.0f]是设置的placeholder的字体
+    style.minimumLineHeight = _topSearchTextField.font.lineHeight - (_topSearchTextField.font.lineHeight - [UIFont systemFontOfSize:13.0f].lineHeight) / 2.0;
     _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
 }
 
@@ -102,16 +102,28 @@
 
 #pragma mark - RequestData
 
-- (void)rquestData
+- (void)requestData
 {
     [self requestTopSearchDefultData];
-}
+    [self requestHotSearchData];
+} 
 
+/// 默认三条
 - (void)requestTopSearchDefultData
 {
     [self.viewModel getTopThreeDefaultData:^(id entity) {
         
         [self.tableView reloadData];
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+    }];
+}
+
+/// 热搜歌手
+- (void)requestHotSearchData
+{
+    [self.viewModel getHotSearchData:^(id entity) {
+        
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
     }];

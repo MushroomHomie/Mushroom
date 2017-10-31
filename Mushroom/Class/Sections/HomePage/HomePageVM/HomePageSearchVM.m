@@ -8,11 +8,15 @@
 
 #import "HomePageSearchVM.h"
 #import "HomePageDefaultSearchModel.h"
+#import "HotSearchModel.h"
+
 #import "HomePageSearchCellVM.h"
 
 @interface HomePageSearchVM ()
 
-@property(nonatomic, strong) HomePageDefaultSearchModel *homePageDefaultSearchModel;
+@property (nonatomic, strong) HomePageDefaultSearchModel *homePageDefaultSearchModel;
+@property (nonatomic, strong) HotSearchModel *hotSearchModel;
+@property (nonatomic, strong) HomePageSearchCellVM *hotSearchCellVM;
 
 @end
 
@@ -21,13 +25,15 @@
 - (void)initData
 {
     _homePageDefaultSearchModel = [HomePageDefaultSearchModel new];
+    _hotSearchModel = [HotSearchModel new];
 }
+
 
 #pragma mark - TableViewDelegate
 
 - (NSInteger)numberOfSections
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)numberOfRowInSection:(NSInteger)section
@@ -36,13 +42,21 @@
     {
         return 3;
     }
-    return 0;
+    
+    return 1;
 }
 
 /// CellVM
 - (BaseTableViewCellVM *)cellViewModelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.cellViewModels[indexPath.row];
+    if (indexPath.section == 0)
+    {
+        return self.cellViewModels[indexPath.row];
+    }
+    else
+    {
+        return _hotSearchCellVM;
+    }
 }
 
 #pragma mark - RequestData
@@ -58,6 +72,21 @@
         }
         
         !succeedBlock ? : succeedBlock(_homePageDefaultSearchModel);
+    }];
+}
+
+- (void)getHotSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock
+{
+    [[_hotSearchModel requestHotSearchData] subscribeNext:^(id data) {
+        
+        if (data)
+        {
+            _hotSearchModel = [DataConvert convertDic:data toEntity:HotSearchModel.class];
+            _hotSearchCellVM = [HomePageSearchCellVM new];
+            _hotSearchCellVM.hotSearchData = _hotSearchModel.data;
+        }
+        
+        !succeedBlock ? : succeedBlock(_hotSearchModel);
     }];
 }
 

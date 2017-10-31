@@ -10,6 +10,8 @@
 
 @interface HomePageSearchCellVM : BaseTableViewCellVM
 
+@property (nonatomic, strong) NSArray *hotSearchData;
+
 - (NSString *)getHomePageSearchText;
 
 @end

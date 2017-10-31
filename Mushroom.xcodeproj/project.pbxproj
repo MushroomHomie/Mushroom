@@ -57,6 +57,8 @@
 		E434A2D81FA221CE003F4EA5 /* HomePageDefaultSearchApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E434A2D71FA221CE003F4EA5 /* HomePageDefaultSearchApi.m */; };
 		E434A2DB1FA22254003F4EA5 /* HomePageDefaultSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E434A2DA1FA22254003F4EA5 /* HomePageDefaultSearchModel.m */; };
 		E434A2DE1FA2235D003F4EA5 /* SubDefaultSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E434A2DD1FA2235D003F4EA5 /* SubDefaultSearchModel.m */; };
+		E4DC384C1FA89D3D004D9EA1 /* HomePageHotSearchApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DC384B1FA89D3D004D9EA1 /* HomePageHotSearchApi.m */; };
+		E4DC384F1FA89D7D004D9EA1 /* HotSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DC384E1FA89D7D004D9EA1 /* HotSearchModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,10 @@
 		E434A2DA1FA22254003F4EA5 /* HomePageDefaultSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageDefaultSearchModel.m; sourceTree = "<group>"; };
 		E434A2DC1FA2235D003F4EA5 /* SubDefaultSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubDefaultSearchModel.h; sourceTree = "<group>"; };
 		E434A2DD1FA2235D003F4EA5 /* SubDefaultSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubDefaultSearchModel.m; sourceTree = "<group>"; };
+		E4DC384A1FA89D3D004D9EA1 /* HomePageHotSearchApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHotSearchApi.h; sourceTree = "<group>"; };
+		E4DC384B1FA89D3D004D9EA1 /* HomePageHotSearchApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHotSearchApi.m; sourceTree = "<group>"; };
+		E4DC384D1FA89D7D004D9EA1 /* HotSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotSearchModel.h; sourceTree = "<group>"; };
+		E4DC384E1FA89D7D004D9EA1 /* HotSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotSearchModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +426,8 @@
 				4F3E09251F97593500E5E532 /* HomePageApi.m */,
 				E434A2D61FA221CE003F4EA5 /* HomePageDefaultSearchApi.h */,
 				E434A2D71FA221CE003F4EA5 /* HomePageDefaultSearchApi.m */,
+				E4DC384A1FA89D3D004D9EA1 /* HomePageHotSearchApi.h */,
+				E4DC384B1FA89D3D004D9EA1 /* HomePageHotSearchApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -551,6 +559,8 @@
 				E434A2DA1FA22254003F4EA5 /* HomePageDefaultSearchModel.m */,
 				E434A2DC1FA2235D003F4EA5 /* SubDefaultSearchModel.h */,
 				E434A2DD1FA2235D003F4EA5 /* SubDefaultSearchModel.m */,
+				E4DC384D1FA89D7D004D9EA1 /* HotSearchModel.h */,
+				E4DC384E1FA89D7D004D9EA1 /* HotSearchModel.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -924,6 +934,7 @@
 				4FE51F361F6A2E94002DF13F /* BaseModel.m in Sources */,
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
 				4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */,
+				E4DC384C1FA89D3D004D9EA1 /* HomePageHotSearchApi.m in Sources */,
 				4F7722361F9DB9DC00B00E87 /* HomePageBannerTableCell.m in Sources */,
 				4F77223C1F9DC98A00B00E87 /* HomePageTableCellVM.m in Sources */,
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
@@ -934,6 +945,7 @@
 				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
 				4F97C4081FA84E7E0084B655 /* HomePageSearchCellVM.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
+				E4DC384F1FA89D7D004D9EA1 /* HotSearchModel.m in Sources */,
 				4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */,
 				E434A2D81FA221CE003F4EA5 /* HomePageDefaultSearchApi.m in Sources */,
 			);
