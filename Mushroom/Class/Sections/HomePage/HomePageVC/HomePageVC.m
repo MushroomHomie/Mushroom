@@ -87,6 +87,7 @@
         
         HomePageSearchVC *homePageSearchVC = [HomePageSearchVC new];
         homePageSearchVC.backgroundImage = [self imageFromView];
+        homePageSearchVC.defultSearchText = _topSearchLabel.text;
         [self.navigationController pushViewController:homePageSearchVC animated:NO];
     }];
 }
@@ -105,7 +106,7 @@
 - (UIView *)createOtherSectionHeaderView:(NSString *)sectionTitleName andIconImage:(NSString *)imageStr
 {
     UIView *sectionHeaderView = [UIView new];
-    sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 50);
+    sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 35);
     
     UIImageView *imageView = [UIImageView new];
     [sectionHeaderView addSubview:imageView];
@@ -118,7 +119,7 @@
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(sectionHeaderView).with.offset(7);
         make.centerY.mas_equalTo(sectionHeaderView.mas_centerY);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(25, 25));
     }];
     
     UILabel *sectionTitleLable = [UILabel new];
@@ -127,7 +128,7 @@
     [sectionHeaderView addSubview:sectionTitleLable];
     
     [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 40, 0, 0));
+        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 35, 0, 0));
     }];
     
     return sectionHeaderView;

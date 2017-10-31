@@ -13,7 +13,7 @@
 @interface HomePageSearchVC ()
 
 @property (nonatomic, strong) HomePageSearchVM *viewModel;
-@property (nonatomic, strong) UILabel *topSearchLabel;
+@property (nonatomic, strong) UITextField *topSearchTextField;
 @property (nonatomic, strong) UIImageView *backGroundImageView;
 
 @end
@@ -54,7 +54,7 @@
     // 顶部搜索条
     [self createTopSearchTextField];
     
-    [self.navigationController createTextfieldWithTarget:self Textfield:_topSearchLabel];
+    [self.navigationController createTextfieldWithTarget:self Textfield:self.topSearchTextField];
     [self.navigationController setRightBarButtonItemWithTitle:nil
                                                         Image:@"StarTV_Live_Back_40x40_"
                                                        Target:self
@@ -80,17 +80,17 @@
 // 顶部搜索条
 - (void)createTopSearchTextField
 {
-    _topSearchLabel = [UILabel new];
-    _topSearchLabel.userInteractionEnabled = YES;
-    _topSearchLabel.font = [UIFont systemFontOfSize:12];
-    _topSearchLabel.textColor = [UIColor lightGrayColor];
+    _topSearchTextField = [UITextField new];
+    _topSearchTextField.font = [UIFont systemFontOfSize:12];
+    _topSearchTextField.textColor = [UIColor lightGrayColor];
+    _topSearchTextField.placeholder = _defultSearchText;
+    [_topSearchTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_topSearchTextField setValue:[UIFont boldSystemFontOfSize:11] forKeyPath:@"_placeholderLabel.font"];
     
-    UITapGestureRecognizer *topSearchTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
-    [_topSearchLabel addGestureRecognizer:topSearchTap];
-    
-    [[topSearchTap rac_gestureSignal] subscribeNext:^(id x) {
-        NSLog(@"x=======234");
-    }];
+    //------设置placeholder的大小后，如果不是系统默认大小，会出现垂直不居中的情况，解决如下
+    NSMutableParagraphStyle *style = [_topSearchTextField.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
+    style.minimumLineHeight = _topSearchTextField.font.lineHeight - (_topSearchTextField.font.lineHeight - [UIFont systemFontOfSize:13.0f].lineHeight) / 2.0; //[UIFont systemFontOfSize:13.0f]是设置的placeholder的字体
+    _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
 }
 
 #pragma mark - CommonMethod

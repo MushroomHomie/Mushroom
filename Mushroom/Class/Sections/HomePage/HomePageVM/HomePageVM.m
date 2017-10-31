@@ -58,7 +58,7 @@
     
     if (typeModel.type == CollectionView)
     {
-        heightForHeader = 40;
+        heightForHeader = 35;
     }
     return heightForHeader;
 }

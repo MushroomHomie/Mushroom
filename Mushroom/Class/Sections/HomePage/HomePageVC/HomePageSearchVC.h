@@ -11,6 +11,6 @@
 @interface HomePageSearchVC : BaseTableViewController
 
 @property (nonatomic, strong) UIImage *backgroundImage;
-
+@property (nonatomic, copy) NSString *defultSearchText;
 
 @end
