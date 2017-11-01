@@ -9,12 +9,14 @@
 #import "HomePageSearchVC.h"
 #import "HomePageSearchVM.h"
 #import "SearchTableViewCell.h"
+#import "HotSearchModel.h"
 
 @interface HomePageSearchVC ()
 
 @property (nonatomic, strong) HomePageSearchVM *viewModel;
 @property (nonatomic, strong) UITextField *topSearchTextField;
 @property (nonatomic, strong) UIImageView *backGroundImageView;
+@property (nonatomic, strong) HotSearchModel *hotSearchModel;
 
 @end
 
@@ -109,7 +111,7 @@
     [sectionHeaderView addSubview:sectionTitleLable];
     
     [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 10, 0, 0));
+        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 15, 0, 0));
     }];
     
     return sectionHeaderView;
@@ -157,6 +159,7 @@
 {
     [self.viewModel getHotSearchData:^(id entity) {
         
+        _hotSearchModel = (HotSearchModel *)entity;
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
     }];

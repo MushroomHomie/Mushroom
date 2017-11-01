@@ -74,6 +74,11 @@
 
 - (NSString *)titleForHeader:(NSInteger)section
 {
+    if (!_hotSearchCellVM)
+    {
+        return @"";
+    }
+    
     if (section == 1)
     {
         return @"热搜";

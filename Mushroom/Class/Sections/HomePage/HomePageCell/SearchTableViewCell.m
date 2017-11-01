@@ -124,6 +124,9 @@
 
         UIButton *tagButton = [self createTagButton:buttonTitle];
         tagButton.frame = CGRectMake(widthSpacing * j + width, row * heightSpacing, labWidth, 22);
+        tagButton.tag = ButtonsTag + i;
+        [tagButton addTarget:self action:@selector(selectedTagButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self.contentView addSubview:tagButton];
         
         width = width + labWidth;
@@ -145,7 +148,7 @@
         }
         else
         {
-            tagButton.mj_y = row * (tagButton.mj_h + 10);
+            tagButton.mj_y = (row - 1) * 31 + 5;
         }
     }
 }
@@ -157,7 +160,6 @@
     UIButton *tagButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [tagButton setTitle:text forState:UIControlStateNormal];
     [tagButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [tagButton setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     tagButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     tagButton.titleLabel.font = font;
     tagButton.layer.cornerRadius = 5.0;
@@ -165,6 +167,22 @@
     tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     return tagButton;
+}
+
+- (void)selectedTagButton:(UIButton *)tagButton
+{
+    if (tagButton.selected)
+    {
+        [tagButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        tagButton.selected = NO;
+    }
+    else
+    {
+        [tagButton setTitleColor:RGBColor(28, 185, 112) forState:UIControlStateNormal];
+        tagButton.layer.borderColor = RGBColor(28, 185, 112).CGColor;
+        tagButton.selected = YES;
+    }
 }
 
 /// 计算文字长度
