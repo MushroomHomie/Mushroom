@@ -67,15 +67,15 @@
     _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
     
     _gradientShadowView = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                   _loopPlayViewFrame.size.height / 3,
+                                                                   (_loopPlayViewFrame.size.height / 3) * 2,
                                                                    APP_SCREEN_WIDTH,
                                                                    _loopPlayViewFrame.size.height / 3)];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = _gradientShadowView.frame;
+    gradientLayer.frame = _gradientShadowView.bounds;
     [_gradientShadowView.layer addSublayer:gradientLayer];
     gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,(__bridge id)[UIColor blackColor].CGColor];
-    gradientLayer.locations = @[@0.3];
+    gradientLayer.locations = @[@0.2];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
 
