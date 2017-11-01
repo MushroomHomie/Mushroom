@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSArray *hotSearchData;
 
 - (NSString *)getHomePageSearchText;
+- (NSArray *)getHotSearchTag;
 
 @end

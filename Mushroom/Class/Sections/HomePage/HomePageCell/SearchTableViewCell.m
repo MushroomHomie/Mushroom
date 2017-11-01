@@ -9,6 +9,8 @@
 #import "SearchTableViewCell.h"
 #import "HomePageSearchCellVM.h"
 
+#define  ButtonsTag  1000
+
 @interface SearchTableViewCell ()
 
 @property (nonatomic, strong) UILabel *searchTextLabel;
@@ -53,7 +55,7 @@
         @weakify(self);
         [RACObserve(self, viewModel) subscribeNext:^(BaseTableViewCellVM *viewModel) {
             @strongify(self);
-            [self initData];
+            [self initData:indexPath];
         }];
     }
     
@@ -67,91 +69,109 @@
         self.searchTextLabel = [UILabel new];
         self.searchTextLabel.font = [UIFont systemFontOfSize:13];
         self.searchTextLabel.textColor = [UIColor lightGrayColor];
-        //    self.searchTextLabel.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 44);
         [self.contentView addSubview:self.searchTextLabel];
         
         @weakify(self)
         [self.searchTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             @strongify(self)
-            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(0, 20, 0, 0));
+            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(0, 15, 0, 0));
         }];
-    }
-    else
-    {
         
+        UIView *line = [UIView new];
+        [self.contentView addSubview:line];
+        line.backgroundColor = [UIColor grayColor];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self)
+            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(self.contentView.height - 0.5, 0, 0, 0));
+        }];
     }
 }
 
-- (void)initData
+- (void)initData:(NSIndexPath *)indexPath
 {
-    self.searchTextLabel.text = [self.viewModel getHomePageSearchText];
+    if (indexPath.section == 0)
+    {
+        self.searchTextLabel.text = [self.viewModel getHomePageSearchText];
+    }
+    else
+    {
+        NSArray *hotSearchTag = [self.viewModel getHotSearchTag];
+        if (hotSearchTag.count > 0)
+        {
+            NSArray *views = [self.contentView subviews];
+            for(UIView *view in views)
+            {
+                [view removeFromSuperview];
+            }
+            
+            [self createTagsWithArray:hotSearchTag];
+        }
+    }
 }
 
 - (void)createTagsWithArray:(NSArray *)tagsArray
 {
-    NSMutableArray *groupTagArray = [[NSMutableArray alloc] init];
-    NSMutableArray<NSNumber *> *widthArray = [[NSMutableArray alloc] init];
-    CGFloat labelSpace = 10;
-    CGFloat lastWidth = 0;
-    int lastIndex = 0;
-    
-    NSMutableArray *smallTagsArray = [[NSMutableArray alloc] init];
-    UIFont *font = [UIFont systemFontOfSize:16];
-    for (int tagIndex = 0; tagIndex < tagsArray.count; tagIndex ++ )
+    int width = 15;
+    int j = 0;
+    int row = 1;
+    int widthSpacing = 7;
+    int heightSpacing = 31;
+
+    for (int i = 0 ; i < tagsArray.count; i++)
     {
-        NSString *tagString =tagsArray[tagIndex];
-        CGFloat tagWidth = [tagString sizeWithAttributes:@{NSFontAttributeName: font}].width + 15;
-        if (tagWidth + lastIndex * labelSpace + lastWidth >= APP_SCREEN_WIDTH - 60) {
-            [widthArray addObject:[NSNumber numberWithFloat:lastWidth]];
-            lastWidth = tagWidth;
-            [groupTagArray addObject:smallTagsArray];
-            smallTagsArray = [[NSMutableArray alloc] init];
-            [smallTagsArray addObject:tagString];
-            if (tagIndex == tagsArray.count - 1) {
-                [groupTagArray addObject:smallTagsArray];
-                [widthArray addObject:[NSNumber numberWithFloat:lastWidth]];
-            }
-            lastIndex = 1;
-            
-        } else {
-            lastWidth = lastWidth + tagWidth;
-            [smallTagsArray addObject:tagString];
-            if (tagIndex == tagsArray.count - 1) {
-                [groupTagArray addObject:smallTagsArray];
-                [widthArray addObject:[NSNumber numberWithFloat:lastWidth]];
-            }
-            lastIndex ++;
+        NSString *buttonTitle = tagsArray[i];
+        int labWidth = [self widthForLabel:buttonTitle fontSize:16] + 7;
+
+        UIButton *tagButton = [self createTagButton:buttonTitle];
+        tagButton.frame = CGRectMake(widthSpacing * j + width, row * heightSpacing, labWidth, 22);
+        [self.contentView addSubview:tagButton];
+        
+        width = width + labWidth;
+        j++;
+        
+        if (width > APP_SCREEN_WIDTH - 30)
+        {
+            j = 0;
+            width = 15;
+            row++;
+            tagButton.frame = CGRectMake(widthSpacing * j + width, row * heightSpacing, labWidth, 22);
+            width = width + labWidth;
+            j++;
         }
-    }
-    
-    for (int arrayIndex = 0; arrayIndex < groupTagArray.count; arrayIndex ++)
-    {
-        NSArray *smallTagArray = groupTagArray[arrayIndex];
-        CGFloat width = [widthArray[arrayIndex] floatValue];
-        CGFloat lastTagWidth = (APP_SCREEN_WIDTH -  width - (smallTagArray.count - 1) * 10) / 2.0;
-        for (int index = 0; index < smallTagArray.count; index ++) {
-            NSString *tagString = smallTagArray[index];
-            CGFloat tagWidth = [tagString sizeWithAttributes:@{NSFontAttributeName: font}].width + 15;
-            UILabel *label = [self createTagLabel:tagString];
-            label.frame = CGRectMake(lastTagWidth + index * 10, arrayIndex * (font.lineHeight + 10 + 15) + 80, tagWidth, font.lineHeight + 10);
-            [self.contentView addSubview:label];
-            lastTagWidth = lastTagWidth + tagWidth;
+        
+        if (row == 1)
+        {
+            tagButton.mj_y = 5;
+        }
+        else
+        {
+            tagButton.mj_y = row * (tagButton.mj_h + 10);
         }
     }
 }
 
-- (UILabel *)createTagLabel:(NSString *)text {
-    UIFont *font = [UIFont systemFontOfSize:16];
-    UILabel *tagLabel = [[UILabel alloc] init];
-    tagLabel.textColor = [UIColor whiteColor];
-    tagLabel.font = font;
-    tagLabel.layer.cornerRadius = 5.0;
-    tagLabel.layer.borderWidth = 1.0;
-    tagLabel.layer.borderColor = [UIColor whiteColor].CGColor;
-    tagLabel.textAlignment = NSTextAlignmentCenter;
-    tagLabel.text = text;
-    return tagLabel;
+- (UIButton *)createTagButton:(NSString *)text
+{
+    UIFont *font = [UIFont systemFontOfSize:13];
+    
+    UIButton *tagButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [tagButton setTitle:text forState:UIControlStateNormal];
+    [tagButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [tagButton setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    tagButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    tagButton.titleLabel.font = font;
+    tagButton.layer.cornerRadius = 5.0;
+    tagButton.layer.borderWidth = 1.0;
+    tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    return tagButton;
 }
 
+/// 计算文字长度
+- (CGFloat )widthForLabel:(NSString *)text fontSize:(CGFloat)font
+{
+    CGSize size = [text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:font], NSFontAttributeName, nil]];
+    return size.width;
+}
 
 @end

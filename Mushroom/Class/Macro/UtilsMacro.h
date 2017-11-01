@@ -9,6 +9,8 @@
 #ifndef UtilsMacro_h
 #define UtilsMacro_h
 
+#define MODEL_VERSION                   [[[UIDevice currentDevice] systemVersion] floatValue]
+
 #define APP_SCREEN_WIDTH                [UIScreen mainScreen].bounds.size.width
 #define APP_SCREEN_HEIGHT               [UIScreen mainScreen].bounds.size.height
 #define APP_NAVTOPBAR_HEIGHT            64

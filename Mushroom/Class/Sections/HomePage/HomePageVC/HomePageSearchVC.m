@@ -43,9 +43,10 @@
     [super initView];
     
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.mj_header = nil;
+
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.mj_header = nil;
     
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title = @"";
@@ -90,7 +91,28 @@
     NSMutableParagraphStyle *style = [_topSearchTextField.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
     // [UIFont systemFontOfSize:13.0f]是设置的placeholder的字体
     style.minimumLineHeight = _topSearchTextField.font.lineHeight - (_topSearchTextField.font.lineHeight - [UIFont systemFontOfSize:13.0f].lineHeight) / 2.0;
-    _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
+    if (_defultSearchText)
+    {
+        _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
+    }
+}
+
+- (UIView *)createSectionHeaderView:(NSString *)sectionTitleName
+{
+    UIView *sectionHeaderView = [UIView new];
+    sectionHeaderView.frame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 35);
+    
+    UILabel *sectionTitleLable = [UILabel new];
+    sectionTitleLable.text = sectionTitleName;
+    sectionTitleLable.textColor = [UIColor grayColor];
+    sectionTitleLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+    [sectionHeaderView addSubview:sectionTitleLable];
+    
+    [sectionTitleLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(sectionHeaderView).with.insets(UIEdgeInsetsMake(0, 10, 0, 0));
+    }];
+    
+    return sectionHeaderView;
 }
 
 #pragma mark - CommonMethod
@@ -98,6 +120,17 @@
 - (Class)cellClassForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return SearchTableViewCell.class;
+}
+
+- (UIView *)viewForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionTitle = [self tableView:self.tableView titleForHeaderInSection:section];
+    if (sectionTitle == nil)
+    {
+        return  nil;
+    }
+    
+    return [self createSectionHeaderView:sectionTitle];
 }
 
 #pragma mark - RequestData

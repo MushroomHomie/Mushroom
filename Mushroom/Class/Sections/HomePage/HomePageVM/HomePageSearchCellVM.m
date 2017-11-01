@@ -22,4 +22,9 @@
     return self.model.title;
 }
 
+- (NSArray *)getHotSearchTag
+{
+    return self.hotSearchData;
+}
+
 @end

@@ -77,7 +77,7 @@
             
         case LoopPlayView:
         {
-            heightForRow = 170;
+            heightForRow = APP_SCREEN_WIDTH * 0.55;
         }
             break;
             
@@ -108,7 +108,6 @@
         
         !succeedBlock ? : succeedBlock(_homePageModel);
     }];
-    
 }
 
 - (void)getHomePageTopSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock

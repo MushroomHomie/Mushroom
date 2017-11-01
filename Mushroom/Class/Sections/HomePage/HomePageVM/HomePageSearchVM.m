@@ -38,12 +38,53 @@
 
 - (NSInteger)numberOfRowInSection:(NSInteger)section
 {
-    if (_homePageDefaultSearchModel.data.count > 0)
+    if (_homePageDefaultSearchModel.data.count <= 0 || _hotSearchModel.data.count <= 0)
+    {
+        return 0;
+    }
+   
+    if (section == 0)
     {
         return 3;
     }
     
     return 1;
+}
+
+- (NSInteger)heightForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat heightForRow = 44;
+    if (indexPath.section == 1)
+    {
+        heightForRow = 190;
+    }
+    
+    return heightForRow;
+}
+
+- (CGFloat)heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return 0;
+    }
+    
+    return 30;
+}
+
+- (NSString *)titleForHeader:(NSInteger)section
+{
+    if (section == 1)
+    {
+        return @"热搜";
+    }
+    
+    if (section == 2)
+    {
+        return @"搜索历史";
+    }
+    
+    return nil;
 }
 
 /// CellVM

@@ -78,7 +78,7 @@
 
 - (void)initData
 {
-    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, 170);
+    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
 
     NSArray *dataArray = [self.viewModel getDataArray];
     
