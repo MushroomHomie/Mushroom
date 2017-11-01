@@ -56,12 +56,12 @@
     
     // 顶部搜索条
     [self createTopSearchTextField];
-    
     [self.navigationController createTextfieldWithTarget:self Textfield:self.topSearchTextField];
     [self.navigationController setRightBarButtonItemWithTitle:nil
                                                         Image:@"StarTV_Live_Back_40x40_"
                                                        Target:self
                                                        Action:@selector(cancelSearch)];
+    
 }
 
 - (void)initData
@@ -97,6 +97,12 @@
     {
         _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
     }
+    
+    [[_topSearchTextField rac_textSignal] subscribeNext:^(id x) {
+        
+        NSLog(@"%@",x);
+        
+    }];
 }
 
 - (UIView *)createSectionHeaderView:(NSString *)sectionTitleName

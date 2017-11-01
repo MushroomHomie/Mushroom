@@ -15,9 +15,9 @@
 @property (nonatomic, strong) HomePageTableCellVM *viewModel;
 @property (nonatomic, strong) LoopPlaybackView *loopPlayView;
 @property (nonatomic, strong) NSMutableArray *photoNameArray;
-
-
-
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *authorLabel;
+@property (nonatomic, strong) UIView *gradientShadowView;
 @end
 
 @implementation HomePageHeaderTableCell
@@ -50,7 +50,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        [self initView];
+        [self initView:indexPath];
 
         @weakify(self);
         [RACObserve(self, viewModel) subscribeNext:^(id x) {
@@ -64,22 +64,47 @@
 
 - (void)initView:(NSIndexPath *)indexPath
 {
+    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
     
+    _gradientShadowView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                   _loopPlayViewFrame.size.height / 3,
+                                                                   APP_SCREEN_WIDTH,
+                                                                   _loopPlayViewFrame.size.height / 3)];
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = _gradientShadowView.frame;
+    [_gradientShadowView.layer addSublayer:gradientLayer];
+    gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,(__bridge id)[UIColor blackColor].CGColor];
+    gradientLayer.locations = @[@0.3];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
+
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, APP_SCREEN_WIDTH * 0.55 - 50, APP_SCREEN_WIDTH, 20)];
+    _titleLabel.font = [UIFont systemFontOfSize:15];
+    _titleLabel.textColor = [UIColor whiteColor];
+    _titleLabel.text = @"美人谷";
+    
+    _authorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, _titleLabel.bottom, APP_SCREEN_WIDTH, 20)];
+    _authorLabel.font = [UIFont systemFontOfSize:13];
+    _authorLabel.textColor = [UIColor whiteColor];
+    _authorLabel.text = @"Alan";
 }
 
 - (void)initLoopPlayView:(NSArray *)photoNameArray
 {
     if (!_loopPlayView)
     {
-        _loopPlayView = [[LoopPlaybackView alloc]initWithFrame:_loopPlayViewFrame array:photoNameArray];
+        _loopPlayView = [[LoopPlaybackView alloc] initWithFrame:_loopPlayViewFrame array:photoNameArray];
         [self.contentView addSubview:_loopPlayView];
+        [self.contentView addSubview:_gradientShadowView];
+        [self.contentView addSubview:_titleLabel];
+        [self.contentView addSubview:_authorLabel];
     }
 }
 
 - (void)initData
 {
-    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
-
     NSArray *dataArray = [self.viewModel getDataArray];
     
     if (_photoNameArray)
