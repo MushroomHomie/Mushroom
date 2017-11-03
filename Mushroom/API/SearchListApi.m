@@ -19,8 +19,10 @@
         _keyWord = @"";
     }
     
+    NSString *newKeyWord =  (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes( kCFAllocatorDefault, (CFStringRef)_keyWord, NULL, NULL,  kCFStringEncodingUTF8 ));
+    
     return @{
-             @"keyword":_keyWord,
+             @"keyword":newKeyWord,
              @"type":@"Mv"
              };
 }

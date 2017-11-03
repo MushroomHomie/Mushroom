@@ -32,7 +32,6 @@
     self.manager = [RequestManager initManagerWithDelegate:self];
 }
 
-
 - (RACSignal *)getRequestWithApi:(BaseApi *)api
 {
     @weakify(self)
