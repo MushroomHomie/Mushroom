@@ -10,13 +10,19 @@
 #import "HomePageSearchVM.h"
 #import "SearchTableViewCell.h"
 #import "HotSearchModel.h"
+#import "SearchListModel.h"
+
+#import "SearchListApi.h"
 
 @interface HomePageSearchVC ()
 
 @property (nonatomic, strong) HomePageSearchVM *viewModel;
 @property (nonatomic, strong) UITextField *topSearchTextField;
+@property (nonatomic, strong) UIButton *clearTextFieldButton;
 @property (nonatomic, strong) UIImageView *backGroundImageView;
 @property (nonatomic, strong) HotSearchModel *hotSearchModel;
+@property (nonatomic, strong) SearchListModel *searchResultModel;
+@property (nonatomic, strong) SearchListApi *searchListApi;
 
 @end
 
@@ -46,6 +52,7 @@
     
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.mj_header = nil;
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
@@ -56,16 +63,19 @@
     
     // 顶部搜索条
     [self createTopSearchTextField];
-    [self.navigationController createTextfieldWithTarget:self Textfield:self.topSearchTextField];
-    [self.navigationController setRightBarButtonItemWithTitle:nil
-                                                        Image:@"StarTV_Live_Back_40x40_"
+    [self createClearSearchButton];
+    [self.navigationController createTextfieldWithTarget:self
+                                               Textfield:self.topSearchTextField
+                                    clearTextfieldButton:_clearTextFieldButton];
+    [self.navigationController setRightBarButtonItemWithTitle:@"取消"
+                                                        Image:nil
                                                        Target:self
                                                        Action:@selector(cancelSearch)];
-    
 }
 
 - (void)initData
 {
+    _searchListApi = [SearchListApi new];
     self.viewModel = [HomePageSearchVM new];
     [self requestData];
 }
@@ -91,17 +101,52 @@
     
     // 设置placeholder的大小后，如果不是系统默认大小，会出现垂直不居中的情况，解决如下
     NSMutableParagraphStyle *style = [_topSearchTextField.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
-    // [UIFont systemFontOfSize:13.0f]是设置的placeholder的字体
     style.minimumLineHeight = _topSearchTextField.font.lineHeight - (_topSearchTextField.font.lineHeight - [UIFont systemFontOfSize:13.0f].lineHeight) / 2.0;
     if (_defultSearchText)
     {
         _topSearchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_defultSearchText attributes:@{NSParagraphStyleAttributeName : style}];
     }
     
-    [[_topSearchTextField rac_textSignal] subscribeNext:^(id x) {
+    // 监听textfield
+    @weakify(self);
+    [[_topSearchTextField.rac_textSignal filter:^BOOL(NSString *value) {
         
-        NSLog(@"%@",x);
+        @strongify(self);
+        NSString *newValue = [value stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if (newValue.length > 0)
+        {
+            return YES;
+        }
+        else
+        {
+            _searchListApi.keyWord = @"";
+            [self.tableView reloadData];
+            return NO;
+        }
+    }] subscribeNext:^(NSString *x) {
         
+        @strongify(self);
+        _clearTextFieldButton.hidden = NO;
+        _searchListApi.keyWord = [x stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [self requestSearchResultList];
+    }];
+}
+
+/// 创建清空搜索框Button
+- (void)createClearSearchButton
+{
+    _clearTextFieldButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_clearTextFieldButton setBackgroundImage:[UIImage imageNamed:@"AD_RSS_CloseBtn_8x8_"] forState:UIControlStateNormal];
+    _clearTextFieldButton.hidden = YES;
+    
+    // 监听button
+    @weakify(self);
+    [[_clearTextFieldButton rac_signalForControlEvents:UIControlEventTouchUpInside]  subscribeNext:^(id x) {
+        @strongify(self);
+        _topSearchTextField.text = @"";
+        _searchListApi.keyWord = @"";
+        _clearTextFieldButton.hidden = YES;
+        [self.tableView reloadData];
     }];
 }
 
@@ -166,6 +211,18 @@
     [self.viewModel getHotSearchData:^(id entity) {
         
         _hotSearchModel = (HotSearchModel *)entity;
+        
+    } failure:^(NSUInteger errCode, NSString *errorMsg) {
+    }];
+}
+
+/// 模糊搜索MV/歌手
+- (void)requestSearchResultList
+{
+    [self.viewModel getSearchResultListWithApi:_searchListApi succeed:^(id entity) {
+        
+        _searchResultModel = (SearchListModel *)entity;
+        [self.tableView reloadData];
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {
     }];

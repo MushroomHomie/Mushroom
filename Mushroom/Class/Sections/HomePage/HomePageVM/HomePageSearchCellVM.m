@@ -17,8 +17,22 @@
 
 @implementation HomePageSearchCellVM
 
+- (instancetype)initWithSearchListModel:(nullable id)model
+{
+    self = [super init];
+    if (self)
+    {
+        _searchResultModel = model;
+    }
+    return self;
+}
+
 - (NSString *)getHomePageSearchText
 {
+    if (_searchResultModel)
+    {
+        return self.searchResultModel.word;
+    }
     return self.model.title;
 }
 

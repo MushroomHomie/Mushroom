@@ -7,11 +7,17 @@
 //
 
 #import "BaseTableViewModel.h"
+#import "SearchListApi.h"
 
 @interface HomePageSearchVM : BaseTableViewModel
 
-
+/// 默认三条搜索
 - (void)getTopThreeDefaultData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
+
+/// 热门搜索
 - (void)getHotSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
+
+/// 模糊搜索结果
+- (void)getSearchResultListWithApi:(SearchListApi *)api succeed:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 
 @end

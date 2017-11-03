@@ -126,7 +126,6 @@
         tagButton.frame = CGRectMake(widthSpacing * j + width, row * heightSpacing, labWidth, 22);
         tagButton.tag = ButtonsTag + i;
         [tagButton addTarget:self action:@selector(selectedTagButton:) forControlEvents:UIControlEventTouchUpInside];
-        
         [self.contentView addSubview:tagButton];
         
         width = width + labWidth;

@@ -13,6 +13,10 @@
 		4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */; };
 		4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */; };
 		4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */; };
+		4F2026731FAAB5E0003D40C6 /* SearchListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2026721FAAB5E0003D40C6 /* SearchListModel.m */; };
+		4F2026761FAAB71A003D40C6 /* SubSearchListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2026751FAAB71A003D40C6 /* SubSearchListModel.m */; };
+		4F2026791FAAB7C2003D40C6 /* SubSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2026781FAAB7C2003D40C6 /* SubSearchModel.m */; };
+		4F20267C1FAABA4B003D40C6 /* SearchListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F20267B1FAABA4B003D40C6 /* SearchListApi.m */; };
 		4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */; };
 		4F3726DA1F970F3200E79654 /* LoopPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726D91F970F3200E79654 /* LoopPlaybackView.m */; };
 		4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726DD1F9720AC00E79654 /* HomePageVM.m */; };
@@ -91,6 +95,14 @@
 		4F1227F91F9D8E4B007C7291 /* HomePageHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageHeaderTableCell.h; sourceTree = "<group>"; };
 		4F1227FA1F9D8E4B007C7291 /* HomePageHeaderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageHeaderTableCell.m; sourceTree = "<group>"; };
 		4F1227FC1F9D9483007C7291 /* HomePageTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTypeEnum.h; sourceTree = "<group>"; };
+		4F2026711FAAB5E0003D40C6 /* SearchListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListModel.h; sourceTree = "<group>"; };
+		4F2026721FAAB5E0003D40C6 /* SearchListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListModel.m; sourceTree = "<group>"; };
+		4F2026741FAAB71A003D40C6 /* SubSearchListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSearchListModel.h; sourceTree = "<group>"; };
+		4F2026751FAAB71A003D40C6 /* SubSearchListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubSearchListModel.m; sourceTree = "<group>"; };
+		4F2026771FAAB7C2003D40C6 /* SubSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSearchModel.h; sourceTree = "<group>"; };
+		4F2026781FAAB7C2003D40C6 /* SubSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubSearchModel.m; sourceTree = "<group>"; };
+		4F20267A1FAABA4B003D40C6 /* SearchListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListApi.h; sourceTree = "<group>"; };
+		4F20267B1FAABA4B003D40C6 /* SearchListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListApi.m; sourceTree = "<group>"; };
 		4F23D9421FA18F64007DACEC /* UINavigationController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Extension.h"; sourceTree = "<group>"; };
 		4F23D9431FA18F64007DACEC /* UINavigationController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Extension.m"; sourceTree = "<group>"; };
 		4F26EF7C1F6A879900DB7E0F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -428,6 +440,8 @@
 				E434A2D71FA221CE003F4EA5 /* HomePageDefaultSearchApi.m */,
 				E4DC384A1FA89D3D004D9EA1 /* HomePageHotSearchApi.h */,
 				E4DC384B1FA89D3D004D9EA1 /* HomePageHotSearchApi.m */,
+				4F20267A1FAABA4B003D40C6 /* SearchListApi.h */,
+				4F20267B1FAABA4B003D40C6 /* SearchListApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -561,6 +575,12 @@
 				E434A2DD1FA2235D003F4EA5 /* SubDefaultSearchModel.m */,
 				E4DC384D1FA89D7D004D9EA1 /* HotSearchModel.h */,
 				E4DC384E1FA89D7D004D9EA1 /* HotSearchModel.m */,
+				4F2026711FAAB5E0003D40C6 /* SearchListModel.h */,
+				4F2026721FAAB5E0003D40C6 /* SearchListModel.m */,
+				4F2026741FAAB71A003D40C6 /* SubSearchListModel.h */,
+				4F2026751FAAB71A003D40C6 /* SubSearchListModel.m */,
+				4F2026771FAAB7C2003D40C6 /* SubSearchModel.h */,
+				4F2026781FAAB7C2003D40C6 /* SubSearchModel.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -912,8 +932,10 @@
 				4F7722391F9DC72A00B00E87 /* BaseTableViewCellVM.m in Sources */,
 				4FF401061F98A51800E25E04 /* HomePageArtistsModel.m in Sources */,
 				4F740BA71F69090D00C300ED /* MainTabBarController.m in Sources */,
+				4F20267C1FAABA4B003D40C6 /* SearchListApi.m in Sources */,
 				4F02BD601F95F3BD00BB0D6D /* HomePageCollectionCell.m in Sources */,
 				4F4474681FA728B700B8AD78 /* SearchTableViewCell.m in Sources */,
+				4F2026761FAAB71A003D40C6 /* SubSearchListModel.m in Sources */,
 				4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */,
 				4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
@@ -942,7 +964,9 @@
 				4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */,
 				4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
+				4F2026791FAAB7C2003D40C6 /* SubSearchModel.m in Sources */,
 				4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */,
+				4F2026731FAAB5E0003D40C6 /* SearchListModel.m in Sources */,
 				4F97C4081FA84E7E0084B655 /* HomePageSearchCellVM.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
 				E4DC384F1FA89D7D004D9EA1 /* HotSearchModel.m in Sources */,

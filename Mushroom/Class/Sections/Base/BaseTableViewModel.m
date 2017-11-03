@@ -85,7 +85,7 @@
 {
     if (!_cellViewModels)
     {
-        _cellViewModels = [[NSMutableArray alloc] init];
+        _cellViewModels = [NSMutableArray array];
     }
     return _cellViewModels;
 }

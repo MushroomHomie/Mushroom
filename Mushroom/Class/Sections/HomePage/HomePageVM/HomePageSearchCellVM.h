@@ -7,12 +7,15 @@
 //
 
 #import "BaseTableViewCellVM.h"
+#import "SubSearchModel.h"
 
 @interface HomePageSearchCellVM : BaseTableViewCellVM
 
 @property (nonatomic, strong) NSArray *hotSearchData;
+@property (nonatomic, strong) SubSearchModel *searchResultModel;
 
 - (NSString *)getHomePageSearchText;
 - (NSArray *)getHotSearchTag;
+- (instancetype)initWithSearchListModel:(nullable id)model;
 
 @end

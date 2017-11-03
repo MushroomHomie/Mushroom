@@ -41,6 +41,15 @@
        
         [self.manager sendRequest:api sucBlock:^(id result) {
             
+            NSString *errMsg = result[@"msg"];
+            if (errMsg && errMsg.length > 0 && ![errMsg isEqualToString:@"SUCCESS"])
+            {
+                UIViewController *resultVC = [self topViewControllerWithRootViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+                showMessage(errMsg, resultVC);
+                
+                [subscriber sendCompleted];
+            }
+            
             [subscriber sendNext:result];
             [subscriber sendCompleted];
             

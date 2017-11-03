@@ -54,11 +54,17 @@
     
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
+    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(self.view).with.offset(-45);
+    }];
     
     // 顶部搜索条
     [self createTopSearchTextField];
 
-    [self.navigationController createTextfieldWithTarget:self Textfield:_topSearchLabel];
+    [self.navigationController createTextfieldWithTarget:self
+                                               Textfield:_topSearchLabel
+                                    clearTextfieldButton:nil];
 }
 
 - (void)initData

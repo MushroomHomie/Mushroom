@@ -19,6 +19,8 @@
     if (buttonTitle)
     {
         target.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleDone target:target action:action];
+        [target.navigationItem.rightBarButtonItem setTintColor:[UIColor lightGrayColor]];
+        [target.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
     }
     
     if (imageName)
@@ -42,6 +44,8 @@
 /// 导航栏上的textfield
 - (void)createTextfieldWithTarget:(UIViewController *)target
                              Textfield:(UIView *)textField
+             clearTextfieldButton:(UIButton *)clearButton
+
 {
     UIView *topSearchView = [[UIView alloc] init];
     [topSearchView setFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH-100, 30)];
@@ -65,15 +69,31 @@
         make.left.equalTo(searchBarBg.mas_left).with.offset(10);
         make.centerY.mas_equalTo(searchBarBg.mas_centerY);
     }];
-
+    
+    // clearButton
+    [searchBarBg addSubview:clearButton];
+    [clearButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(10, 10));
+        make.right.equalTo(searchBarBg.mas_right).with.offset(-10);
+        make.centerY.mas_equalTo(searchBarBg.mas_centerY);
+    }];
+    
     // textfield
     [searchBarBg addSubview:textField];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(searchIconImage.mas_right).with.offset(5);
-        make.right.equalTo(searchBarBg.mas_right);
+        make.right.equalTo(searchBarBg.mas_right).with.offset(-10);
         make.top.equalTo(searchBarBg);
         make.bottom.equalTo(searchBarBg);
     }];
+    
+    if (clearButton)
+    {
+        [textField mas_updateConstraints:^(MASConstraintMaker *make) {
+            
+            make.right.equalTo(searchBarBg.mas_right).with.offset(-30);;
+        }];
+    }
     
     target.navigationItem.titleView = topSearchView;
 }
