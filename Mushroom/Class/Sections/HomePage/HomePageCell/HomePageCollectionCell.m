@@ -38,6 +38,9 @@
     _photoImageView = [UIImageView new];
     [self.contentView addSubview:_photoImageView];
     _photoImageView.backgroundColor = [UIColor blackColor];
+    _photoImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _photoImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _photoImageView.clipsToBounds = YES;
     
     @weakify(self)
     [_photoImageView mas_makeConstraints:^(MASConstraintMaker *make) {

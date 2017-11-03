@@ -54,7 +54,7 @@
     UIView *searchBarBg = [UIView new];
     [topSearchView addSubview:searchBarBg];
     searchBarBg.backgroundColor = [UIColor whiteColor];
-    searchBarBg.layer.cornerRadius = 15;
+    searchBarBg.layer.cornerRadius = 13; //因为下面 你设置了 UIEdgeInsetsMake(2, 0, 2, 0)  所以不是十五  是 (30 - 2 - 2) / 2
     
     [searchBarBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(topSearchView).with.insets(UIEdgeInsetsMake(2, 0, 2, 0));
