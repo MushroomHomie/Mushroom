@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "322F8FE2030EE0DC0F27E8DAF49385A6"
-               BuildableName = "libYYKit.a"
+               BlueprintIdentifier = "15E6285CC8FBD8E5F3E8E85FC616620B"
+               BuildableName = "YYKit.framework"
                BlueprintName = "YYKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,8 +47,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "322F8FE2030EE0DC0F27E8DAF49385A6"
-            BuildableName = "libYYKit.a"
+            BlueprintIdentifier = "15E6285CC8FBD8E5F3E8E85FC616620B"
+            BuildableName = "YYKit.framework"
             BlueprintName = "YYKit"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -63,8 +65,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "322F8FE2030EE0DC0F27E8DAF49385A6"
-            BuildableName = "libYYKit.a"
+            BlueprintIdentifier = "15E6285CC8FBD8E5F3E8E85FC616620B"
+            BuildableName = "YYKit.framework"
             BlueprintName = "YYKit"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

@@ -807,8 +807,9 @@
 				TargetAttributes = {
 					4F620F441F67BEE4000D51A8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y3HE25MMC2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					4F620F5D1F67BEE4000D51A8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1047,7 +1048,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1069,6 +1071,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "7d58c526-0029-4632-a392-dfcc77aefe13";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1095,7 +1098,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1110,6 +1114,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "7d58c526-0029-4632-a392-dfcc77aefe13";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1121,13 +1126,18 @@
 			baseConfigurationReference = 20AD704699170C0FE99C826B /* Pods-Mushroom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y3HE25MMC2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Mushroom/PrefixHeader.pch;
 				INFOPLIST_FILE = Mushroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjzzcm.jred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d58c526-0029-4632-a392-dfcc77aefe13";
+				PROVISIONING_PROFILE_SPECIFIER = jiuhong_Dev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1137,13 +1147,18 @@
 			baseConfigurationReference = BE9E64D95AA13453970FC7D1 /* Pods-Mushroom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hai Yang Jin (9KD3MK9SXE)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y3HE25MMC2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Mushroom/PrefixHeader.pch;
 				INFOPLIST_FILE = Mushroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-1hjkl.Mushroom";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjzzcm.jred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d58c526-0029-4632-a392-dfcc77aefe13";
+				PROVISIONING_PROFILE_SPECIFIER = jiuhong_Dev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
