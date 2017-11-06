@@ -149,6 +149,8 @@
         self.page = scrollView.contentSize.width / scrollView.frame.size.width - 2 ;
         [scrollView setContentOffset:CGPointMake(size.width - with * 2, 0)];
     }
+    
+    [self.delegate slippingPageNumber:self.page];
 }
 
 #pragma mark - tapAction
