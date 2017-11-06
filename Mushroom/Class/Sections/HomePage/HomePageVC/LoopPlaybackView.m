@@ -10,7 +10,6 @@
 
 @implementation LoopPlaybackView
 
-
 - (instancetype)initWithFrame:(CGRect)frame array:(NSArray *)array
 {
     self = [super initWithFrame:frame];
@@ -107,6 +106,8 @@
         self.page = 1;
         [self.scrollView setContentOffset:CGPointMake(0, 0)];
     }
+    
+    [self.delegate slippingPageNumber:self.page];
 }
 
 - (void)setPageNameArray:(NSMutableArray *)pageNameArray

@@ -10,11 +10,12 @@
 #import "HomePageTableCellVM.h"
 #import "HomePageSubDataModel.h"
 
-@interface HomePageHeaderTableCell ()
+@interface HomePageHeaderTableCell ()<LoopPlaybackDelegate>
 
 @property (nonatomic, strong) HomePageTableCellVM *viewModel;
 @property (nonatomic, strong) LoopPlaybackView *loopPlayView;
 @property (nonatomic, strong) NSMutableArray *photoNameArray;
+@property (nonatomic, strong) UILabel *pageNumberLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *authorLabel;
 @property (nonatomic, strong) UIView *gradientShadowView;
@@ -75,20 +76,22 @@
     gradientLayer.frame = _gradientShadowView.bounds;
     [_gradientShadowView.layer addSublayer:gradientLayer];
     gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,(__bridge id)[UIColor blackColor].CGColor];
-    gradientLayer.locations = @[@0.2];
+    gradientLayer.locations = @[@0.1];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
-
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, APP_SCREEN_WIDTH * 0.55 - 50, APP_SCREEN_WIDTH, 20)];
-    _titleLabel.font = [UIFont systemFontOfSize:15];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, APP_SCREEN_WIDTH * 0.55 - 50, APP_SCREEN_WIDTH - 50, 20)];
+    _titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
     _titleLabel.textColor = [UIColor whiteColor];
-    _titleLabel.text = @"美人谷";
     
     _authorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, _titleLabel.bottom, APP_SCREEN_WIDTH, 20)];
-    _authorLabel.font = [UIFont systemFontOfSize:13];
+    _authorLabel.font = [UIFont systemFontOfSize:12];
     _authorLabel.textColor = [UIColor whiteColor];
-    _authorLabel.text = @"Alan";
+    
+    _pageNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(APP_SCREEN_WIDTH - 50, _loopPlayViewFrame.size.height - 30, 50, 30)];
+    _pageNumberLabel.font = [UIFont systemFontOfSize:11];
+    _pageNumberLabel.textAlignment = NSTextAlignmentCenter;
+    _pageNumberLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)initLoopPlayView:(NSArray *)photoNameArray
@@ -96,10 +99,14 @@
     if (!_loopPlayView)
     {
         _loopPlayView = [[LoopPlaybackView alloc] initWithFrame:_loopPlayViewFrame array:photoNameArray];
+        _loopPlayView.delegate = self;
         [self.contentView addSubview:_loopPlayView];
         [self.contentView addSubview:_gradientShadowView];
         [self.contentView addSubview:_titleLabel];
         [self.contentView addSubview:_authorLabel];
+        [self.contentView addSubview:_pageNumberLabel];
+        
+        _pageNumberLabel.text = [NSString stringWithFormat:@"1/%ld",photoNameArray.count];
     }
 }
 
@@ -128,6 +135,29 @@
     {
         [self initLoopPlayView:_photoNameArray];
     }
+}
+
+#pragma mark - LoopPlaybackDelegate
+
+- (void)slippingPageNumber:(NSInteger)pageNumber
+{
+    NSArray *dataArray = [self.viewModel getDataArray];
+    HomePageSubDataModel *subModel = dataArray[pageNumber];
+    NSString *authors = @"";
+    for (HomePageArtistsModel *authorModel in subModel.artists)
+    {
+        if (authors.length > 0) {
+            authors = [authors stringByAppendingString:[NSString stringWithFormat:@"&%@",authorModel.artistName]];
+        }
+        else
+        {
+            authors = authorModel.artistName;
+        }
+    }
+    
+    _titleLabel.text = subModel.title;
+    _authorLabel.text = authors;
+    _pageNumberLabel.text = [NSString stringWithFormat:@"%ld/%ld",pageNumber,dataArray.count];
 }
 
 @end

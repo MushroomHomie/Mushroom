@@ -10,6 +10,12 @@
 #import "UIImageView+WebCache.h"
 #import "SDImageCache.h"
 
+@protocol LoopPlaybackDelegate <NSObject>
+
+- (void)slippingPageNumber:(NSInteger)pageNumber;
+
+@end
+
 /// 轮播图View
 @interface LoopPlaybackView : UIView<UIScrollViewDelegate>
 
@@ -19,6 +25,7 @@
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSTimer *myTimer;
 @property (nonatomic, strong) NSString *placeholderImage;
+@property (nonatomic, assign) id<LoopPlaybackDelegate>delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame array:(NSArray *)array;
 

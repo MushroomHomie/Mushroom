@@ -19,7 +19,7 @@
 #import "HomePageSearchVC.h"
 #import "HomePageTypeEnum.h"
 
-@interface HomePageVC ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
+@interface HomePageVC ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
     HomePageModel *_homePageModel;
     HomePageDefaultSearchModel *_homePageDefaultSearchModel;

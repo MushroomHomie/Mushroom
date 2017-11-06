@@ -72,7 +72,7 @@
     [_authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
         make.bottom.equalTo(_gradientShadowView.mas_bottom);
-        make.left.equalTo(_gradientShadowView.mas_left);
+        make.left.equalTo(_gradientShadowView.mas_left).with.offset(3);
         make.height.mas_equalTo(@20);
         make.right.equalTo(_gradientShadowView.mas_right);
     }];
