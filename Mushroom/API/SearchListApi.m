@@ -11,7 +11,6 @@
 
 @implementation SearchListApi
 
-//请求体参数
 - (NSDictionary *)getBody
 {
     if (!_keyWord)

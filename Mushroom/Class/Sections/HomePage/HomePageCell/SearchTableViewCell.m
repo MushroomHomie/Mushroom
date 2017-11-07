@@ -181,6 +181,8 @@
         [tagButton setTitleColor:RGBColor(28, 185, 112) forState:UIControlStateNormal];
         tagButton.layer.borderColor = RGBColor(28, 185, 112).CGColor;
         tagButton.selected = YES;
+        
+        [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:tagButton.titleLabel.text];
     }
 }
 

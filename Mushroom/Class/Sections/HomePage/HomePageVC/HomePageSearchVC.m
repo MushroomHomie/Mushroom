@@ -11,6 +11,7 @@
 #import "SearchTableViewCell.h"
 #import "HotSearchModel.h"
 #import "SearchListModel.h"
+#import "HomePageDefaultSearchModel.h"
 
 #import "SearchListApi.h"
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) UIButton *clearTextFieldButton;
 @property (nonatomic, strong) UIImageView *backGroundImageView;
 @property (nonatomic, strong) HotSearchModel *hotSearchModel;
+@property (nonatomic, strong) NSMutableArray *defaultSearchModelArray;
+
 @property (nonatomic, strong) SearchListModel *searchResultModel;
 @property (nonatomic, strong) SearchListApi *searchListApi;
 
@@ -186,6 +189,16 @@
     return [self createSectionHeaderView:sectionTitle];
 }
 
+#pragma mark - TableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];
+    [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.title];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - RequestData
 
 - (void)requestData
@@ -197,8 +210,9 @@
 /// 默认三条
 - (void)requestTopSearchDefultData
 {
-    [self.viewModel getTopThreeDefaultData:^(id entity) {
+    [self.viewModel getTopThreeDefaultData:^(id array) {
         
+        _defaultSearchModelArray = (NSMutableArray *)array;
         [self.tableView reloadData];
         
     } failure:^(NSUInteger errCode, NSString *errorMsg) {

@@ -28,6 +28,8 @@
     // 设置状态栏字体颜色为白色
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
+    // 创建数据库
+    [[DataBaseOperation sharedataBaseOperation] createDataBaseMethod];
     return YES;
 }
 

@@ -16,7 +16,6 @@
     return [cls modelWithDictionary:dic] ;
 }
 
-
 /// 将Model转成dic
 + (id)convertModeltToDic:(id)model
 {

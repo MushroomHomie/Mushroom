@@ -133,13 +133,14 @@
 {
     [[_homePageDefaultSearchModel requestHomePageTopDefaultSearch] subscribeNext:^(id data) {
         
+        NSMutableArray *modelArray = [NSMutableArray array];
         if (data)
         {
             _homePageDefaultSearchModel = [DataConvert convertDic:data toEntity:HomePageDefaultSearchModel.class];
-            [self handlePagingEntities:_homePageDefaultSearchModel.data cellViewModelClass:HomePageSearchCellVM.class];
+            modelArray = (NSMutableArray *)[self handlePagingEntities:_homePageDefaultSearchModel.data cellViewModelClass:HomePageSearchCellVM.class];
         }
         
-        !succeedBlock ? : succeedBlock(_homePageDefaultSearchModel);
+        !succeedBlock ? : succeedBlock(modelArray);
     }];
 }
 
@@ -176,7 +177,7 @@
     }];
 }
 
-- (void)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
+- (NSArray *)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
 {
     NSInteger  randomNumberCount = 3;
     NSMutableArray *mutableEntities = [NSMutableArray arrayWithArray:entities];
@@ -190,6 +191,7 @@
     }
     
     [self handleMutableArrayEntites:resultArray cellViewModelClass:cellViewModelClass];
+    return resultArray;
 }
 
 - (void)handleSearchListEntites:(NSArray *)entities

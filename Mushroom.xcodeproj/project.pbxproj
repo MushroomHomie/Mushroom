@@ -50,6 +50,9 @@
 		4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F401F6A3205002DF13F /* BaseServiceManager.m */; };
 		4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE51F421F6A3205002DF13F /* RequestManager.m */; };
 		4FF11C5D1F99EA7A000317E8 /* HomePageModelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */; };
+		4FF15B1A1FB00A2100614E37 /* DataBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B191FB00A2100614E37 /* DataBaseOperation.m */; };
+		4FF15B1D1FB04A4700614E37 /* SearchVideoListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */; };
+		4FF15B201FB04B9200614E37 /* SearchVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */; };
 		4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */; };
 		4FF400F61F9885DA00E25E04 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F11F9885DA00E25E04 /* BaseTableViewController.m */; };
 		4FF400F71F9885DA00E25E04 /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F31F9885DA00E25E04 /* BaseTableViewModel.m */; };
@@ -172,6 +175,12 @@
 		4FE51F421F6A3205002DF13F /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		4FF11C5B1F99EA7A000317E8 /* HomePageModelTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageModelTableCell.h; sourceTree = "<group>"; };
 		4FF11C5C1F99EA7A000317E8 /* HomePageModelTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageModelTableCell.m; sourceTree = "<group>"; };
+		4FF15B181FB00A2100614E37 /* DataBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseOperation.h; sourceTree = "<group>"; };
+		4FF15B191FB00A2100614E37 /* DataBaseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseOperation.m; sourceTree = "<group>"; };
+		4FF15B1B1FB04A4700614E37 /* SearchVideoListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVideoListApi.h; sourceTree = "<group>"; };
+		4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVideoListApi.m; sourceTree = "<group>"; };
+		4FF15B1E1FB04B9100614E37 /* SearchVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVideoModel.h; sourceTree = "<group>"; };
+		4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVideoModel.m; sourceTree = "<group>"; };
 		4FF400EC1F9885DA00E25E04 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		4FF400F01F9885DA00E25E04 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -442,6 +451,8 @@
 				E4DC384B1FA89D3D004D9EA1 /* HomePageHotSearchApi.m */,
 				4F20267A1FAABA4B003D40C6 /* SearchListApi.h */,
 				4F20267B1FAABA4B003D40C6 /* SearchListApi.m */,
+				4FF15B1B1FB04A4700614E37 /* SearchVideoListApi.h */,
+				4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -581,6 +592,8 @@
 				4F2026751FAAB71A003D40C6 /* SubSearchListModel.m */,
 				4F2026771FAAB7C2003D40C6 /* SubSearchModel.h */,
 				4F2026781FAAB7C2003D40C6 /* SubSearchModel.m */,
+				4FF15B1E1FB04B9100614E37 /* SearchVideoModel.h */,
+				4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -724,6 +737,8 @@
 			children = (
 				4FF400F81F9885ED00E25E04 /* DataConvert.h */,
 				4FF400F91F9885ED00E25E04 /* DataConvert.m */,
+				4FF15B181FB00A2100614E37 /* DataBaseOperation.h */,
+				4FF15B191FB00A2100614E37 /* DataBaseOperation.m */,
 			);
 			path = Communal;
 			sourceTree = "<group>";
@@ -941,6 +956,7 @@
 				4F1227FB1F9D8E4B007C7291 /* HomePageHeaderTableCell.m in Sources */,
 				4FE51F451F6A3205002DF13F /* BaseServiceManager.m in Sources */,
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
+				4FF15B1A1FB00A2100614E37 /* DataBaseOperation.m in Sources */,
 				4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */,
 				4F0DC26A1FA3321100F355A0 /* UIImage+Extension.m in Sources */,
 				E434A2DB1FA22254003F4EA5 /* HomePageDefaultSearchModel.m in Sources */,
@@ -952,6 +968,7 @@
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
 				4FE51F431F6A3205002DF13F /* AbsApi.m in Sources */,
 				4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */,
+				4FF15B1D1FB04A4700614E37 /* SearchVideoListApi.m in Sources */,
 				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
 				4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */,
 				4FE51F361F6A2E94002DF13F /* BaseModel.m in Sources */,
@@ -960,6 +977,7 @@
 				E4DC384C1FA89D3D004D9EA1 /* HomePageHotSearchApi.m in Sources */,
 				4F7722361F9DB9DC00B00E87 /* HomePageBannerTableCell.m in Sources */,
 				4F77223C1F9DC98A00B00E87 /* HomePageTableCellVM.m in Sources */,
+				4FF15B201FB04B9200614E37 /* SearchVideoModel.m in Sources */,
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
 				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
 				4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */,

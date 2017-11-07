@@ -33,4 +33,7 @@
 /** 图片类扩展 */
 #import "UIImage+Extension.h"
 
+/** DataBase */
+#import "DataBaseOperation.h"
+
 #endif /* PrefixHeader_pch */
