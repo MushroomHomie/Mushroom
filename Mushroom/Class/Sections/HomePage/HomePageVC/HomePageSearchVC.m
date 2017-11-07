@@ -123,6 +123,8 @@
         else
         {
             _searchListApi.keyWord = @"";
+            _clearTextFieldButton.hidden = YES;
+            [self.viewModel getHistoryListTitle];
             [self.tableView reloadData];
             return NO;
         }
@@ -195,8 +197,6 @@
 {
     SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];
     [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.title];
-    
-    [self.tableView reloadData];
 }
 
 #pragma mark - RequestData

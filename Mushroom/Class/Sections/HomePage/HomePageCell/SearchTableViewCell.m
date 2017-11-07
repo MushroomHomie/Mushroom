@@ -14,6 +14,8 @@
 @interface SearchTableViewCell ()
 
 @property (nonatomic, strong) UILabel *searchTextLabel;
+@property (nonatomic, strong) UILabel *searchHistoryTextLabel;
+
 @property (nonatomic, strong) HomePageSearchCellVM *viewModel;
 
 @end
@@ -85,6 +87,54 @@
             make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(self.contentView.height - 0.5, 0, 0, 0));
         }];
     }
+    else if (indexPath.section == 2)
+    {
+        UIView *searchHistoryView = [UIView new];
+        [self.contentView addSubview:searchHistoryView];
+        
+        @weakify(self)
+        [searchHistoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self)
+            make.centerY.mas_equalTo(self.contentView.mas_centerY);
+            make.left.equalTo(self.contentView).with.offset(15);
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+        }];
+        
+        // 绘制时钟
+        CGPoint center = CGPointMake(10, 10);
+        
+        UIBezierPath *path = [UIBezierPath new];
+        [path addArcWithCenter:center radius:6 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        [path moveToPoint:center];
+        [path addLineToPoint:CGPointMake(center.x, center.y - 3.5)];
+        [path moveToPoint:center];
+        [path addLineToPoint:CGPointMake(center.x + 3.5, center.y)];
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.strokeColor = [UIColor grayColor].CGColor;
+        shapeLayer.fillColor = [UIColor clearColor].CGColor;
+        shapeLayer.lineWidth = 1;
+        shapeLayer.lineJoin = kCALineJoinRound;
+        shapeLayer.lineCap = kCALineJoinRound;
+        shapeLayer.path = path.CGPath;
+        
+        [searchHistoryView.layer addSublayer:shapeLayer];
+        
+        // historyLabel
+        _searchHistoryTextLabel = [UILabel new];
+        _searchHistoryTextLabel.textColor = [UIColor lightGrayColor];
+        _searchHistoryTextLabel.font = [UIFont systemFontOfSize:13];
+        [self.contentView addSubview:_searchHistoryTextLabel];
+        
+        [_searchHistoryTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(searchHistoryView.mas_right).with.offset(5);
+            make.right.equalTo(self.contentView).with.offset(20);
+            make.top.equalTo(self.contentView.mas_top);
+            make.bottom.equalTo(self.contentView.mas_bottom);
+        }];
+        
+        _searchHistoryTextLabel.text = @"历史记录";
+    }
 }
 
 - (void)initData:(NSIndexPath *)indexPath
@@ -93,7 +143,7 @@
     {
         self.searchTextLabel.text = [self.viewModel getHomePageSearchText];
     }
-    else
+    else if (indexPath.section == 1)
     {
         NSArray *hotSearchTag = [self.viewModel getHotSearchTag];
         if (hotSearchTag.count > 0)
@@ -106,6 +156,10 @@
             
             [self createTagsWithArray:hotSearchTag];
         }
+    }
+    else
+    {
+        _searchHistoryTextLabel.text = [self.viewModel getSearchHistoryTitle];
     }
 }
 

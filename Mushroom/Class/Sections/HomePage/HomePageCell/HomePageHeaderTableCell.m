@@ -66,12 +66,11 @@
 - (void)initView:(NSIndexPath *)indexPath
 {
     _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
-    
     _gradientShadowView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                    (_loopPlayViewFrame.size.height / 3) * 2,
                                                                    APP_SCREEN_WIDTH,
                                                                    _loopPlayViewFrame.size.height / 3)];
-    
+
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = _gradientShadowView.bounds;
     [_gradientShadowView.layer addSublayer:gradientLayer];
@@ -142,11 +141,12 @@
 - (void)slippingPageNumber:(NSInteger)pageNumber
 {
     NSArray *dataArray = [self.viewModel getDataArray];
-    HomePageSubDataModel *subModel = dataArray[pageNumber];
+    HomePageSubDataModel *subModel = dataArray[pageNumber - 1];
     NSString *authors = @"";
     for (HomePageArtistsModel *authorModel in subModel.artists)
     {
-        if (authors.length > 0) {
+        if (authors.length > 0)
+        {
             authors = [authors stringByAppendingString:[NSString stringWithFormat:@"&%@",authorModel.artistName]];
         }
         else

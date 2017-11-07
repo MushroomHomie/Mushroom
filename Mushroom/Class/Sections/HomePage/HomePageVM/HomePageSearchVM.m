@@ -20,6 +20,8 @@
 @property (nonatomic, strong) HomePageSearchCellVM *hotSearchCellVM;
 @property (nonatomic, strong) SearchListModel *searchResultModel;
 @property (nonatomic, strong) NSMutableArray *searchResultModelCells;
+@property (nonatomic, strong) NSMutableArray *searchHistoryModelCells;
+@property (nonatomic, strong) NSMutableArray *searchHistoryTitles;
 @property (nonatomic, strong) SearchListApi *searchListApi;
 @end
 
@@ -30,6 +32,21 @@
     _homePageDefaultSearchModel = [HomePageDefaultSearchModel new];
     _hotSearchModel = [HotSearchModel new];
     _searchResultModel = [SearchListModel new];
+    [self getHistoryListTitle];
+}
+
+- (void)getHistoryListTitle
+{
+    self.searchHistoryTitles = (NSMutableArray *)[[DataBaseOperation sharedataBaseOperation] selectSearchHistoricalRecordList];
+    [self handleSearchHistoryTitle:self.searchHistoryTitles];
+}
+
+#pragma mark - PrivateMethod
+
+/// 是否含有历史记录
+- (BOOL)haveHistoryList
+{
+    return self.searchHistoryTitles.count > 0;
 }
 
 #pragma mark - TableViewDelegate
@@ -40,6 +57,12 @@
     if (_searchListApi.keyWord.length > 0)
     {
         return 1;
+    }
+    
+    // 有历史记录
+    if (self.searchHistoryTitles.count > 0)
+    {
+        return 3;
     }
     
     return 2;
@@ -61,6 +84,11 @@
     if (section == 0)
     {
         return 3;
+    }
+    
+    if (section == 2)
+    {
+        return self.searchHistoryTitles.count;
     }
     
     return 1;
@@ -116,9 +144,13 @@
         {
             return self.cellViewModels[indexPath.row];
         }
-        else
+        else if (indexPath.section == 1)
         {
             return _hotSearchCellVM;
+        }
+        else
+        {
+            return self.searchHistoryModelCells[indexPath.row];
         }
     }
     else
@@ -177,6 +209,8 @@
     }];
 }
 
+#pragma mark - createCellVM
+
 - (NSArray *)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
 {
     NSInteger  randomNumberCount = 3;
@@ -209,14 +243,33 @@
     [self.searchResultModelCells addObjectsFromArray:cellViewModes];
 }
 
+/// 历史记录
+- (void)handleSearchHistoryTitle:(NSArray *)historyTitleArray
+{
+    NSMutableArray *cellViewModes = [NSMutableArray array];
+
+    [historyTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        HomePageSearchCellVM *cellVM = [HomePageSearchCellVM new];
+        cellVM.searchHistoryTitle = (NSString *)obj;
+        
+        [cellViewModes addObject:cellVM];
+    }];
+    
+    [self.searchHistoryModelCells addObjectsFromArray:cellViewModes];
+}
+
 #pragma mark - Lazy load
+
 - (NSMutableArray *)searchResultModelCells
 {
     if (!_searchResultModelCells)
     {
         _searchResultModelCells = [NSMutableArray array];
     }
+    
     return _searchResultModelCells;
 }
+
 
 @end

@@ -13,9 +13,11 @@
 
 @property (nonatomic, strong) NSArray *hotSearchData;
 @property (nonatomic, strong) SubSearchModel *searchResultModel;
+@property (nonatomic, copy) NSString *searchHistoryTitle;
 
 - (NSString *)getHomePageSearchText;
 - (NSArray *)getHotSearchTag;
+- (NSString *)getSearchHistoryTitle;
 - (instancetype)initWithSearchListModel:(nullable id)model;
 
 @end

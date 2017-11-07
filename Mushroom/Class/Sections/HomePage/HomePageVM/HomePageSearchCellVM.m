@@ -41,4 +41,9 @@
     return self.hotSearchData;
 }
 
+- (NSString *)getSearchHistoryTitle
+{
+    return self.searchHistoryTitle;
+}
+
 @end

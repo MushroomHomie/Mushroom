@@ -11,6 +11,8 @@
 
 @interface HomePageSearchVM : BaseTableViewModel
 
+- (void)getHistoryListTitle;
+
 /// 默认三条搜索
 - (void)getTopThreeDefaultData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 

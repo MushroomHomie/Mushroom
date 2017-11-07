@@ -69,6 +69,9 @@ static DataBaseOperation* dataBaseOperation = nil;
         return;
     }
     
+    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
+    NSLog(@"doc = %@",doc);
+    
     if (![self isTableExist:@"SearchHistoricalRecordList"])
     {
         [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchHistoryTitle TEXT)"];
@@ -78,7 +81,7 @@ static DataBaseOperation* dataBaseOperation = nil;
     [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchHistoryTitle = ?",searchTitle];
     
     // 搜索条件保存10条
-    FMResultSet *resultSet=[_dataBase executeQuery:@"SELECT rowid FROM SearchHistoricalRecordList order by rowid"];
+    FMResultSet *resultSet = [_dataBase executeQuery:@"SELECT rowid FROM SearchHistoricalRecordList order by rowid"];
     
     NSMutableArray *rowIdArray = [[NSMutableArray alloc]init];
     
@@ -92,7 +95,7 @@ static DataBaseOperation* dataBaseOperation = nil;
         [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where rowid = ?",[rowIdArray objectAtIndex:0]];
     }
     
-    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)", searchTitle];
+    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchHistoryTitle) VALUES (?)", searchTitle];
     [_dataBase close];
 }
 
@@ -105,7 +108,7 @@ static DataBaseOperation* dataBaseOperation = nil;
     }
 
     NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
-    FMResultSet *resultSet = [_dataBase executeQuery:@"SELECT * FROM SearchHistoricalRecordList"];
+    FMResultSet *resultSet = [_dataBase executeQuery:@"SELECT * kFROM SearchHistoricalRecordList"];
     
     while ([resultSet next])
     {
