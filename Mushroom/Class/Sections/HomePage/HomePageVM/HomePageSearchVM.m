@@ -49,6 +49,41 @@
     return self.searchHistoryTitles.count > 0;
 }
 
+/// 获得热搜cell的高度
+- (CGFloat)getHotSearchSectionHeight
+{
+    int width = 15;
+    int j = 0;
+    int row = 1;
+    
+    for (int i = 0 ; i < _hotSearchCellVM.hotSearchData.count; i++)
+    {
+        NSString *buttonTitle = _hotSearchCellVM.hotSearchData[i];
+        int labWidth = [self widthForLabel:buttonTitle fontSize:16] + 7;
+        
+        width = width + labWidth;
+        j++;
+        
+        if (width > APP_SCREEN_WIDTH - 20)
+        {
+            j = 0;
+            width = 15;
+            row++;
+            width = width + labWidth;
+            j++;
+        }
+    }
+   
+    return row * (22 + 10);
+}
+
+/// 计算文字长度
+- (CGFloat )widthForLabel:(NSString *)text fontSize:(CGFloat)font
+{
+    CGSize size = [text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:font], NSFontAttributeName, nil]];
+    return size.width;
+}
+
 #pragma mark - TableViewDelegate
 
 - (NSInteger)numberOfSections
@@ -99,7 +134,7 @@
     CGFloat heightForRow = 44;
     if (indexPath.section == 1)
     {
-        heightForRow = 190;
+        heightForRow = [self getHotSearchSectionHeight];
     }
     
     return heightForRow;

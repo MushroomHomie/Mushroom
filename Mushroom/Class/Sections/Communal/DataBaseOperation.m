@@ -28,7 +28,10 @@ static DataBaseOperation* dataBaseOperation = nil;
 - (void)createDataBaseMethod
 {
     NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"PaKeTongData.sqlite"];
+    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"Mushroom.sqlite"];
+    
+    NSLog(@"dbpath = %@",dbpath);
+    
     _dataBase = [FMDatabase databaseWithPath:dbpath];
     
     if (![_dataBase open])
@@ -64,59 +67,40 @@ static DataBaseOperation* dataBaseOperation = nil;
 /// 插入搜索历史记录
 - (void)insertSearchHistoricalRecordWithSearchTitle:(NSString *)searchTitle
 {
-    if (![_dataBase open])
-    {
+    if (![_dataBase open]) {
+        
         return;
     }
     
-    NSString *doc =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)  lastObject];
-    NSLog(@"doc = %@",doc);
-    
     if (![self isTableExist:@"SearchHistoricalRecordList"])
     {
-        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchHistoryTitle TEXT)"];
+        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT)"];
     }
     
-    // 删除保存过的相同的内容
-    [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchHistoryTitle = ?",searchTitle];
+    BOOL success = [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)",searchTitle];
     
-    // 搜索条件保存10条
-    FMResultSet *resultSet = [_dataBase executeQuery:@"SELECT rowid FROM SearchHistoricalRecordList order by rowid"];
-    
-    NSMutableArray *rowIdArray = [[NSMutableArray alloc]init];
-    
-    while ([resultSet next])
-    {
-        [rowIdArray addObject:[NSString stringWithFormat:@"%@", [resultSet stringForColumn:@"rowid"]]];
-    }
-    
-    if (rowIdArray.count != 0 && rowIdArray.count >= 8)
-    {
-        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where rowid = ?",[rowIdArray objectAtIndex:0]];
-    }
-    
-    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchHistoryTitle) VALUES (?)", searchTitle];
+    NSLog(@"success = %d",success);
     [_dataBase close];
 }
 
 /// 获得搜索历史记录
 - (NSArray *)selectSearchHistoricalRecordList
 {
-    if (![_dataBase open] || ![self isTableExist:@"SearchHistoricalRecordList"])
-    {
+    
+    if (![_dataBase open] || ![self isTableExist:@"SearchHistoricalRecordList"]) {
         return nil;
     }
-
-    NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
-    FMResultSet *resultSet = [_dataBase executeQuery:@"SELECT * kFROM SearchHistoricalRecordList"];
     
-    while ([resultSet next])
-    {
-        NSString *searchTitle = [NSString stringWithFormat:@"%@",[resultSet stringForColumn:@"rowid"]];
+    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT * FROM SearchHistoricalRecordList"];
+    NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
+    
+    while ([sysParamResultSet next]){
+        NSString *searchTitle = [NSString stringWithFormat:@"%@",[sysParamResultSet stringForColumn:@"searchTitle"]];
         [searchHistoricalRecordList addObject:searchTitle];
     }
     
     [_dataBase close];
+
     return searchHistoricalRecordList;
 }
 

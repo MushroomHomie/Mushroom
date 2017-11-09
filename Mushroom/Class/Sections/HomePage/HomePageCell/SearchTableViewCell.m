@@ -185,7 +185,7 @@
         width = width + labWidth;
         j++;
         
-        if (width > APP_SCREEN_WIDTH - 30)
+        if (width > APP_SCREEN_WIDTH - 20)
         {
             j = 0;
             width = 15;

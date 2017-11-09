@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "921FF0FF3C812CE30DECD1696DD974CE3A19F107",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "8d29155f-4a3b-9249-8424-559cf8bab2fc++424" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "921FF0FF3C812CE30DECD1696DD974CE3A19F107" : 0,
+    "8d29155f-4a3b-9249-8424-559cf8bab2fc++424" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0B86B92A-0513-4646-837B-82B92EAC93FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "921FF0FF3C812CE30DECD1696DD974CE3A19F107" : "Mushroom\/",
+    "8d29155f-4a3b-9249-8424-559cf8bab2fc++424" : "Mushroom\/Mushroom\/Class\/General\/ReuqestManager\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Mushroom",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Mushroom.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/10.58.1.230:3690\/svn\/panketong",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8d29155f-4a3b-9249-8424-559cf8bab2fc++424"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MushroomHomie\/Mushroom.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "921FF0FF3C812CE30DECD1696DD974CE3A19F107"
+    }
+  ]
+}
