@@ -77,21 +77,18 @@ static DataBaseOperation* dataBaseOperation = nil;
         [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT)"];
     }
     
-    BOOL success = [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)",searchTitle];
-    
-    NSLog(@"success = %d",success);
+    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)",searchTitle];
     [_dataBase close];
 }
 
 /// 获得搜索历史记录
 - (NSArray *)selectSearchHistoricalRecordList
 {
-    
     if (![_dataBase open] || ![self isTableExist:@"SearchHistoricalRecordList"]) {
         return nil;
     }
     
-    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT * FROM SearchHistoricalRecordList"];
+    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT searchTitle FROM SearchHistoricalRecordList"];
     NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
     
     while ([sysParamResultSet next]){
@@ -100,7 +97,6 @@ static DataBaseOperation* dataBaseOperation = nil;
     }
     
     [_dataBase close];
-
     return searchHistoricalRecordList;
 }
 

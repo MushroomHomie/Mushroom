@@ -281,6 +281,7 @@
 /// 历史记录
 - (void)handleSearchHistoryTitle:(NSArray *)historyTitleArray
 {
+    [self.searchHistoryModelCells removeAllObjects];
     NSMutableArray *cellViewModes = [NSMutableArray array];
 
     [historyTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -306,5 +307,14 @@
     return _searchResultModelCells;
 }
 
+- (NSMutableArray *)searchHistoryModelCells
+{
+    if (!_searchHistoryModelCells)
+    {
+        _searchHistoryModelCells = [NSMutableArray array];
+    }
+    
+    return _searchHistoryModelCells;
+}
 
 @end
