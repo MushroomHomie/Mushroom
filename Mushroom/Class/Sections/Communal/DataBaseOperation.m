@@ -77,6 +77,10 @@ static DataBaseOperation* dataBaseOperation = nil;
         [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT)"];
     }
     
+    // 删除之前保存过的搜索内容
+    [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchTitle = ?", searchTitle];
+    
+    
     [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)",searchTitle];
     [_dataBase close];
 }
