@@ -74,14 +74,26 @@ static DataBaseOperation* dataBaseOperation = nil;
     
     if (![self isTableExist:@"SearchHistoricalRecordList"])
     {
-        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT)"];
+        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT,historyListNumber Text)"];
     }
     
     // 删除之前保存过的搜索内容
     [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchTitle = ?", searchTitle];
     
-    
-    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList VALUES (?)",searchTitle];
+//    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT searchTitle FROM SearchHistoricalRecordList"];
+//    NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
+//    
+//    while ([sysParamResultSet next]){
+//        NSString *searchTitle = [NSString stringWithFormat:@"%@",[sysParamResultSet stringForColumn:@"searchTitle"]];
+//        [searchHistoricalRecordList addObject:searchTitle];
+//    }
+
+//    if (searchHistoricalRecordList.count > 5)
+//    {
+//        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where historyListNumber = ?", @"0"];
+//    }
+//    
+    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchTitle,historyListNumber) VALUES (?,?)",searchTitle, [NSString stringWithFormat:@"%d",0]];
     [_dataBase close];
 }
 

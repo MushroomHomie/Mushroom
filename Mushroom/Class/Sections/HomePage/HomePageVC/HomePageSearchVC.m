@@ -81,6 +81,7 @@
     _searchListApi = [SearchListApi new];
     self.viewModel = [HomePageSearchVM new];
     [self requestData];
+    [[DataBaseOperation sharedataBaseOperation] deleteSearchHistoricalRecordList];
 }
 
 #pragma mark - ClickEvents
