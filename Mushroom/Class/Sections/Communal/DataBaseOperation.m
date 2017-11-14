@@ -80,20 +80,20 @@ static DataBaseOperation* dataBaseOperation = nil;
     // 删除之前保存过的搜索内容
     [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchTitle = ?", searchTitle];
     
-//    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT searchTitle FROM SearchHistoricalRecordList"];
-//    NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
-//    
-//    while ([sysParamResultSet next]){
-//        NSString *searchTitle = [NSString stringWithFormat:@"%@",[sysParamResultSet stringForColumn:@"searchTitle"]];
-//        [searchHistoricalRecordList addObject:searchTitle];
-//    }
+    FMResultSet *sysParamResultSet = [_dataBase executeQuery:@"SELECT searchTitle FROM SearchHistoricalRecordList"];
+    NSMutableArray *searchHistoricalRecordList = [NSMutableArray array];
+    
+    while ([sysParamResultSet next]){
+        NSString *searchTitle = [NSString stringWithFormat:@"%@",[sysParamResultSet stringForColumn:@"searchTitle"]];
+        [searchHistoricalRecordList addObject:searchTitle];
+    }
 
-//    if (searchHistoricalRecordList.count > 5)
-//    {
-//        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where historyListNumber = ?", @"0"];
-//    }
-//    
-    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchTitle,historyListNumber) VALUES (?,?)",searchTitle, [NSString stringWithFormat:@"%d",0]];
+    if (searchHistoricalRecordList.count > 4)
+    {
+        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where historyListNumber = ?", @"0"];
+    }
+    
+    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchTitle,historyListNumber) VALUES (?,?)",searchTitle, [NSString stringWithFormat:@"%ld",searchHistoricalRecordList.count]];
     [_dataBase close];
 }
 
