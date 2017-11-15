@@ -18,8 +18,6 @@
                  andViewModel:(BaseTableViewCellVM *)viewModel;
 
 - (void)initView;
-- (void)initBinding;
 - (void)initData;
-
 
 @end

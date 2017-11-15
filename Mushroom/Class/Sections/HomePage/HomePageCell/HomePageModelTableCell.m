@@ -97,7 +97,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    HomePageSubDataModel *dataModel = _dataArray[indexPath.row];
+    [self.viewModel.cellClickSubject sendNext:dataModel];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

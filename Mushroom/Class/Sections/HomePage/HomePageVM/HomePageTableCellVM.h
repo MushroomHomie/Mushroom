@@ -10,7 +10,11 @@
 
 @interface HomePageTableCellVM : BaseTableViewCellVM
 
-- (NSArray *)getDataArray;
+@property (nonatomic, strong) RACSubject *cellClickSubject;
 
+
+- (instancetype)initWithEntity:(nullable id)model cellClickSubject:(RACSubject *)cellClickSubject;
+
+- (NSArray *)getDataArray;
 - (NSString *)getBannerStr;
 @end

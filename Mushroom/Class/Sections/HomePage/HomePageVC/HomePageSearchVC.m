@@ -79,8 +79,12 @@
 - (void)initData
 {
     _searchListApi = [SearchListApi new];
-    self.viewModel = [HomePageSearchVM new];
     [self requestData];
+}
+
+- (void)initBinding
+{
+    self.viewModel = [HomePageSearchVM new];
 }
 
 #pragma mark - ClickEvents

@@ -128,7 +128,7 @@ static DataBaseOperation* dataBaseOperation = nil;
         return;
     }
 
-    [_dataBase executeUpdate:@"DELETE FROM SearchHistoricalRecordList"];
+    [_dataBase executeUpdate:@" DROP TABLE IF EXISTS SearchHistoricalRecordList"];
     [_dataBase close];
 }
 

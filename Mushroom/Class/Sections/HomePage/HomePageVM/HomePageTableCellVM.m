@@ -18,6 +18,17 @@
 
 @implementation HomePageTableCellVM
 
+- (instancetype)initWithEntity:(nullable id)model cellClickSubject:(RACSubject *)cellClickSubject
+{
+    self = [super init];
+    if (self)
+    {
+        self.model = model;
+        self.cellClickSubject = cellClickSubject;
+    }
+    return self;
+}
+
 - (NSArray *)getDataArray
 {
     return self.model.data;

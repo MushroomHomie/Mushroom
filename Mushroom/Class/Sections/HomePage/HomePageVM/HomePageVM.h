@@ -11,6 +11,8 @@
 
 @interface HomePageVM : BaseTableViewModel
 
+@property (nonatomic, strong) RACSubject *cellClickSubject;
+
 - (void)getHomePageListData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 - (void)getHomePageTopSearchData:(RequestSucceed)succeedBlock failure:(RequestFailure)failBlock;
 

@@ -7,6 +7,9 @@
 //
 
 #import "HomePageVC.h"
+#import "VideoPlayVC.h"
+#import "HomePageSearchVC.h"
+#import "HomePageTableCellVM.h"
 
 #import "HomePageVM.h"
 #import "HomePageModelTableCell.h"
@@ -15,8 +18,8 @@
 
 #import "HomePageModel.h"
 #import "HomePageDefaultSearchModel.h"
+#import "HomePageSubDataModel.h"
 
-#import "HomePageSearchVC.h"
 #import "HomePageTypeEnum.h"
 
 @interface HomePageVC ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
@@ -51,17 +54,15 @@
 - (void)initView
 {
     [super initView];
-    //一只猪强势回归 !!!!!!!!
+
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
         make.bottom.equalTo(self.view).with.offset(-45);
     }];
     
     // 顶部搜索条
     [self createTopSearchTextField];
-
     [self.navigationController createTextfieldWithTarget:self
                                                Textfield:_topSearchLabel
                                     clearTextfieldButton:nil];
@@ -69,9 +70,19 @@
 
 - (void)initData
 {
-    self.viewModel = [HomePageVM new];
-    
     [self headerRefreshMethod];
+}
+
+- (void)initBinding
+{
+    self.viewModel = [HomePageVM new];
+    @weakify(self);
+    [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(HomePageSubDataModel *cellModel) {
+        @strongify(self);
+        
+        VideoPlayVC *videoPlayVC = [VideoPlayVC new];
+        [self.navigationController pushViewController:videoPlayVC animated:YES];
+    }];
 }
 
 #pragma mark - PrivateMethod

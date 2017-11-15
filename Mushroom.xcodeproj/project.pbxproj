@@ -24,6 +24,11 @@
 		4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3726E31F97234800E79654 /* MushroomBaseApi.m */; };
 		4F3E09261F97593500E5E532 /* HomePageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3E09251F97593500E5E532 /* HomePageApi.m */; };
 		4F4474681FA728B700B8AD78 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */; };
+		4F5F382A1FBC0514006B68F3 /* VideoPlayApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F38291FBC0514006B68F3 /* VideoPlayApi.m */; };
+		4F5F382D1FBC058A006B68F3 /* VideoPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F382C1FBC058A006B68F3 /* VideoPlayModel.m */; };
+		4F5F38301FBC05EF006B68F3 /* VideoPlaySubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F382F1FBC05EF006B68F3 /* VideoPlaySubModel.m */; };
+		4F5F38331FBC09A3006B68F3 /* VideoPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F38321FBC09A3006B68F3 /* VideoPlayVC.m */; };
+		4F5F38361FBC09D4006B68F3 /* VideoPlayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F38351FBC09D4006B68F3 /* VideoPlayVM.m */; };
 		4F620F4A1F67BEE4000D51A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F620F491F67BEE4000D51A8 /* main.m */; };
 		4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F511F67BEE4000D51A8 /* Main.storyboard */; };
 		4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F620F541F67BEE4000D51A8 /* Assets.xcassets */; };
@@ -122,6 +127,16 @@
 		4F4474661FA728B700B8AD78 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		4F475D7F1F7103C500D134C8 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
+		4F5F38281FBC0514006B68F3 /* VideoPlayApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayApi.h; sourceTree = "<group>"; };
+		4F5F38291FBC0514006B68F3 /* VideoPlayApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayApi.m; sourceTree = "<group>"; };
+		4F5F382B1FBC058A006B68F3 /* VideoPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayModel.h; sourceTree = "<group>"; };
+		4F5F382C1FBC058A006B68F3 /* VideoPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayModel.m; sourceTree = "<group>"; };
+		4F5F382E1FBC05EF006B68F3 /* VideoPlaySubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaySubModel.h; sourceTree = "<group>"; };
+		4F5F382F1FBC05EF006B68F3 /* VideoPlaySubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlaySubModel.m; sourceTree = "<group>"; };
+		4F5F38311FBC09A3006B68F3 /* VideoPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayVC.h; sourceTree = "<group>"; };
+		4F5F38321FBC09A3006B68F3 /* VideoPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayVC.m; sourceTree = "<group>"; };
+		4F5F38341FBC09D4006B68F3 /* VideoPlayVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayVM.h; sourceTree = "<group>"; };
+		4F5F38351FBC09D4006B68F3 /* VideoPlayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayVM.m; sourceTree = "<group>"; };
 		4F620F451F67BEE4000D51A8 /* Mushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F620F491F67BEE4000D51A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F620F521F67BEE4000D51A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -309,6 +324,8 @@
 				4F0DC26F1FA334D900F355A0 /* HomePageSearchVM.m */,
 				4F97C4061FA84E7E0084B655 /* HomePageSearchCellVM.h */,
 				4F97C4071FA84E7E0084B655 /* HomePageSearchCellVM.m */,
+				4F5F38341FBC09D4006B68F3 /* VideoPlayVM.h */,
+				4F5F38351FBC09D4006B68F3 /* VideoPlayVM.m */,
 			);
 			path = HomePageVM;
 			sourceTree = "<group>";
@@ -453,6 +470,8 @@
 				4F20267B1FAABA4B003D40C6 /* SearchListApi.m */,
 				4FF15B1B1FB04A4700614E37 /* SearchVideoListApi.h */,
 				4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */,
+				4F5F38281FBC0514006B68F3 /* VideoPlayApi.h */,
+				4F5F38291FBC0514006B68F3 /* VideoPlayApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -594,6 +613,10 @@
 				4F2026781FAAB7C2003D40C6 /* SubSearchModel.m */,
 				4FF15B1E1FB04B9100614E37 /* SearchVideoModel.h */,
 				4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */,
+				4F5F382B1FBC058A006B68F3 /* VideoPlayModel.h */,
+				4F5F382C1FBC058A006B68F3 /* VideoPlayModel.m */,
+				4F5F382E1FBC05EF006B68F3 /* VideoPlaySubModel.h */,
+				4F5F382F1FBC05EF006B68F3 /* VideoPlaySubModel.m */,
 			);
 			path = HomePageModel;
 			sourceTree = "<group>";
@@ -607,6 +630,8 @@
 				4F3726D91F970F3200E79654 /* LoopPlaybackView.m */,
 				4F0DC26B1FA334A200F355A0 /* HomePageSearchVC.h */,
 				4F0DC26C1FA334A200F355A0 /* HomePageSearchVC.m */,
+				4F5F38311FBC09A3006B68F3 /* VideoPlayVC.h */,
+				4F5F38321FBC09A3006B68F3 /* VideoPlayVC.m */,
 			);
 			path = HomePageVC;
 			sourceTree = "<group>";
@@ -958,6 +983,7 @@
 				4FE51F331F6A2B6B002DF13F /* BaseViewModel.m in Sources */,
 				4FF15B1A1FB00A2100614E37 /* DataBaseOperation.m in Sources */,
 				4F0DC26D1FA334A200F355A0 /* HomePageSearchVC.m in Sources */,
+				4F5F382A1FBC0514006B68F3 /* VideoPlayApi.m in Sources */,
 				4F0DC26A1FA3321100F355A0 /* UIImage+Extension.m in Sources */,
 				E434A2DB1FA22254003F4EA5 /* HomePageDefaultSearchModel.m in Sources */,
 				4FF11C5D1F99EA7A000317E8 /* HomePageModelTableCell.m in Sources */,
@@ -967,6 +993,7 @@
 				E434A2DE1FA2235D003F4EA5 /* SubDefaultSearchModel.m in Sources */,
 				4F740BA41F69081C00C300ED /* BaseViewController.m in Sources */,
 				4FE51F431F6A3205002DF13F /* AbsApi.m in Sources */,
+				4F5F382D1FBC058A006B68F3 /* VideoPlayModel.m in Sources */,
 				4F3726E41F97234800E79654 /* MushroomBaseApi.m in Sources */,
 				4FF15B1D1FB04A4700614E37 /* SearchVideoListApi.m in Sources */,
 				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
@@ -980,6 +1007,7 @@
 				4FF15B201FB04B9200614E37 /* SearchVideoModel.m in Sources */,
 				4F740BCE1F690BDA00C300ED /* V_ListVC.m in Sources */,
 				4F740BB71F690B2400C300ED /* ClassifyVC.m in Sources */,
+				4F5F38331FBC09A3006B68F3 /* VideoPlayVC.m in Sources */,
 				4F3726DE1F9720AC00E79654 /* HomePageVM.m in Sources */,
 				4F0DC2701FA334D900F355A0 /* HomePageSearchVM.m in Sources */,
 				4F620F7E1F67E508000D51A8 /* AppDelegate.m in Sources */,
@@ -989,7 +1017,9 @@
 				4F97C4081FA84E7E0084B655 /* HomePageSearchCellVM.m in Sources */,
 				4FE51F461F6A3205002DF13F /* RequestManager.m in Sources */,
 				E4DC384F1FA89D7D004D9EA1 /* HotSearchModel.m in Sources */,
+				4F5F38361FBC09D4006B68F3 /* VideoPlayVM.m in Sources */,
 				4F23D9441FA18F64007DACEC /* UINavigationController+Extension.m in Sources */,
+				4F5F38301FBC05EF006B68F3 /* VideoPlaySubModel.m in Sources */,
 				E434A2D81FA221CE003F4EA5 /* HomePageDefaultSearchApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

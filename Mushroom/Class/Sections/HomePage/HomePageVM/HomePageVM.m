@@ -27,6 +27,16 @@
     _homePageDefaultSearchModel = [HomePageDefaultSearchModel new];
 }
 
+- (RACSubject *)cellClickSubject
+{
+    if (!_cellClickSubject)
+    {
+        _cellClickSubject = [RACSubject subject];
+    }
+    
+    return _cellClickSubject;
+}
+
 #pragma mark - TableViewDelegate
 
 - (NSInteger)numberOfSections
@@ -77,7 +87,7 @@
             
         case LoopPlayView:
         {
-            heightForRow = APP_SCREEN_WIDTH * 0.55;
+            heightForRow = APP_SCREEN_WIDTH * 0.58;
         }
             break;
             
@@ -125,7 +135,14 @@
 
 - (void)handlePagingEntities:(NSArray *)entities cellViewModelClass:(Class)cellViewModelClass
 {
-    [self handleMutableArrayEntites:entities cellViewModelClass:cellViewModelClass];
+    NSMutableArray *cellViewModes = [NSMutableArray array];
+    [entities enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [cellViewModes addObject:[[cellViewModelClass alloc] initWithEntity:obj cellClickSubject:self.cellClickSubject]];
+        
+    }];
+    
+    [self.cellViewModels addObjectsFromArray:cellViewModes];
 }
 
 @end

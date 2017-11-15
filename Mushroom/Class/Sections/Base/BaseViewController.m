@@ -34,11 +34,11 @@
     // 将ViewDidLoad绑定initView与initData
     @weakify(viewController);
     [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
-        
         @strongify(viewController);
+        
+        [viewController initBinding];
         [viewController initView];
         [viewController initData];
-        
     }];
     
     return viewController;
@@ -65,12 +65,7 @@
 
 - (void)initBinding
 {
-    [self.viewModel sendRequest:^(id entity) {
-        
-    } failure:^(NSUInteger errCode, NSString *errorMsg) {
-        
-        showMessage(errorMsg, self);
-    }];
+    
 }
 
 - (void)back

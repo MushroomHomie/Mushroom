@@ -13,7 +13,7 @@
 
 - (NSString *)getPath
 {
-    return @"search/top_keyword.json";
+    return @"video/play.json";
 }
 
 - (Class)getRespClass

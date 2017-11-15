@@ -65,7 +65,7 @@
 
 - (void)initView:(NSIndexPath *)indexPath
 {
-    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.55);
+    _loopPlayViewFrame = CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_WIDTH * 0.58);
     _gradientShadowView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                    (_loopPlayViewFrame.size.height / 3) * 2,
                                                                    APP_SCREEN_WIDTH,
@@ -79,7 +79,7 @@
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1);
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, APP_SCREEN_WIDTH * 0.55 - 50, APP_SCREEN_WIDTH - 50, 20)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, APP_SCREEN_WIDTH * 0.58 - 50, APP_SCREEN_WIDTH - 50, 20)];
     _titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
     _titleLabel.textColor = [UIColor whiteColor];
     
