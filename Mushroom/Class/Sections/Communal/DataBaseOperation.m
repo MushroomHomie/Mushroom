@@ -113,7 +113,11 @@ static DataBaseOperation* dataBaseOperation = nil;
     }
     
     [_dataBase close];
-    return searchHistoricalRecordList;
+    
+    // 倒叙输出
+    NSArray *reverseArray = [[searchHistoricalRecordList reverseObjectEnumerator] allObjects];
+    
+    return reverseArray;
 }
 
 /// 删除搜索历史记录

@@ -157,6 +157,11 @@
         return @"";
     }
     
+    if (!_searchHistoryTitles)
+    {
+        return @"";
+    }
+    
     if (section == 1)
     {
         return @"热搜";
