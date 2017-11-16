@@ -7,6 +7,7 @@
 //
 
 #import "VideoPlayVM.h"
+#import "VideoPlayCellVM.h"
 
 @implementation VideoPlayVM
 
