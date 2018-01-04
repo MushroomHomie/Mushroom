@@ -12,18 +12,19 @@
 #import "HotSearchModel.h"
 #import "SearchListModel.h"
 #import "HomePageDefaultSearchModel.h"
+#import "SubSearchModel.h"
 
 #import "SearchListApi.h"
 
 @interface HomePageSearchVC ()
 
-@property (nonatomic, strong) HomePageSearchVM *viewModel;
 @property (nonatomic, strong) UITextField *topSearchTextField;
 @property (nonatomic, strong) UIButton *clearTextFieldButton;
 @property (nonatomic, strong) UIImageView *backGroundImageView;
-@property (nonatomic, strong) HotSearchModel *hotSearchModel;
 @property (nonatomic, strong) NSMutableArray *defaultSearchModelArray;
 
+@property (nonatomic, strong) HomePageSearchVM *viewModel;
+@property (nonatomic, strong) HotSearchModel *hotSearchModel;
 @property (nonatomic, strong) SearchListModel *searchResultModel;
 @property (nonatomic, strong) SearchListApi *searchListApi;
 
@@ -214,6 +215,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_searchResultModel.data.suggest.count > 0) {
+        SubSearchModel *subModel = _searchResultModel.data.suggest[indexPath.row];
+        [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.word];
+    }
+    
     SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];
     [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.title];
 }
