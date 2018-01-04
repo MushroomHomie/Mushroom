@@ -10,7 +10,7 @@
 
 @interface BaseViewController ()
 
-///  baseVC的BviewModel，外部只是暴露getter属性
+/// baseVC的BviewModel，外部只是暴露getter属性
 @property (nonatomic, strong) BaseViewModel *viewModel;
 
 @end

@@ -111,7 +111,7 @@
         return _searchResultModelCells.count;
     }
     
-    if (_homePageDefaultSearchModel.data.count <= 0 || _hotSearchModel.data.count <= 0)
+    if (_homePageDefaultSearchModel.data.count <= 0 && _hotSearchModel.data.count <= 0)
     {
         return 0;
     }

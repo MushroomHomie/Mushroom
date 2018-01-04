@@ -206,6 +206,22 @@
     }
 }
 
+- (void)selectedTagButton:(UIButton *)tagButton
+{
+    if (tagButton.selected)
+    {
+        [tagButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        tagButton.selected = NO;
+    }
+    else
+    {
+        [tagButton setTitleColor:RGBColor(28, 185, 112) forState:UIControlStateNormal];
+        tagButton.layer.borderColor = RGBColor(28, 185, 112).CGColor;
+        tagButton.selected = YES;
+    }
+}
+
 - (UIButton *)createTagButton:(NSString *)text
 {
     UIFont *font = [UIFont systemFontOfSize:13];
@@ -220,24 +236,6 @@
     tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     return tagButton;
-}
-
-- (void)selectedTagButton:(UIButton *)tagButton
-{
-    if (tagButton.selected)
-    {
-        [tagButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        tagButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        tagButton.selected = NO;
-    }
-    else
-    {
-        [tagButton setTitleColor:RGBColor(28, 185, 112) forState:UIControlStateNormal];
-        tagButton.layer.borderColor = RGBColor(28, 185, 112).CGColor;
-        tagButton.selected = YES;
-        
-        [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:tagButton.titleLabel.text];
-    }
 }
 
 /// 计算文字长度
