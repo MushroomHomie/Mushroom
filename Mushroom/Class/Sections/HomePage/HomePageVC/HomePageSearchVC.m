@@ -28,6 +28,8 @@
 @property (nonatomic, strong) SearchListModel *searchResultModel;
 @property (nonatomic, strong) SearchListApi *searchListApi;
 
+@property (nonatomic, assign) BOOL isSearch;
+
 @end
 
 @implementation HomePageSearchVC
@@ -79,6 +81,7 @@
 
 - (void)initData
 {
+    _isSearch = NO;
     _searchListApi = [SearchListApi new];
     [self requestData];
 }
@@ -128,6 +131,7 @@
         else
         {
             _searchListApi.keyWord = @"";
+            _isSearch = NO;
             _clearTextFieldButton.hidden = YES;
             [self.viewModel getHistoryListTitle];
             [self.tableView reloadData];
@@ -136,6 +140,7 @@
     }] subscribeNext:^(NSString *x) {
         
         @strongify(self);
+        _isSearch = YES;
         _clearTextFieldButton.hidden = NO;
         _searchListApi.keyWord = [x stringByReplacingOccurrencesOfString:@" " withString:@""];
         [self requestSearchResultList];
@@ -156,6 +161,7 @@
         _topSearchTextField.text = @"";
         _searchListApi.keyWord = @"";
         _clearTextFieldButton.hidden = YES;
+        _isSearch = NO;
         [self.tableView reloadData];
     }];
 }
@@ -215,9 +221,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_searchResultModel.data.suggest.count > 0) {
+    if (_isSearch) {
         SubSearchModel *subModel = _searchResultModel.data.suggest[indexPath.row];
         [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.word];
+        
+        return;
     }
     
     SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];

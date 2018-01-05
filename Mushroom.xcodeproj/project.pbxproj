@@ -60,6 +60,8 @@
 		4FF15B1A1FB00A2100614E37 /* DataBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B191FB00A2100614E37 /* DataBaseOperation.m */; };
 		4FF15B1D1FB04A4700614E37 /* SearchVideoListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */; };
 		4FF15B201FB04B9200614E37 /* SearchVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */; };
+		4FF2EF4E1FFF72BE00782E38 /* SearchVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2EF4C1FFF72BE00782E38 /* SearchVideoCell.m */; };
+		4FF2EF4F1FFF72BE00782E38 /* SearchVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2EF4D1FFF72BE00782E38 /* SearchVideoCell.xib */; };
 		4FF400F41F9885DA00E25E04 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */; };
 		4FF400F61F9885DA00E25E04 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F11F9885DA00E25E04 /* BaseTableViewController.m */; };
 		4FF400F71F9885DA00E25E04 /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF400F31F9885DA00E25E04 /* BaseTableViewModel.m */; };
@@ -202,6 +204,9 @@
 		4FF15B1C1FB04A4700614E37 /* SearchVideoListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVideoListApi.m; sourceTree = "<group>"; };
 		4FF15B1E1FB04B9100614E37 /* SearchVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVideoModel.h; sourceTree = "<group>"; };
 		4FF15B1F1FB04B9200614E37 /* SearchVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVideoModel.m; sourceTree = "<group>"; };
+		4FF2EF4B1FFF72BE00782E38 /* SearchVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVideoCell.h; sourceTree = "<group>"; };
+		4FF2EF4C1FFF72BE00782E38 /* SearchVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVideoCell.m; sourceTree = "<group>"; };
+		4FF2EF4D1FFF72BE00782E38 /* SearchVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchVideoCell.xib; sourceTree = "<group>"; };
 		4FF400EC1F9885DA00E25E04 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		4FF400ED1F9885DA00E25E04 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		4FF400F01F9885DA00E25E04 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -281,6 +286,9 @@
 				4F4474671FA728B700B8AD78 /* SearchTableViewCell.m */,
 				4FF0057E1FBD22F500039408 /* VideoPlayCell.h */,
 				4FF0057F1FBD22F500039408 /* VideoPlayCell.m */,
+				4FF2EF4B1FFF72BE00782E38 /* SearchVideoCell.h */,
+				4FF2EF4C1FFF72BE00782E38 /* SearchVideoCell.m */,
+				4FF2EF4D1FFF72BE00782E38 /* SearchVideoCell.xib */,
 			);
 			path = HomePageCell;
 			sourceTree = "<group>";
@@ -545,6 +553,7 @@
 		4F740BA91F690A5300C300ED /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				4FF2EF4A1FFF630A00782E38 /* HomePageView */,
 				4F3726DB1F97209500E79654 /* HomePageVM */,
 				4F02BD5D1F95F30F00BB0D6D /* HomePageCell */,
 				4F740BB91F690B2F00C300ED /* HomePageVC */,
@@ -778,6 +787,13 @@
 			path = Communal;
 			sourceTree = "<group>";
 		};
+		4FF2EF4A1FFF630A00782E38 /* HomePageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePageView;
+			sourceTree = "<group>";
+		};
 		9D791ED0ED1D4250FCA46250 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +915,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F620F581F67BEE4000D51A8 /* LaunchScreen.storyboard in Resources */,
+				4FF2EF4F1FFF72BE00782E38 /* SearchVideoCell.xib in Resources */,
 				4F620F551F67BEE4000D51A8 /* Assets.xcassets in Resources */,
 				4F620F531F67BEE4000D51A8 /* Main.storyboard in Resources */,
 			);
@@ -1009,6 +1026,7 @@
 				4FF15B1D1FB04A4700614E37 /* SearchVideoListApi.m in Sources */,
 				4F740BC81F690BB100C300ED /* RadioFM_VC.m in Sources */,
 				4FC7FFCB1F6946DA00A0F2B7 /* MainNavigationController.m in Sources */,
+				4FF2EF4E1FFF72BE00782E38 /* SearchVideoCell.m in Sources */,
 				4FE51F361F6A2E94002DF13F /* BaseModel.m in Sources */,
 				4F620F4A1F67BEE4000D51A8 /* main.m in Sources */,
 				4F740BBC1F690B2F00C300ED /* HomePageVC.m in Sources */,

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="SearchVideoCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="101.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="55C-7a-caZ">
+                        <rect key="frame" x="18" y="11" width="140" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="08i-B0-sSK"/>
+                            <constraint firstAttribute="height" constant="80" id="vFD-X4-SKs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张靓颖&amp;林俊杰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-LD-456">
+                        <rect key="frame" x="168" y="43" width="134" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr0-CQ-niR">
+                        <rect key="frame" x="168" y="38" width="134" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/10/1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCq-Jl-k1G">
+                        <rect key="frame" x="168" y="63" width="134" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Kr0-CQ-niR" secondAttribute="trailing" constant="10" id="8qh-Kb-Taw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="2ah-LD-456" secondAttribute="trailing" constant="10" id="Bcz-DQ-Jnz"/>
+                    <constraint firstItem="55C-7a-caZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G01-U1-wh0"/>
+                    <constraint firstItem="55C-7a-caZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="PR1-Lu-m4k"/>
+                    <constraint firstItem="2ah-LD-456" firstAttribute="top" secondItem="Kr0-CQ-niR" secondAttribute="bottom" constant="5" id="SrZ-yk-I4l"/>
+                    <constraint firstItem="kCq-Jl-k1G" firstAttribute="top" secondItem="2ah-LD-456" secondAttribute="bottom" constant="5" id="WjP-j7-mGF"/>
+                    <constraint firstItem="Kr0-CQ-niR" firstAttribute="leading" secondItem="55C-7a-caZ" secondAttribute="trailing" constant="10" id="gKJ-0G-tUC"/>
+                    <constraint firstItem="2ah-LD-456" firstAttribute="leading" secondItem="55C-7a-caZ" secondAttribute="trailing" constant="10" id="liz-yr-WTG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kCq-Jl-k1G" secondAttribute="trailing" constant="10" id="n32-Tg-h2X"/>
+                    <constraint firstItem="2ah-LD-456" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uTq-xJ-oZT"/>
+                    <constraint firstItem="kCq-Jl-k1G" firstAttribute="leading" secondItem="55C-7a-caZ" secondAttribute="trailing" constant="10" id="wXO-oj-AKT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="videoAuthor" destination="2ah-LD-456" id="7VY-Mi-WTv"/>
+                <outlet property="videoDate" destination="kCq-Jl-k1G" id="iNB-Jh-1Gu"/>
+                <outlet property="videoImage" destination="55C-7a-caZ" id="AiA-lA-bzq"/>
+                <outlet property="videoTitle" destination="Kr0-CQ-niR" id="tVl-5m-mkD"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="135"/>
+        </tableViewCell>
+    </objects>
+</document>
