@@ -12,34 +12,64 @@
 
 
 - (void)setRightBarButtonItemWithTitle:(NSString *)buttonTitle
-                                              Image:(NSString *)imageName
-                                             Target:(UIViewController *)target
-                                             Action:(SEL)action
+                                 Image:(NSString *)imageName
+                                Target:(UIViewController *)target
+                                Action:(SEL)action
 {
-    if (buttonTitle)
-    {
-        target.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleDone target:target action:action];
-        [target.navigationItem.rightBarButtonItem setTintColor:[UIColor lightGrayColor]];
-        [target.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (buttonTitle) {
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [btn setTitle:buttonTitle forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        btn.titleLabel.textAlignment = NSTextAlignmentRight;
+        btn.size = CGSizeMake(33, 30);
     }
     
-    if (imageName)
-    {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
+    if (imageName) {
         UIImage *btuImage = [UIImage imageNamed:imageName];
         btuImage = [btuImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
-        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         // 设置图片
         [btn setBackgroundImage:btuImage forState:UIControlStateNormal];
         [btn setBackgroundImage:btuImage forState:UIControlStateHighlighted];
         // 设置尺寸
         btn.size = btn.currentBackgroundImage.size;
-        
-        target.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
+    
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    target.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
 }
+
+- (void)setLeftBarButtonItemWithTitle:(NSString *)buttonTitle
+                                Image:(NSString *)imageName
+                               Target:(UIViewController *)target
+                               Action:(SEL)action
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (buttonTitle) {
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
+        btn.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [btn setTitle:buttonTitle forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        btn.size = CGSizeMake(33, 30);
+    }
+    
+    if (imageName) {
+        UIImage *btuImage = [UIImage imageNamed:imageName];
+        btuImage = [btuImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        // 设置图片
+        [btn setBackgroundImage:btuImage forState:UIControlStateNormal];
+        [btn setBackgroundImage:btuImage forState:UIControlStateHighlighted];
+        // 设置尺寸
+        btn.size = btn.currentBackgroundImage.size;
+    }
+    
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    target.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
 
 /// 导航栏上的textfield
 - (void)createTextfieldWithTarget:(UIViewController *)target

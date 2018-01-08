@@ -12,6 +12,11 @@
 
 @property (nonatomic, strong) UIButton *clearTextfieldButton;
 
+- (void)setLeftBarButtonItemWithTitle:(NSString *)buttonTitle
+                                Image:(NSString *)imageName
+                               Target:(UIViewController *)target
+                               Action:(SEL)action;
+
 - (void)setRightBarButtonItemWithTitle:(NSString *)buttonTitle
                                  Image:(NSString *)imageName
                                 Target:(UIViewController *)target
@@ -21,5 +26,6 @@
 -  (void)createTextfieldWithTarget:(UIViewController *)target
                          Textfield:(UIView *)textField
               clearTextfieldButton:(UIButton *)clearButton;
+
 
 @end

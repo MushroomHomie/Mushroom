@@ -7,6 +7,8 @@
 //
 
 #import "HomePageSearchVC.h"
+#import "HomePageSearchResultListVC.h"
+
 #import "HomePageSearchVM.h"
 #import "SearchTableViewCell.h"
 #import "HotSearchModel.h"
@@ -16,7 +18,7 @@
 
 #import "SearchListApi.h"
 
-@interface HomePageSearchVC ()
+@interface HomePageSearchVC ()<SearchResultListDelegate>
 
 @property (nonatomic, strong) UITextField *topSearchTextField;
 @property (nonatomic, strong) UIButton *clearTextFieldButton;
@@ -217,19 +219,38 @@
     }
 }
 
+#pragma mark - SearchResultListDelegate
+
+- (void)changeKeyWord:(NSString *)keyWord
+{
+    _topSearchTextField.text = keyWord;
+    [_topSearchTextField becomeFirstResponder];
+}
+
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_isSearch) {
+    NSString *insertTitle = @"";
+    
+    if (_isSearch)
+    {
         SubSearchModel *subModel = _searchResultModel.data.suggest[indexPath.row];
-        [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.word];
-        
-        return;
+        insertTitle = subModel.word;
+    }
+    else
+    {
+        SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];
+        insertTitle = subModel.title;
     }
     
-    SubDefaultSearchModel *subModel = _defaultSearchModelArray[indexPath.row];
-    [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:subModel.title];
+    [[DataBaseOperation sharedataBaseOperation] insertSearchHistoricalRecordWithSearchTitle:insertTitle];
+    
+    HomePageSearchResultListVC *searchResultVC = [HomePageSearchResultListVC new];
+    searchResultVC.delegate = self;
+    searchResultVC.keyWord = insertTitle;
+    searchResultVC.backgroundImage = _backgroundImage;
+    [self.navigationController pushViewController:searchResultVC animated:NO];
 }
 
 #pragma mark - RequestData

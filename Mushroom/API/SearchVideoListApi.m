@@ -7,7 +7,7 @@
 //
 
 #import "SearchVideoListApi.h"
-#import "SearchVideoModel.h"
+#import "SearchResultListModel.h"
 
 @implementation SearchVideoListApi
 
@@ -34,7 +34,7 @@
 
 - (Class)getRespClass
 {
-    return SearchVideoModel.class;
+    return SearchResultListModel.class;
 }
 
 - (int)getRequestMethod

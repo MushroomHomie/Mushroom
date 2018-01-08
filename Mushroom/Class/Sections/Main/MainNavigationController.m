@@ -33,16 +33,18 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    // 判断是否为栈底控制器
     if (self.viewControllers.count > 0)
     {
-        // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
-        
         // 自动显示和隐藏tabbar
         viewController.hidesBottomBarWhenPushed = YES;
         // 添加返回按钮
-        UIImage *image2 = [UIImage imageNamed:@"yyt_return_44x44_"];
+        UIImage *image2 = [UIImage imageNamed:@"backBtnImg"];
         image2 = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image2 style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image2
+                                                                                          style:UIBarButtonItemStylePlain
+                                                                                         target:self
+                                                                                         action:@selector(back)];
     }
     
     [super pushViewController:viewController animated:animated];
