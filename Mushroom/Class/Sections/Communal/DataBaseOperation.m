@@ -74,7 +74,7 @@ static DataBaseOperation* dataBaseOperation = nil;
     
     if (![self isTableExist:@"SearchHistoricalRecordList"])
     {
-        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT,historyListNumber Text)"];
+        [_dataBase executeUpdate:@"CREATE TABLE SearchHistoricalRecordList (searchTitle TEXT)"];
     }
     
     // 删除之前保存过的搜索内容
@@ -90,10 +90,11 @@ static DataBaseOperation* dataBaseOperation = nil;
 
     if (searchHistoricalRecordList.count > 4)
     {
-        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where historyListNumber = ?", @"0"];
+        NSString *searchTitle = [searchHistoricalRecordList firstObject];
+        [_dataBase executeUpdate:@"delete from SearchHistoricalRecordList where searchTitle = ?", searchTitle];
     }
     
-    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchTitle,historyListNumber) VALUES (?,?)",searchTitle, [NSString stringWithFormat:@"%ld",searchHistoricalRecordList.count]];
+    [_dataBase executeUpdate:@"INSERT INTO SearchHistoricalRecordList(searchTitle) VALUES (?)",searchTitle];
     [_dataBase close];
 }
 

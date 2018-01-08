@@ -19,6 +19,7 @@
 @property (nonatomic, strong) HotSearchModel *hotSearchModel;
 @property (nonatomic, strong) HomePageSearchCellVM *hotSearchCellVM;
 @property (nonatomic, strong) SearchListModel *searchResultModel;
+
 @property (nonatomic, strong) NSMutableArray *searchResultModelCells;
 @property (nonatomic, strong) NSMutableArray *searchHistoryModelCells;
 @property (nonatomic, strong) NSMutableArray *searchHistoryTitles;
