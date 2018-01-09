@@ -125,11 +125,12 @@
 
         if (_clearTextFieldButton)
         {
-            [self.navigationController popViewControllerAnimated:NO];
             
             if ([self.delegate respondsToSelector:@selector(changeKeyWord:)]) {
                 [self.delegate changeKeyWord:_keyWord];
             }
+            
+            [self.navigationController popViewControllerAnimated:NO];
         }
     }];
 }
