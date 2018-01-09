@@ -224,7 +224,6 @@
 - (void)changeKeyWord:(NSString *)keyWord
 {
     _topSearchTextField.text = keyWord;
-    [_topSearchTextField becomeFirstResponder];
 }
 
 #pragma mark - TableViewDelegate

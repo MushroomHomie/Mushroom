@@ -139,7 +139,6 @@
 {
     _clearTextFieldButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_clearTextFieldButton setBackgroundImage:[UIImage imageNamed:@"AD_RSS_CloseBtn_8x8_"] forState:UIControlStateNormal];
-    _clearTextFieldButton.hidden = YES;
     
     // 监听button
     @weakify(self);
@@ -148,12 +147,11 @@
         
         [self.navigationController popViewControllerAnimated:NO];
 
-        if ([self.delegate respondsToSelector:@selector(changeKeyWord)]) {
-            [self.delegate changeKeyWord];
+        if ([self.delegate respondsToSelector:@selector(changeKeyWord:)]) {
+            [self.delegate changeKeyWord:@""];
         }
     }];
 }
-
 
 #pragma mark - CommonMethod
 
